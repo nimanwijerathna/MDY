@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Dambadiwa Project Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#00b050",
+                        secondary: "#1e3a8a",
+                        "background-light": "#f3f4f6",
+                        "background-dark": "#0f172a",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1e293b",
+                        "sidebar-dark": "#111827",
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "sans-serif"],
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-sans text-gray-800 dark:text-gray-200 antialiased transition-colors duration-200">
+    <div class="flex h-screen overflow-hidden">
+        <aside class="w-64 hidden md:flex flex-col bg-sidebar-dark text-white border-r border-gray-700">
+            <div class="h-16 flex items-center px-6 border-b border-gray-700 bg-gray-900">
+                <span class="text-lg font-bold tracking-wide">Mahamewnawa</span>
+            </div>
+            <nav class="flex-1 px-3 py-4 space-y-2 overflow-y-auto">
+                <a class="flex items-center px-4 py-3 text-sm font-medium rounded-lg text-gray-300 hover:bg-gray-800 hover:text-white transition-colors"
+                    href="#">
+                    <span class="material-icons-round mr-3">dashboard</span>
+                    Dashboard
+                </a>
+                <a class="flex items-center justify-between px-4 py-3 text-sm font-medium rounded-lg text-gray-300 hover:bg-gray-800 hover:text-white transition-colors"
+                    href="#">
+                    <div class="flex items-center">
+                        <span class="material-icons-round mr-3">people</span>
+                        Users
+                    </div>
+                    <span class="material-icons-round text-xs">chevron_right</span>
+                </a>
+                <a class="flex items-center justify-between px-4 py-3 text-sm font-medium rounded-lg text-gray-300 hover:bg-gray-800 hover:text-white transition-colors"
+                    href="#">
+                    <div class="flex items-center">
+                        <span class="material-icons-round mr-3">groups</span>
+                        Followers
+                    </div>
+                    <span class="material-icons-round text-xs">chevron_right</span>
+                </a>
+                <a class="flex items-center justify-between px-4 py-3 text-sm font-medium rounded-lg text-gray-300 hover:bg-gray-800 hover:text-white transition-colors"
+                    href="#">
+                    <div class="flex items-center">
+                        <span class="material-icons-round mr-3">menu_book</span>
+                        Passports
+                    </div>
+                    <span class="material-icons-round text-xs">chevron_right</span>
+                </a>
+                <a class="flex items-center px-4 py-3 text-sm font-medium rounded-lg bg-primary text-white shadow-md"
+                    href="#">
+                    <span class="material-icons-round mr-3">public</span>
+                    Dambadiwa
+                </a>
+                <a class="flex items-center justify-between px-4 py-3 text-sm font-medium rounded-lg text-gray-300 hover:bg-gray-800 hover:text-white transition-colors"
+                    href="#">
+                    <div class="flex items-center">
+                        <span class="material-icons-round mr-3">payments</span>
+                        Finance
+                    </div>
+                    <span class="material-icons-round text-xs">chevron_right</span>
+                </a>
+            </nav>
+            <div class="p-4 border-t border-gray-700">
+                <div class="flex items-center">
+                    <div class="w-8 h-8 rounded bg-gray-600 flex items-center justify-center text-xs font-bold">N</div>
+                    <div class="ml-3">
+                        <p class="text-sm font-medium">Niman</p>
+                    </div>
+                    <button class="ml-auto text-gray-400 hover:text-white">
+                        <span class="material-icons-round">unfold_more</span>
+                    </button>
+                </div>
+            </div>
+        </aside>
+        <main class="flex-1 flex flex-col h-full overflow-hidden relative">
+            <header class="bg-primary shadow-md z-10">
+                <div class="px-6 py-4 flex items-center justify-between">
+                    <button class="md:hidden text-white mr-4">
+                        <span class="material-icons-round">menu</span>
+                    </button>
+                    <h1 class="text-2xl font-semibold text-white text-center w-full md:w-auto mx-auto md:mx-0">View
+                        Projects</h1>
+                    <button class="p-2 rounded-full hover:bg-white/20 text-white transition-colors absolute right-4"
+                        onclick="document.documentElement.classList.toggle('dark')">
+                        <span class="material-icons-round block dark:hidden">dark_mode</span>
+                        <span class="material-icons-round hidden dark:block">light_mode</span>
+                    </button>
+                </div>
+            </header>
+            <div class="flex-1 overflow-y-auto p-4 md:p-6 space-y-6">
+                <nav class="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                    <a class="hover:text-primary transition-colors flex items-center" href="#">
+                        <span class="material-icons-round text-lg">home</span>
+                    </a>
+                    <span class="mx-2 text-gray-300">/</span>
+                    <a class="hover:text-primary transition-colors" href="projects.html">Dambadiwa</a>
+                    <span class="mx-2 text-gray-300">/</span>
+                    <span class="font-medium text-primary">View Projects</span>
+                </nav>
+                <div
+                    class="bg-white dark:bg-surface-dark p-5 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700">
+                    <div class="flex flex-col lg:flex-row gap-4 items-end lg:items-center justify-between">
+                        <div class="w-full lg:w-1/3">
+                            <label
+                                class="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2 ml-1">Search</label>
+                            <div class="relative group">
+                                <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <span
+                                        class="material-icons-round text-gray-400 group-focus-within:text-primary transition-colors">search</span>
+                                </span>
+                                <input
+                                    class="pl-10 block w-full rounded-lg border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 text-sm focus:ring-primary focus:border-primary transition-shadow"
+                                    placeholder="Search projects..." type="text" />
+                            </div>
+                        </div>
+                        <div class="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
+                            <div class="w-full sm:w-auto">
+                                <label
+                                    class="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2 ml-1">Year</label>
+                                <select
+                                    class="w-full sm:w-40 rounded-lg border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 text-sm focus:ring-primary focus:border-primary">
+                                    <option>Sort by Year</option>
+                                    <option>2026</option>
+                                    <option>2025</option>
+                                    <option>2024</option>
+                                </select>
+                            </div>
+                            <div class="w-full sm:w-auto">
+                                <label
+                                    class="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2 ml-1">Start
+                                    Date</label>
+                                <select
+                                    class="w-full sm:w-40 rounded-lg border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 text-sm focus:ring-primary focus:border-primary">
+                                    <option>Sort by Start</option>
+                                    <option>Newest First</option>
+                                    <option>Oldest First</option>
+                                </select>
+                            </div>
+                            <div class="w-full sm:w-auto">
+                                <label
+                                    class="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2 ml-1">End
+                                    Date</label>
+                                <select
+                                    class="w-full sm:w-40 rounded-lg border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 text-sm focus:ring-primary focus:border-primary">
+                                    <option>Sort by End</option>
+                                    <option>Newest First</option>
+                                    <option>Oldest First</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="bg-white dark:bg-surface-dark rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm text-left">
+                            <thead class="bg-secondary text-white uppercase text-xs font-bold tracking-wider">
+                                <tr>
+                                    <th class="px-6 py-4 whitespace-nowrap">Name</th>
+                                    <th class="px-6 py-4 whitespace-nowrap">EST COUNT</th>
+                                    <th class="px-6 py-4 whitespace-nowrap">Projects Fee</th>
+                                    <th class="px-6 py-4 whitespace-nowrap">Start Date</th>
+                                    <th class="px-6 py-4 whitespace-nowrap">End Date</th>
+                                    <th class="px-6 py-4 text-center whitespace-nowrap">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody
+                                class="divide-y divide-gray-200 dark:divide-gray-700 text-gray-600 dark:text-gray-300">
+                                <tr class="hover:bg-blue-50/50 dark:hover:bg-blue-900/10 transition-colors">
+                                    <td class="px-6 py-4 font-medium text-gray-900 dark:text-white">2026 February 02
+                                    </td>
+                                    <td class="px-6 py-4 font-bold text-black dark:text-white">120</td>
+                                    <td class="px-6 py-4">Rs. 275,000.00</td>
+                                    <td class="px-6 py-4">2026-02-16</td>
+                                    <td class="px-6 py-4">2026-03-01</td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center justify-center space-x-2">
+                                            <button
+                                                class="flex items-center justify-center w-8 h-8 bg-amber-400 hover:bg-amber-500 text-white rounded shadow-sm transition-colors"
+                                                title="Edit">
+                                                <span class="material-icons-round text-lg">edit</span>
+                                            </button>
+                                            <button
+                                                class="flex items-center justify-center w-8 h-8 bg-red-500 hover:bg-red-600 text-white rounded shadow-sm transition-colors"
+                                                title="Delete">
+                                                <span class="material-icons-round text-lg">delete</span>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-blue-50/50 dark:hover:bg-blue-900/10 transition-colors">
+                                    <td class="px-6 py-4 font-medium text-gray-900 dark:text-white">2026 February 01
+                                    </td>
+                                    <td class="px-6 py-4 font-bold text-black dark:text-white">80</td>
+                                    <td class="px-6 py-4">Rs. 295,000.00</td>
+                                    <td class="px-6 py-4">2026-02-03</td>
+                                    <td class="px-6 py-4">2026-02-16</td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center justify-center space-x-2">
+                                            <button
+                                                class="flex items-center justify-center w-8 h-8 bg-amber-400 hover:bg-amber-500 text-white rounded shadow-sm transition-colors"
+                                                title="Edit">
+                                                <span class="material-icons-round text-lg">edit</span>
+                                            </button>
+                                            <button
+                                                class="flex items-center justify-center w-8 h-8 bg-red-500 hover:bg-red-600 text-white rounded shadow-sm transition-colors"
+                                                title="Delete">
+                                                <span class="material-icons-round text-lg">delete</span>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-blue-50/50 dark:hover:bg-blue-900/10 transition-colors">
+                                    <td class="px-6 py-4 font-medium text-gray-900 dark:text-white">2026 March 01</td>
+                                    <td class="px-6 py-4 font-bold text-black dark:text-white">80</td>
+                                    <td class="px-6 py-4">Rs. 175,000.00</td>
+                                    <td class="px-6 py-4">2026-03-02</td>
+                                    <td class="px-6 py-4">2026-03-15</td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center justify-center space-x-2">
+                                            <button
+                                                class="flex items-center justify-center w-8 h-8 bg-amber-400 hover:bg-amber-500 text-white rounded shadow-sm transition-colors"
+                                                title="Edit">
+                                                <span class="material-icons-round text-lg">edit</span>
+                                            </button>
+                                            <button
+                                                class="flex items-center justify-center w-8 h-8 bg-red-500 hover:bg-red-600 text-white rounded shadow-sm transition-colors"
+                                                title="Delete">
+                                                <span class="material-icons-round text-lg">delete</span>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div
+                        class="px-6 py-4 border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-surface-dark flex items-center justify-between">
+                        <span class="text-xs text-gray-500 dark:text-gray-400">Showing 1-3 of 3 projects</span>
+                        <div class="flex space-x-2">
+                            <button
+                                class="p-1 rounded hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-500 disabled:opacity-50"
+                                disabled="">
+                                <span class="material-icons-round text-lg">chevron_left</span>
+                            </button>
+                            <button
+                                class="p-1 rounded hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-500 disabled:opacity-50"
+                                disabled="">
+                                <span class="material-icons-round text-lg">chevron_right</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

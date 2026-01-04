@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Update Passport Details</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#2563EB", // Blue color for the "Update" button
+                        "background-light": "#F3F4F6",
+                        "background-dark": "#111827",
+                        "surface-light": "#FFFFFF",
+                        "surface-dark": "#1F2937",
+                        "text-light": "#111827",
+                        "text-dark": "#F9FAFB",
+                        "border-light": "#E5E7EB",
+                        "border-dark": "#374151",
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.375rem",
+                    },
+                },
+            },
+        };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <style>
+        input[type="file"]::file-selector-button {
+            border: 1px solid #e5e7eb;
+            padding: 0.2em 0.4em;
+            border-radius: 0.2em;
+            background-color: #f3f4f6;
+            transition: 0.2s;
+            margin-right: 10px;
+            font-size: 0.875rem;
+        }
+
+        .dark input[type="file"]::file-selector-button {
+            background-color: #374151;
+            border-color: #4b5563;
+            color: white;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark min-h-screen flex items-center justify-center font-sans antialiased p-4">
+    <div aria-hidden="true"
+        class="fixed inset-0 bg-gray-900 bg-opacity-50 dark:bg-opacity-70 backdrop-blur-sm z-40 transition-opacity">
+    </div>
+    <div
+        class="relative bg-surface-light dark:bg-surface-dark w-full max-w-2xl rounded-lg shadow-xl z-50 transform transition-all p-6 sm:p-8">
+        <div class="mb-6 border-b border-gray-100 dark:border-gray-700 pb-4">
+            <h2 class="text-xl font-medium text-text-light dark:text-text-dark">Update Passport Details</h2>
+        </div>
+        <form action="#" class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div class="md:col-span-2">
+                    <label class="block text-sm font-semibold text-text-light dark:text-gray-300 mb-1.5"
+                        for="collected-date">
+                        Collected Date
+                    </label>
+                    <div class="relative">
+                        <input
+                            class="block w-full rounded-md border-gray-300 dark:border-gray-600 shadow-sm focus:border-primary focus:ring-primary dark:bg-gray-800 dark:text-white sm:text-sm py-2 px-3 border [color-scheme:light] dark:[color-scheme:dark]"
+                            id="collected-date" name="collected-date" type="date" />
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-text-light dark:text-gray-300 mb-1.5" for="surname">
+                        Surname
+                    </label>
+                    <input
+                        class="block w-full rounded-md border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50 text-gray-500 dark:text-gray-400 cursor-not-allowed shadow-sm sm:text-sm py-2 px-3 border"
+                        id="surname" name="surname" readonly="" type="text" value="Yapa Mudiyanselage" />
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-text-light dark:text-gray-300 mb-1.5"
+                        for="other-name">
+                        Other Name
+                    </label>
+                    <input
+                        class="block w-full rounded-md border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50 text-gray-500 dark:text-gray-400 cursor-not-allowed shadow-sm sm:text-sm py-2 px-3 border"
+                        id="other-name" name="other-name" readonly="" type="text" value="Wasana Lakprabha" />
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-text-light dark:text-gray-300 mb-1.5"
+                        for="birth-date">
+                        Birth Date
+                    </label>
+                    <input
+                        class="block w-full rounded-md border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50 text-gray-500 dark:text-gray-400 cursor-not-allowed shadow-sm sm:text-sm py-2 px-3 border"
+                        id="birth-date" name="birth-date" readonly="" type="text" value="15/05/1988" />
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-text-light dark:text-gray-300 mb-1.5" for="gender">
+                        Gender
+                    </label>
+                    <input
+                        class="block w-full rounded-md border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50 text-gray-500 dark:text-gray-400 cursor-not-allowed shadow-sm sm:text-sm py-2 px-3 border"
+                        id="gender" name="gender" readonly="" type="text" value="Female" />
+                </div>
+                <div class="md:col-span-2">
+                    <label class="block text-sm font-semibold text-text-light dark:text-gray-300 mb-1.5"
+                        for="old-passport-no">
+                        Old Passport Number
+                    </label>
+                    <input
+                        class="block w-full rounded-md border-gray-300 dark:border-gray-600 shadow-sm focus:border-primary focus:ring-primary dark:bg-gray-800 dark:text-white sm:text-sm py-2 px-3 border"
+                        id="old-passport-no" name="old-passport-no" placeholder="Enter old passport number"
+                        type="text" />
+                </div>
+                <div class="md:col-span-2">
+                    <label class="block text-sm font-semibold text-text-light dark:text-gray-300 mb-1.5"
+                        for="passport-image">
+                        Passport Image
+                    </label>
+                    <input
+                        class="block w-full text-sm text-gray-500 dark:text-gray-400 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-gray-100 file:text-gray-700 dark:file:bg-gray-700 dark:file:text-gray-300 hover:file:bg-gray-200 dark:hover:file:bg-gray-600 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm p-1.5 bg-white dark:bg-gray-800"
+                        id="passport-image" name="passport-image" type="file" />
+                </div>
+                <div class="md:col-span-2">
+                    <label class="block text-sm font-semibold text-text-light dark:text-gray-300 mb-1.5"
+                        for="passport-number">
+                        Passport Number
+                    </label>
+                    <input
+                        class="block w-full rounded-md border-gray-300 dark:border-gray-600 shadow-sm focus:border-primary focus:ring-primary dark:bg-gray-800 dark:text-white sm:text-sm py-2 px-3 border"
+                        id="passport-number" name="passport-number" placeholder="Enter new passport number"
+                        type="text" />
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-text-light dark:text-gray-300 mb-1.5"
+                        for="issue-date">
+                        Issue Date
+                    </label>
+                    <div class="relative">
+                        <input
+                            class="block w-full rounded-md border-gray-300 dark:border-gray-600 shadow-sm focus:border-primary focus:ring-primary dark:bg-gray-800 dark:text-white sm:text-sm py-2 px-3 border [color-scheme:light] dark:[color-scheme:dark]"
+                            id="issue-date" name="issue-date" type="date" />
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-text-light dark:text-gray-300 mb-1.5" for="exp-date">
+                        Exp Date
+                    </label>
+                    <div class="relative">
+                        <input
+                            class="block w-full rounded-md border-gray-300 dark:border-gray-600 shadow-sm focus:border-primary focus:ring-primary dark:bg-gray-800 dark:text-white sm:text-sm py-2 px-3 border [color-scheme:light] dark:[color-scheme:dark]"
+                            id="exp-date" name="exp-date" type="date" />
+                    </div>
+                </div>
+            </div>
+            <div
+                class="flex items-center justify-end space-x-3 pt-6 mt-2 border-t border-gray-100 dark:border-gray-700">
+                <button onclick="window.location.href='submittedList.html'"
+                    class="inline-flex items-center px-6 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700 dark:bg-gray-700 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 shadow-sm transition-colors"
+                    type="button">
+                    Cancel
+                </button>
+                <button
+                    class="inline-flex items-center px-6 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-primary hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 shadow-sm transition-colors"
+                    type="submit">
+                    Update
+                </button>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>
