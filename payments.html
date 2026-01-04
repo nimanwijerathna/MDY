@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Payment Details Page</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#1f2937",
+                        "primary-hover": "#111827",
+                        "background-light": "#ffffff",
+                        "background-dark": "#111827",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1f2937",
+                        "input-bg-light": "#f3f4f6",
+                        "input-bg-dark": "#374151",
+                        "border-light": "#e5e7eb",
+                        "border-dark": "#374151",
+                        "text-main-light": "#111827",
+                        "text-main-dark": "#f9fafb",
+                        "text-muted-light": "#6b7280",
+                        "text-muted-dark": "#9ca3af",
+                        "link-blue": "#3b82f6",
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Inter', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                        'xl': "0.75rem",
+                        '2xl': "1rem",
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: rgba(156, 163, 175, 0.5);
+            border-radius: 20px;
+        }
+
+        input[type="file"]::file-selector-button {
+            border: 0;
+            background-color: #e5e7eb;
+            padding: 0.5rem 1rem;
+            margin-right: 1rem;
+            border-radius: 0.375rem;
+            color: #374151;
+            cursor: pointer;
+            font-size: 0.875rem;
+            transition: background-color 0.2s;
+        }
+
+        .dark input[type="file"]::file-selector-button {
+            background-color: #4b5563;
+            color: #f3f4f6;
+        }
+
+        input[type="file"]::file-selector-button:hover {
+            background-color: #d1d5db;
+        }
+
+        .dark input[type="file"]::file-selector-button:hover {
+            background-color: #6b7280;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-sans h-screen w-full overflow-hidden flex transition-colors duration-300">
+    <div class="hidden lg:block lg:w-1/2 relative h-full">
+        <div class="absolute inset-0 bg-black/10 dark:bg-black/40 z-10 pointer-events-none"></div>
+        <div class="absolute inset-0 w-full h-full overflow-hidden">
+            <a href="#" title="Budu Pasebudu Arahanthaka Maha Viharaya">
+                <img src="https://live.staticflickr.com/65535/54451385426_103363d9a6_b.jpg"
+                    class="w-full h-full object-cover"
+                    alt="Budu Pasebudu Arahanthaka Maha Viharaya - Pasebudu Mandiraya">
+            </a>
+            <script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+        </div>
+    </div>
+    <div
+        class="w-full lg:w-1/2 h-full flex items-center justify-center p-4 sm:p-6 lg:p-8 relative bg-background-light dark:bg-background-dark overflow-y-auto">
+        <button aria-label="Toggle Dark Mode"
+            class="absolute top-6 right-6 p-2 rounded-full text-text-muted-light dark:text-text-muted-dark hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors focus:outline-none z-50"
+            onclick="document.documentElement.classList.toggle('dark')">
+            <span class="material-icons text-xl">brightness_medium</span>
+        </button>
+        <div
+            class="w-full max-w-2xl bg-surface-light dark:bg-surface-dark rounded-xl shadow-none lg:shadow-xl lg:border border-border-light dark:border-border-dark p-6 sm:p-8 transition-all duration-300 my-auto">
+            <div class="text-center mb-8">
+                <h1 class="text-2xl font-semibold text-text-main-light dark:text-text-main-dark mb-2">
+                    Payment Details
+                </h1>
+                <p class="text-sm text-text-muted-light dark:text-text-muted-dark">
+                    Please fill in the payment information below
+                </p>
+            </div>
+            <form action="#" class="space-y-6" method="POST">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium text-text-main-light dark:text-text-main-dark mb-1.5"
+                            for="reg_no">
+                            Reg No
+                        </label>
+                        <input
+                            class="block w-full px-4 py-2.5 rounded-lg border-transparent bg-input-bg-light dark:bg-input-bg-dark text-text-main-light dark:text-text-main-dark placeholder-text-muted-light dark:placeholder-text-muted-dark focus:border-primary focus:bg-white dark:focus:bg-gray-800 focus:ring-2 focus:ring-primary/20 transition-all duration-200 sm:text-sm"
+                            id="reg_no" name="reg_no" placeholder="Enter Registration No" type="text" />
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-text-main-light dark:text-text-main-dark mb-1.5"
+                            for="journey">
+                            Journey
+                        </label>
+                        <div class="relative">
+                            <select
+                                class="block w-full px-4 py-2.5 rounded-lg border-transparent bg-input-bg-light dark:bg-input-bg-dark text-text-main-light dark:text-text-main-dark focus:border-primary focus:bg-white dark:focus:bg-gray-800 focus:ring-2 focus:ring-primary/20 transition-all duration-200 sm:text-sm"
+                                id="journey" name="journey">
+                                <option>Choose</option>
+                                <option>2026 February 01</option>
+                                <option>2026 February 02</option>
+                                <option>2026 March 01</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-text-main-light dark:text-text-main-dark mb-1.5"
+                            for="amount">
+                            Amount
+                        </label>
+                        <input
+                            class="block w-full px-4 py-2.5 rounded-lg border-transparent bg-input-bg-light dark:bg-input-bg-dark text-text-main-light dark:text-text-main-dark placeholder-text-muted-light dark:placeholder-text-muted-dark focus:border-primary focus:bg-white dark:focus:bg-gray-800 focus:ring-2 focus:ring-primary/20 transition-all duration-200 sm:text-sm"
+                            id="amount" name="amount" placeholder="Enter fee amount" type="number" />
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-text-main-light dark:text-text-main-dark mb-1.5"
+                            for="payment_method">
+                            Payment Method
+                        </label>
+                        <select
+                            class="block w-full px-4 py-2.5 rounded-lg border-transparent bg-input-bg-light dark:bg-input-bg-dark text-text-main-light dark:text-text-main-dark focus:border-primary focus:bg-white dark:focus:bg-gray-800 focus:ring-2 focus:ring-primary/20 transition-all duration-200 sm:text-sm"
+                            id="payment_method" name="payment_method">
+                            <option value="">Select Method</option>
+                            <option value="cash">Bank</option>
+                            <option value="bank_transfer">Cash</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-text-main-light dark:text-text-main-dark mb-1.5"
+                            for="receipt_no">
+                            Receipt No
+                        </label>
+                        <input
+                            class="block w-full px-4 py-2.5 rounded-lg border-transparent bg-input-bg-light dark:bg-input-bg-dark text-text-main-light dark:text-text-main-dark placeholder-text-muted-light dark:placeholder-text-muted-dark focus:border-primary focus:bg-white dark:focus:bg-gray-800 focus:ring-2 focus:ring-primary/20 transition-all duration-200 sm:text-sm"
+                            id="receipt_no" name="receipt_no" placeholder="Enter Receipt No" type="text" />
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-text-main-light dark:text-text-main-dark mb-1.5"
+                            for="payment_date">
+                            Date
+                        </label>
+                        <input
+                            class="block w-full px-4 py-2.5 rounded-lg border-transparent bg-input-bg-light dark:bg-input-bg-dark text-text-main-light dark:text-text-main-dark placeholder-text-muted-light dark:placeholder-text-muted-dark focus:border-primary focus:bg-white dark:focus:bg-gray-800 focus:ring-2 focus:ring-primary/20 transition-all duration-200 sm:text-sm [color-scheme:light] dark:[color-scheme:dark]"
+                            id="payment_date" name="payment_date" type="date" />
+                    </div>
+                </div>
+                <div class="pt-2">
+                    <label class="block text-sm font-medium text-text-main-light dark:text-text-main-dark mb-3">
+                        Receipt Images
+                    </label>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="space-y-1">
+                            <label class="text-xs text-text-muted-light dark:text-text-muted-dark ml-1">Receipt Image
+                                1</label>
+                            <input
+                                class="block w-full text-sm text-text-muted-light dark:text-text-muted-dark file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-primary/10 file:text-primary hover:file:bg-primary/20 dark:file:bg-gray-700 dark:file:text-gray-300"
+                                id="receipt_1" name="receipt_1" type="file" />
+                        </div>
+                        <div class="space-y-1">
+                            <label class="text-xs text-text-muted-light dark:text-text-muted-dark ml-1">Receipt Image
+                                2</label>
+                            <input
+                                class="block w-full text-sm text-text-muted-light dark:text-text-muted-dark file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-primary/10 file:text-primary hover:file:bg-primary/20 dark:file:bg-gray-700 dark:file:text-gray-300"
+                                id="receipt_2" name="receipt_2" type="file" />
+                        </div>
+                        <div class="space-y-1">
+                            <label class="text-xs text-text-muted-light dark:text-text-muted-dark ml-1">Receipt Image
+                                3</label>
+                            <input
+                                class="block w-full text-sm text-text-muted-light dark:text-text-muted-dark file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-primary/10 file:text-primary hover:file:bg-primary/20 dark:file:bg-gray-700 dark:file:text-gray-300"
+                                id="receipt_3" name="receipt_3" type="file" />
+                        </div>
+                        <div class="space-y-1">
+                            <label class="text-xs text-text-muted-light dark:text-text-muted-dark ml-1">Receipt Image
+                                4</label>
+                            <input
+                                class="block w-full text-sm text-text-muted-light dark:text-text-muted-dark file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-primary/10 file:text-primary hover:file:bg-primary/20 dark:file:bg-gray-700 dark:file:text-gray-300"
+                                id="receipt_4" name="receipt_4" type="file" />
+                        </div>
+                    </div>
+                </div>
+                <div class="pt-2">
+                    <button
+                        class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-primary hover:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary dark:focus:ring-offset-background-dark transition-all duration-200 transform hover:-translate-y-0.5"
+                        type="submit">
+                        Submit Payment
+                    </button>
+                </div>
+            </form>
+            <div class="mt-6 text-center">
+                <a class="flex items-center justify-center gap-1 text-sm font-medium text-text-muted-light dark:text-text-muted-dark hover:text-link-blue dark:hover:text-blue-400 transition-colors group"
+                    href="index.html">
+                    <span
+                        class="material-icons text-base group-hover:-translate-x-1 transition-transform">arrow_back</span>
+                    Back to Sign-In
+                </a>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
