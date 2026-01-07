@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Visa Management Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#00b050",
+                        secondary: "#1e3a8a",
+                        "background-light": "#f3f4f6",
+                        "background-dark": "#0f172a",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1e293b",
+                        "sidebar-dark": "#111827",
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "sans-serif"],
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-sans text-gray-800 dark:text-gray-200 antialiased transition-colors duration-200">
+    <div class="flex h-screen overflow-hidden">
+        <aside class="w-64 hidden md:flex flex-col bg-sidebar-dark text-white border-r border-gray-700">
+            <div class="h-16 flex items-center px-6 border-b border-gray-700 bg-gray-900">
+                <span class="text-lg font-bold tracking-wide">Mahamewnawa</span>
+            </div>
+            <nav class="flex-1 px-3 py-4 space-y-2 overflow-y-auto">
+                <a class="flex items-center px-4 py-3 text-sm font-medium rounded-lg text-gray-300 hover:bg-gray-800 hover:text-white transition-colors"
+                    href="#">
+                    <span class="material-icons-round mr-3">dashboard</span>
+                    Dashboard
+                </a>
+                <a class="flex items-center justify-between px-4 py-3 text-sm font-medium rounded-lg text-gray-300 hover:bg-gray-800 hover:text-white transition-colors"
+                    href="#">
+                    <div class="flex items-center">
+                        <span class="material-icons-round mr-3">people</span>
+                        Users
+                    </div>
+                    <span class="material-icons-round text-xs">chevron_right</span>
+                </a>
+                <a class="flex items-center justify-between px-4 py-3 text-sm font-medium rounded-lg text-gray-300 hover:bg-gray-800 hover:text-white transition-colors"
+                    href="#">
+                    <div class="flex items-center">
+                        <span class="material-icons-round mr-3">groups</span>
+                        Followers
+                    </div>
+                    <span class="material-icons-round text-xs">chevron_right</span>
+                </a>
+                <a class="flex items-center justify-between px-4 py-3 text-sm font-medium rounded-lg text-gray-300 hover:bg-gray-800 hover:text-white transition-colors"
+                    href="#">
+                    <div class="flex items-center">
+                        <span class="material-icons-round mr-3">menu_book</span>
+                        Passports
+                    </div>
+                    <span class="material-icons-round text-xs">chevron_right</span>
+                </a>
+                <a class="flex items-center px-4 py-3 text-sm font-medium rounded-lg text-gray-300 hover:bg-gray-800 hover:text-white transition-colors"
+                    href="#">
+                    <span class="material-icons-round mr-3">public</span>
+                    Dambadiwa
+                </a>
+                <a class="flex items-center px-4 py-3 text-sm font-medium rounded-lg bg-primary text-white shadow-md"
+                    href="visa.html">
+                    <span class="material-icons-round mr-3">assignment_ind</span>
+                    Visa
+                </a>
+                <a class="flex items-center justify-between px-4 py-3 text-sm font-medium rounded-lg text-gray-300 hover:bg-gray-800 hover:text-white transition-colors"
+                    href="#">
+                    <div class="flex items-center">
+                        <span class="material-icons-round mr-3">payments</span>
+                        Finance
+                    </div>
+                    <span class="material-icons-round text-xs">chevron_right</span>
+                </a>
+            </nav>
+            <div class="p-4 border-t border-gray-700">
+                <div class="flex items-center">
+                    <div class="w-8 h-8 rounded bg-gray-600 flex items-center justify-center text-xs font-bold">N</div>
+                    <div class="ml-3">
+                        <p class="text-sm font-medium">Niman</p>
+                    </div>
+                    <button class="ml-auto text-gray-400 hover:text-white">
+                        <span class="material-icons-round">unfold_more</span>
+                    </button>
+                </div>
+            </div>
+        </aside>
+        <main class="flex-1 flex flex-col h-full overflow-hidden relative">
+            <header class="bg-primary shadow-md z-10">
+                <div class="px-6 py-4 flex items-center justify-between">
+                    <button class="md:hidden text-white mr-4">
+                        <span class="material-icons-round">menu</span>
+                    </button>
+                    <h1 class="text-2xl font-semibold text-white text-center w-full md:w-auto mx-auto md:mx-0">Visa</h1>
+                    <button class="p-2 rounded-full hover:bg-white/20 text-white transition-colors absolute right-4"
+                        onclick="document.documentElement.classList.toggle('dark')">
+                        <span class="material-icons-round block dark:hidden">dark_mode</span>
+                        <span class="material-icons-round hidden dark:block">light_mode</span>
+                    </button>
+                </div>
+            </header>
+            <div class="flex-1 overflow-y-auto p-4 md:p-6 space-y-6">
+                <nav class="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                    <a class="hover:text-primary transition-colors flex items-center" href="#">
+                        <span class="material-icons-round text-lg">home</span>
+                    </a>
+                    <span class="mx-2 text-gray-300">/</span>
+                    <span class="font-medium text-primary">Visa</span>
+                </nav>
+                <div
+                    class="bg-white dark:bg-surface-dark p-5 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700">
+                    <div class="flex flex-col lg:flex-row gap-4 items-end lg:items-center justify-between">
+                        <div class="w-full lg:w-1/4">
+                            <label
+                                class="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2 ml-1">Sort
+                                by Status</label>
+                            <select
+                                class="w-full rounded-lg border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 text-sm focus:ring-primary focus:border-primary">
+                                <option>Submitted</option>
+                                <option>Spellings Checked</option>
+                                <option>Ready for Visa</option>
+                                <option>Online Visa Received</option>
+                                <option>Online Visa Submitted</option>
+                                <option>Visa Available</option>
+                                <option>Visa to be Ammended</option>
+                                <option>Online Visa Applicant</option>
+                            </select>
+                        </div>
+                        <div class="w-full lg:flex-1">
+                            <label
+                                class="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2 ml-1">Search
+                                Crew</label>
+                            <div class="relative group">
+                                <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <span
+                                        class="material-icons-round text-gray-400 group-focus-within:text-primary transition-colors">search</span>
+                                </span>
+                                <input
+                                    class="pl-10 block w-full rounded-lg border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 text-sm focus:ring-primary focus:border-primary transition-shadow"
+                                    placeholder="Search by name, reg no..." type="text" />
+                            </div>
+                        </div>
+                        <div class="flex gap-3 w-full lg:w-auto">
+                            <button
+                                class="flex-1 lg:flex-none flex items-center justify-center px-4 py-2 bg-green-600 hover:bg-green-700 text-white text-sm font-medium rounded-lg shadow-sm transition-colors">
+                                <span class="material-icons-round text-lg mr-2">table_view</span>
+                                Excel
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="bg-white dark:bg-surface-dark rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm text-left">
+                            <thead class="bg-secondary text-white uppercase text-xs font-bold tracking-wider">
+                                <tr>
+                                    <th class="px-6 py-4 whitespace-nowrap">Reg No</th>
+                                    <th class="px-6 py-4 whitespace-nowrap">Surname</th>
+                                    <th class="px-6 py-4 whitespace-nowrap">Other Name</th>
+                                    <th class="px-6 py-4 whitespace-nowrap">Gender</th>
+                                    <th class="px-6 py-4 whitespace-nowrap">DOB</th>
+                                    <th class="px-6 py-4 whitespace-nowrap">Contact</th>
+                                    <th class="px-6 py-4 whitespace-nowrap">Address</th>
+                                    <th class="px-6 py-4 whitespace-nowrap">Passport No</th>
+                                    <th class="px-6 py-4 whitespace-nowrap">Passport Exp Date</th>
+                                    <th class="px-6 py-4 whitespace-nowrap">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody
+                                class="divide-y divide-gray-200 dark:divide-gray-700 text-gray-600 dark:text-gray-300">
+                                <tr class="hover:bg-blue-50/50 dark:hover:bg-blue-900/10 transition-colors">
+                                    <td class="px-6 py-4 font-medium text-gray-900 dark:text-white">FEB2 - 002</td>
+                                    <td class="px-6 py-4">Aththili Godage </td>
+                                    <td class="px-6 py-4">Irosha Ushanthi</td>
+                                    <td class="px-6 py-4">Female</td>
+                                    <td class="px-6 py-4">1985-05-12</td>
+                                    <td class="px-6 py-4">071-2345678</td>
+                                    <td class="px-6 py-4 min-w-[200px]">12/A, Temple Road, Colombo 03</td>
+                                    <td class="px-6 py-4 font-medium text-gray-900 dark:text-white">N1234567</td>
+                                    <td class="px-6 py-4">2030-01-15</td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center gap-2 min-w-[220px]">
+                                            <select
+                                                class="block w-full text-xs border-gray-300 rounded-md shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 py-1.5 pl-2 pr-8">
+                                                <option selected="">Submitted</option>
+                                                <option>Spellings Checked</option>
+                                                <option>Ready for Visa</option>
+                                                <option>Online Visa Received</option>
+                                                <option>Online Visa Submitted</option>
+                                                <option>Visa Available</option>
+                                                <option>Visa to be Ammended</option>
+                                                <option>Online Visa Applicant</option>
+                                            </select>
+                                            <button
+                                                class="flex items-center justify-center px-3 py-1.5 text-xs font-medium text-white bg-secondary rounded hover:bg-green-800 transition-colors shadow-sm whitespace-nowrap">
+                                                Update
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-blue-50/50 dark:hover:bg-blue-900/10 transition-colors">
+                                    <td class="px-6 py-4 font-medium text-gray-900 dark:text-white">FEB2 - 003</td>
+                                    <td class="px-6 py-4">Wikrama Kaluthotahewage</td>
+                                    <td class="px-6 py-4">Thanuja Lalani</td>
+                                    <td class="px-6 py-4">Female</td>
+                                    <td class="px-6 py-4">1990-08-22</td>
+                                    <td class="px-6 py-4">077-9876543</td>
+                                    <td class="px-6 py-4 min-w-[200px]">45, Flower Avenue, Kandy</td>
+                                    <td class="px-6 py-4 font-medium text-gray-900 dark:text-white">N8765432</td>
+                                    <td class="px-6 py-4">2029-11-20</td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center gap-2 min-w-[220px]">
+                                            <select
+                                                class="block w-full text-xs border-gray-300 rounded-md shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 py-1.5 pl-2 pr-8">
+                                                <option>Submitted</option>
+                                                <option>Spellings Checked</option>
+                                                <option selected="">Ready for Visa</option>
+                                                <option>Online Visa Received</option>
+                                                <option>Online Visa Submitted</option>
+                                                <option>Visa Available</option>
+                                                <option>Visa to be Ammended</option>
+                                                <option>Online Visa Applicant</option>
+                                            </select>
+                                            <button
+                                                class="flex items-center justify-center px-3 py-1.5 text-xs font-medium text-white bg-secondary rounded hover:bg-green-800 transition-colors shadow-sm whitespace-nowrap">
+                                                Update
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-blue-50/50 dark:hover:bg-blue-900/10 transition-colors">
+                                    <td class="px-6 py-4 font-medium text-gray-900 dark:text-white">FEB2 - 015</td>
+                                    <td class="px-6 py-4">Kasthuriarachchige</td>
+                                    <td class="px-6 py-4">Nilmini Kasthuriarachchi</td>
+                                    <td class="px-6 py-4">Female</td>
+                                    <td class="px-6 py-4">1982-12-05</td>
+                                    <td class="px-6 py-4">076-5544332</td>
+                                    <td class="px-6 py-4 min-w-[200px]">88, Main Street, Kurunegala</td>
+                                    <td class="px-6 py-4 font-medium text-gray-900 dark:text-white">N5544332</td>
+                                    <td class="px-6 py-4">2028-06-10</td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center gap-2 min-w-[220px]">
+                                            <select
+                                                class="block w-full text-xs border-gray-300 rounded-md shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 py-1.5 pl-2 pr-8">
+                                                <option>Submitted</option>
+                                                <option selected="">Spellings Checked</option>
+                                                <option>Ready for Visa</option>
+                                                <option>Online Visa Received</option>
+                                                <option>Online Visa Submitted</option>
+                                                <option>Visa Available</option>
+                                                <option>Visa to be Ammended</option>
+                                                <option>Online Visa Applicant</option>
+                                            </select>
+                                            <button
+                                                class="flex items-center justify-center px-3 py-1.5 text-xs font-medium text-white bg-secondary rounded hover:bg-green-800 transition-colors shadow-sm whitespace-nowrap">
+                                                Update
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-blue-50/50 dark:hover:bg-blue-900/10 transition-colors">
+                                    <td class="px-6 py-4 font-medium text-gray-900 dark:text-white">FEB2 - 021</td>
+                                    <td class="px-6 py-4">Ethugal Pedi Dhurayalage</td>
+                                    <td class="px-6 py-4">Padmini Siriyalatha</td>
+                                    <td class="px-6 py-4">Female</td>
+                                    <td class="px-6 py-4">1978-03-18</td>
+                                    <td class="px-6 py-4">072-1122334</td>
+                                    <td class="px-6 py-4 min-w-[200px]">23/B, Lake View, Galle</td>
+                                    <td class="px-6 py-4 font-medium text-gray-900 dark:text-white">N9988776</td>
+                                    <td class="px-6 py-4">2031-02-28</td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center gap-2 min-w-[220px]">
+                                            <select
+                                                class="block w-full text-xs border-gray-300 rounded-md shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 py-1.5 pl-2 pr-8">
+                                                <option>Submitted</option>
+                                                <option>Spellings Checked</option>
+                                                <option>Ready for Visa</option>
+                                                <option>Online Visa Received</option>
+                                                <option>Online Visa Submitted</option>
+                                                <option>Visa Available</option>
+                                                <option>Visa to be Ammended</option>
+                                                <option selected="">Online Visa Applicant</option>
+                                            </select>
+                                            <button
+                                                class="flex items-center justify-center px-3 py-1.5 text-xs font-medium text-white bg-secondary rounded hover:bg-green-800 transition-colors shadow-sm whitespace-nowrap">
+                                                Update
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div
+                            class="bg-gray-50 dark:bg-gray-800/50 px-4 py-3 border-t border-gray-200 dark:border-gray-700 sm:px-6">
+                            <div class="flex items-center justify-between">
+                                <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
+                                    <div>
+                                        <p class="text-sm text-gray-700 dark:text-gray-300">
+                                            Showing <span class="font-medium">1</span> to <span
+                                                class="font-medium">4</span> of <span class="font-medium">12</span>
+                                            results
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <nav aria-label="Pagination"
+                                            class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px">
+                                            <a class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-sm font-medium text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600"
+                                                href="#">
+                                                <span class="material-icons-round text-sm">chevron_left</span>
+                                            </a>
+                                            <a aria-current="page"
+                                                class="z-10 bg-blue-50 dark:bg-blue-900/20 border-blue-500 text-blue-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium"
+                                                href="#">1</a>
+                                            <a class="bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium"
+                                                href="#">2</a>
+                                            <a class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-sm font-medium text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600"
+                                                href="#">
+                                                <span class="material-icons-round text-sm">chevron_right</span>
+                                            </a>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
