@@ -4,8 +4,10 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Visa Management Dashboard</title>
+    <title>Visa Management</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
         rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -30,10 +32,20 @@
             },
         };
     </script>
-    <style>
+    <style type="text/tailwindcss">
         .scrollbar-hide::-webkit-scrollbar {
             display: none;
         }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }.row-submitted { @apply bg-[#1e3a5f] text-white; }.row-spelling-checked { @apply bg-[#1579c1] text-white; }.row-ready-for-visa { @apply bg-[#00adef] text-white; }.row-online-visa-received { @apply bg-[#c1e1ad] text-gray-900; }.row-online-visa-submitted { @apply bg-[#f6d1b1] text-gray-900; }.row-visa-available { @apply bg-[#ffeb9c] text-gray-900; }.row-visa-to-be-amended { @apply bg-[#d9d9d9] text-gray-900; }.row-online-visa-applicant { @apply bg-[#a5a5a5] text-gray-900; }.row-visa-on-amendment { @apply bg-[#fdbd87] text-gray-900; }.dark .row-submitted { @apply bg-[#0f1d2e]; }
+        .dark .row-spelling-checked { @apply bg-[#0d4d7a]; }
+        .dark .row-online-visa-received { @apply bg-[#a1c48c]; }
+        .dark .row-online-visa-submitted { @apply bg-[#d9b89b]; }
+        .dark .row-visa-available { @apply bg-[#e6d48c]; }
+        .dark .row-visa-to-be-amended { @apply bg-[#bfbfbf]; }
+        .dark .row-online-visa-applicant { @apply bg-[#8c8c8c]; }
+        .dark .row-visa-on-amendment { @apply bg-[#e0a676]; }
     </style>
 </head>
 
@@ -42,7 +54,7 @@
     <div class="flex h-screen overflow-hidden">
         <aside class="w-64 hidden md:flex flex-col bg-sidebar-dark text-white border-r border-gray-700">
             <div class="h-16 flex items-center px-6 border-b border-gray-700 bg-gray-900">
-                <span class="text-lg font-bold tracking-wide">Mahamewnawa</span>
+                <span class="text-lg font-bold tracking-wide uppercase">Mahamewnawa</span>
             </div>
             <nav class="flex-1 px-3 py-4 space-y-2 overflow-y-auto">
                 <a class="flex items-center px-4 py-3 text-sm font-medium rounded-lg text-gray-300 hover:bg-gray-800 hover:text-white transition-colors"
@@ -51,7 +63,7 @@
                     Dashboard
                 </a>
                 <a class="flex items-center justify-between px-4 py-3 text-sm font-medium rounded-lg text-gray-300 hover:bg-gray-800 hover:text-white transition-colors"
-                    href="#">
+                    href="viewusers.html">
                     <div class="flex items-center">
                         <span class="material-icons-round mr-3">people</span>
                         Users
@@ -79,7 +91,7 @@
                     <span class="material-icons-round mr-3">public</span>
                     Dambadiwa
                 </a>
-                <a class="flex items-center px-4 py-3 text-sm font-medium rounded-lg bg-primary text-white shadow-md"
+                <a class="flex items-center px-4 py-3 text-sm font-medium rounded-lg text-white bg-primary shadow-sm"
                     href="visa.html">
                     <span class="material-icons-round mr-3">assignment_ind</span>
                     Visa
@@ -97,7 +109,7 @@
                 <div class="flex items-center">
                     <div class="w-8 h-8 rounded bg-gray-600 flex items-center justify-center text-xs font-bold">N</div>
                     <div class="ml-3">
-                        <p class="text-sm font-medium">Niman</p>
+                        <p class="text-sm font-medium text-white">Niman</p>
                     </div>
                     <button class="ml-auto text-gray-400 hover:text-white">
                         <span class="material-icons-round">unfold_more</span>
@@ -111,7 +123,8 @@
                     <button class="md:hidden text-white mr-4">
                         <span class="material-icons-round">menu</span>
                     </button>
-                    <h1 class="text-2xl font-semibold text-white text-center w-full md:w-auto mx-auto md:mx-0">Visa</h1>
+                    <h1 class="text-2xl font-semibold text-white text-center w-full md:w-auto mx-auto md:mx-0">Visa
+                        Management</h1>
                     <button class="p-2 rounded-full hover:bg-white/20 text-white transition-colors absolute right-4"
                         onclick="document.documentElement.classList.toggle('dark')">
                         <span class="material-icons-round block dark:hidden">dark_mode</span>
@@ -120,366 +133,373 @@
                 </div>
             </header>
             <div class="flex-1 overflow-y-auto p-4 md:p-6 space-y-6">
-                <nav class="flex items-center text-sm text-gray-500 dark:text-gray-400">
-                    <a class="hover:text-primary transition-colors flex items-center" href="#">
-                        <span class="material-icons-round text-lg">home</span>
-                    </a>
-                    <span class="mx-2 text-gray-300">/</span>
+                <nav class="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-4">
+                    <a class="hover:text-primary transition-colors" href="#"><span
+                            class="material-icons-round text-base align-middle">home</span></a>
+                    <span class="mx-2">/</span>
                     <span class="font-medium text-primary">Visa</span>
                 </nav>
                 <div
-                    class="bg-white dark:bg-surface-dark p-5 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700">
-                    <div class="flex flex-col lg:flex-row gap-4 items-end lg:items-center justify-between">
-                        <div class="w-full lg:w-1/4">
+                    class="bg-surface-light dark:bg-surface-dark p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="space-y-1">
                             <label
-                                class="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2 ml-1">Sort
+                                class="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider">Sort
                                 by Status</label>
                             <select
-                                class="w-full rounded-lg border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 text-sm focus:ring-primary focus:border-primary">
+                                class="block w-full pl-3 pr-10 py-2 text-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:outline-none focus:ring-primary focus:border-primary rounded-md shadow-sm">
                                 <option>Choose...</option>
                                 <option>Submitted</option>
-                                <option>Spellings Checked</option>
+                                <option>Spelling checked</option>
                                 <option>Ready for Visa</option>
-                                <option>Online Visa Received</option>
-                                <option>Online Visa Submitted</option>
-                                <option>Visa Available</option>
+                                <option>Online Visa received</option>
+                                <option>Online visa submitted</option>
+                                <option>Visa available</option>
                                 <option>Visa to be Ammended</option>
                                 <option>Online Visa Applicant</option>
+                                <option>Visa on Ammendment</option>
                             </select>
                         </div>
-                        <div class="w-full lg:flex-1">
+                        <div class="space-y-1">
                             <label
-                                class="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2 ml-1">Search
+                                class="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider">Search
                                 Crew</label>
-                            <div class="relative group">
+                            <div class="relative">
                                 <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                    <span
-                                        class="material-icons-round text-gray-400 group-focus-within:text-primary transition-colors">search</span>
+                                    <span class="material-icons-round text-gray-400 text-sm">search</span>
                                 </span>
                                 <input
-                                    class="pl-10 block w-full rounded-lg border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 text-sm focus:ring-primary focus:border-primary transition-shadow"
+                                    class="block w-full pl-10 pr-3 py-2 text-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-md focus:outline-none focus:ring-primary focus:border-primary shadow-sm"
                                     placeholder="Search by name, reg no..." type="text" />
                             </div>
-                        </div>
-                        <div class="flex gap-3 w-full lg:w-auto">
-                            <button
-                                class="flex-1 lg:flex-none flex items-center justify-center px-4 py-2 bg-green-600 hover:bg-green-700 text-white text-sm font-medium rounded-lg shadow-sm transition-colors">
-                                <span class="material-icons-round text-lg mr-2">table_view</span>
-                                Excel
-                            </button>
                         </div>
                     </div>
                 </div>
                 <div
-                    class="bg-white dark:bg-surface-dark rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden">
+                    class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm overflow-hidden border border-gray-100 dark:border-gray-700">
                     <div class="overflow-x-auto">
-                        <table class="w-full text-sm text-left">
-                            <thead class="bg-secondary text-white uppercase text-xs font-bold tracking-wider">
+                        <table class="w-full text-left border-collapse">
+                            <thead class="bg-secondary text-white text-[11px] uppercase tracking-wider">
                                 <tr>
-                                    <th class="px-6 py-4 whitespace-nowrap">Status</th>
-                                    <th class="px-6 py-4 whitespace-nowrap">Reg No</th>
-                                    <th class="px-6 py-4 whitespace-nowrap">Surname</th>
-                                    <th class="px-6 py-4 whitespace-nowrap">Other Name</th>
-                                    <th class="px-6 py-4 whitespace-nowrap">Gender</th>
-                                    <th class="px-6 py-4 whitespace-nowrap">DOB</th>
-                                    <th class="px-6 py-4 whitespace-nowrap">Contact</th>
-                                    <th class="px-6 py-4 whitespace-nowrap">Address</th>
-                                    <th class="px-6 py-4 whitespace-nowrap">Passport No</th>
-                                    <th class="px-6 py-4 whitespace-nowrap">Passport Exp Date</th>
-                                    <th class="px-6 py-4 whitespace-nowrap">Visa Number</th>
+                                    <th class="px-4 py-4 font-semibold whitespace-nowrap">Status</th>
+                                    <th class="px-4 py-4 font-semibold whitespace-nowrap">Reg No</th>
+                                    <th class="px-4 py-4 font-semibold whitespace-nowrap">Surname</th>
+                                    <th class="px-4 py-4 font-semibold whitespace-nowrap">Other Name</th>
+                                    <th class="px-4 py-4 font-semibold whitespace-nowrap">Gender</th>
+                                    <th class="px-4 py-4 font-semibold whitespace-nowrap">DOB</th>
+                                    <th class="px-4 py-4 font-semibold whitespace-nowrap">Contact</th>
+                                    <th class="px-4 py-4 font-semibold whitespace-nowrap">Address</th>
+                                    <th class="px-4 py-4 font-semibold whitespace-nowrap">Passport No</th>
+                                    <th class="px-4 py-4 font-semibold whitespace-nowrap">Passport Exp Date</th>
+                                    <th class="px-4 py-4 font-semibold whitespace-nowrap">Visa Number</th>
                                 </tr>
                             </thead>
-                            <tbody
-                                class="divide-y divide-gray-200 dark:divide-gray-700 text-gray-600 dark:text-gray-300">
-                                <tr class="hover:bg-blue-50/50 dark:hover:bg-blue-900/10 transition-colors bg-blue-400">
-                                    <td class="px-6 py-4 bg-blue">
-                                        <div class="flex items-center gap-2 min-w-[220px]">
+                            <tbody class="text-[13px] font-medium">
+                                <tr class="row-submitted border-b border-black/5">
+                                    <td class="px-4 py-3 whitespace-nowrap">
+                                        <div class="flex items-center space-x-2">
                                             <select
-                                                class="block w-full text-xs border-gray-300 rounded-md shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 py-1.5 pl-2 pr-8">
-                                                <option selected="">Submitted</option>
-                                                <option>Spellings Checked</option>
+                                                class="bg-white/10 border-white/20 text-white text-xs rounded focus:ring-0">
+                                                <option class="text-gray-900" selected="">Submitted</option>
+                                                <option>Spelling checked</option>
                                                 <option>Ready for Visa</option>
-                                                <option>Online Visa Received</option>
-                                                <option>Online Visa Submitted</option>
-                                                <option>Visa Available</option>
+                                                <option>Online Visa received</option>
+                                                <option>Online visa submitted</option>
+                                                <option>Visa available</option>
                                                 <option>Visa to be Ammended</option>
                                                 <option>Online Visa Applicant</option>
+                                                <option>Visa on Ammendment</option>
                                             </select>
                                             <button
-                                                class="flex items-center justify-center px-3 py-1.5 text-xs font-medium text-white bg-secondary rounded hover:bg-green-800 transition-colors shadow-sm whitespace-nowrap">
-                                                Update
-                                            </button>
+                                                class="bg-white text-gray-800 px-2 py-1 rounded text-[10px] font-bold uppercase shadow-sm">Update</button>
                                         </div>
                                     </td>
-                                    <td class="px-6 py-4 font-medium text-gray-900 dark:text-white">FEB2 - 002</td>
-                                    <td class="px-6 py-4">Aththili Godage </td>
-                                    <td class="px-6 py-4">Irosha Ushanthi</td>
-                                    <td class="px-6 py-4">Female</td>
-                                    <td class="px-6 py-4">1985-05-12</td>
-                                    <td class="px-6 py-4">071-2345678</td>
-                                    <td class="px-6 py-4 min-w-[200px]">12/A, Temple Road, Colombo 03</td>
-                                    <td class="px-6 py-4 font-medium text-gray-900 dark:text-white">N1234567</td>
-                                    <td class="px-6 py-4">2030-01-15</td>     
-                                    <td class="px-6 py-4">20300115</td>                      
+                                    <td class="px-4 py-3 whitespace-nowrap">FEB2-002</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">Aththili Godage</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">Irosha Ushanthi</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">Female</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">1985-05-12</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">071-2345678</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">Colombo 03</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">N1234567</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">2030-01-15</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">20300115</td>
                                 </tr>
-                                <tr class="hover:bg-blue-50/50 dark:hover:bg-blue-900/10 transition-colors bg-green-500">
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center gap-2 min-w-[220px]">
+                                <tr class="row-spelling-checked border-b border-black/5">
+                                    <td class="px-4 py-3 whitespace-nowrap">
+                                        <div class="flex items-center space-x-2">
                                             <select
-                                                class="block w-full text-xs border-gray-300 rounded-md shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 py-1.5 pl-2 pr-8">
+                                                class="bg-white/10 border-white/20 text-white text-xs rounded focus:ring-0">
                                                 <option>Submitted</option>
-                                                <option>Spellings Checked</option>
-                                                <option selected="">Ready for Visa</option>
-                                                <option>Online Visa Received</option>
-                                                <option>Online Visa Submitted</option>
-                                                <option>Visa Available</option>
+                                                <option class="text-gray-900" selected="">Spelling checked</option>
+                                                <option>Ready for Visa</option>
+                                                <option>Online Visa received</option>
+                                                <option>Online visa submitted</option>
+                                                <option>Visa available</option>
                                                 <option>Visa to be Ammended</option>
                                                 <option>Online Visa Applicant</option>
+                                                <option>Visa on Ammendment</option>
                                             </select>
                                             <button
-                                                class="flex items-center justify-center px-3 py-1.5 text-xs font-medium text-white bg-secondary rounded hover:bg-green-800 transition-colors shadow-sm whitespace-nowrap">
-                                                Update
-                                            </button>
+                                                class="bg-white text-gray-800 px-2 py-1 rounded text-[10px] font-bold uppercase shadow-sm">Update</button>
                                         </div>
                                     </td>
-                                    <td class="px-6 py-4 font-medium text-gray-900 dark:text-white">FEB2 - 003</td>
-                                    <td class="px-6 py-4">Wikrama Kaluthotahewage</td>
-                                    <td class="px-6 py-4">Thanuja Lalani</td>
-                                    <td class="px-6 py-4">Female</td>
-                                    <td class="px-6 py-4">1990-08-22</td>
-                                    <td class="px-6 py-4">077-9876543</td>
-                                    <td class="px-6 py-4 min-w-[200px]">45, Flower Avenue, Kandy</td>
-                                    <td class="px-6 py-4 font-medium text-gray-900 dark:text-white">N8765432</td>
-                                    <td class="px-6 py-4">2029-11-20</td>   
-                                    <td class="px-6 py-4">20291120</td>                                
+                                    <td class="px-4 py-3 whitespace-nowrap">FEB2-003</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">Wikrama</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">Thanuja Lalani</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">Female</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">1990-08-22</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">077-9876543</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">Kandy</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">N8765432</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">2029-11-20</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">20291120</td>
                                 </tr>
-                                <tr class="hover:bg-blue-50/50 dark:hover:bg-blue-900/10 transition-colors bg-red-300">
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center gap-2 min-w-[220px]">
+                                <tr class="row-ready-for-visa border-b border-black/5">
+                                    <td class="px-4 py-3 whitespace-nowrap">
+                                        <div class="flex items-center space-x-2">
                                             <select
-                                                class="block w-full text-xs border-gray-300 rounded-md shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 py-1.5 pl-2 pr-8">
+                                                class="bg-white/10 border-white/20 text-white text-xs rounded focus:ring-0">
                                                 <option>Submitted</option>
-                                                <option selected="">Spellings Checked</option>
-                                                <option>Ready for Visa</option>
-                                                <option>Online Visa Received</option>
-                                                <option>Online Visa Submitted</option>
-                                                <option>Visa Available</option>
+                                                <option>Spelling checked</option>
+                                                <option class="text-gray-900" selected="">Ready for Visa</option>
+                                                <option>Online Visa received</option>
+                                                <option>Online visa submitted</option>
+                                                <option>Visa available</option>
                                                 <option>Visa to be Ammended</option>
                                                 <option>Online Visa Applicant</option>
+                                                <option>Visa on Ammendment</option>
                                             </select>
                                             <button
-                                                class="flex items-center justify-center px-3 py-1.5 text-xs font-medium text-white bg-secondary rounded hover:bg-green-800 transition-colors shadow-sm whitespace-nowrap">
-                                                Update
-                                            </button>
+                                                class="bg-white text-gray-800 px-2 py-1 rounded text-[10px] font-bold uppercase shadow-sm">Update</button>
                                         </div>
                                     </td>
-                                    <td class="px-6 py-4 font-medium text-gray-900 dark:text-white">FEB2 - 015</td>
-                                    <td class="px-6 py-4">Kasthuriarachchige</td>
-                                    <td class="px-6 py-4">Nilmini Kasthuriarachchi</td>
-                                    <td class="px-6 py-4">Female</td>
-                                    <td class="px-6 py-4">1982-12-05</td>
-                                    <td class="px-6 py-4">076-5544332</td>
-                                    <td class="px-6 py-4 min-w-[200px]">88, Main Street, Kurunegala</td>
-                                    <td class="px-6 py-4 font-medium text-gray-900 dark:text-white">N5544332</td>
-                                    <td class="px-6 py-4">2028-06-10</td>       
-                                    <td class="px-6 py-4">20280610</td>                                 
+                                    <td class="px-4 py-3 whitespace-nowrap">FEB2-015</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">Kasthuriarachchige</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">Nilmini</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">Female</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">1982-12-05</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">076-5544332</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">Kurunegala</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">N5544332</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">2028-06-10</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">20280610</td>
                                 </tr>
-                                <tr class="hover:bg-blue-50/50 dark:hover:bg-blue-900/10 transition-colors">
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center gap-2 min-w-[220px]">
+                                <tr class="row-online-visa-received border-b border-black/5">
+                                    <td class="px-4 py-3 whitespace-nowrap">
+                                        <div class="flex items-center space-x-2">
                                             <select
-                                                class="block w-full text-xs border-gray-300 rounded-md shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 py-1.5 pl-2 pr-8">
+                                                class="bg-white/10 border-black/20 text-xs rounded focus:ring-0">
                                                 <option>Submitted</option>
-                                                <option>Spellings Checked</option>
+                                                <option>Spelling checked</option>
                                                 <option>Ready for Visa</option>
-                                                <option>Online Visa Received</option>
-                                                <option>Online Visa Submitted</option>
-                                                <option>Visa Available</option>
-                                                <option>Visa to be Ammended</option>
-                                                <option selected="">Online Visa Applicant</option>
-                                            </select>
-                                            <button
-                                                class="flex items-center justify-center px-3 py-1.5 text-xs font-medium text-white bg-secondary rounded hover:bg-green-800 transition-colors shadow-sm whitespace-nowrap">
-                                                Update
-                                            </button>
-                                        </div>
-                                    </td>
-                                    <td class="px-6 py-4 font-medium text-gray-900 dark:text-white">FEB2 - 021</td>
-                                    <td class="px-6 py-4">Ethugal Pedi Dhurayalage</td>
-                                    <td class="px-6 py-4">Padmini Siriyalatha</td>
-                                    <td class="px-6 py-4">Female</td>
-                                    <td class="px-6 py-4">1978-03-18</td>
-                                    <td class="px-6 py-4">072-1122334</td>
-                                    <td class="px-6 py-4 min-w-[200px]">23/B, Lake View, Galle</td>
-                                    <td class="px-6 py-4 font-medium text-gray-900 dark:text-white">N9988776</td>
-                                    <td class="px-6 py-4">2031-02-28</td>
-                                    <td class="px-6 py-4">20310228</td>
-                                </tr>
-                                <tr class="hover:bg-blue-50/50 dark:hover:bg-blue-900/10 transition-colors bg-gray-400">
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center gap-2 min-w-[220px]">
-                                            <select
-                                                class="block w-full text-xs border-gray-300 rounded-md shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 py-1.5 pl-2 pr-8">
-                                                <option>Submitted</option>
-                                                <option>Spellings Checked</option>
-                                                <option>Ready for Visa</option>
-                                                <option selected="">Online Visa Received</option>
-                                                <option>Online Visa Submitted</option>
-                                                <option>Visa Available</option>
+                                                <option class="text-gray-900" selected="">Online Visa received</option>
+                                                <option>Online visa submitted</option>
+                                                <option>Visa available</option>
                                                 <option>Visa to be Ammended</option>
                                                 <option>Online Visa Applicant</option>
+                                                <option>Visa on Ammendment</option>
                                             </select>
                                             <button
-                                                class="flex items-center justify-center px-3 py-1.5 text-xs font-medium text-white bg-secondary rounded hover:bg-green-800 transition-colors shadow-sm whitespace-nowrap">
-                                                Update
-                                            </button>
+                                                class="bg-black/80 text-white px-2 py-1 rounded text-[10px] font-bold uppercase shadow-sm">Update</button>
                                         </div>
                                     </td>
-                                    <td class="px-6 py-4 font-medium text-gray-900 dark:text-white">FEB2 - 024</td>
-                                    <td class="px-6 py-4">Sirimewan Dhurayalage</td>
-                                    <td class="px-6 py-4">Bimini Senarathna</td>
-                                    <td class="px-6 py-4">Female</td>
-                                    <td class="px-6 py-4">1971-03-18</td>
-                                    <td class="px-6 py-4">072-1155334</td>
-                                    <td class="px-6 py-4 min-w-[200px]">2/B, Saiber Rd, Colombo 05</td>
-                                    <td class="px-6 py-4 font-medium text-gray-900 dark:text-white">N9988776</td>
-                                    <td class="px-6 py-4">2034-02-28</td>
-                                    <td class="px-6 py-4">20340228</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">FEB2-024</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">Sirimewan</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">Bimini</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">Female</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">1971-03-18</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">072-1155334</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">Colombo 05</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">N9988776</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">2034-02-28</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">20340228</td>
                                 </tr>
-                                <tr class="hover:bg-blue-50/50 dark:hover:bg-blue-900/10 transition-colors bg-red-500">
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center gap-2 min-w-[220px]">
+                                <tr class="row-online-visa-submitted border-b border-black/5">
+                                    <td class="px-4 py-3 whitespace-nowrap">
+                                        <div class="flex items-center space-x-2">
                                             <select
-                                                class="block w-full text-xs border-gray-300 rounded-md shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 py-1.5 pl-2 pr-8">
+                                                class="bg-white/10 border-black/20 text-xs rounded focus:ring-0">
                                                 <option>Submitted</option>
-                                                <option>Spellings Checked</option>
+                                                <option>Spelling checked</option>
                                                 <option>Ready for Visa</option>
-                                                <option>Online Visa Received</option>
-                                                <option>Online Visa Submitted</option>
-                                                <option>Visa Available</option>
-                                                <option selected="">Visa to be Ammended</option>
-                                                <option>Online Visa Applicant</option>
-                                            </select>
-                                            <button
-                                                class="flex items-center justify-center px-3 py-1.5 text-xs font-medium text-white bg-secondary rounded hover:bg-green-800 transition-colors shadow-sm whitespace-nowrap">
-                                                Update
-                                            </button>
-                                        </div>
-                                    </td>
-                                    <td class="px-6 py-4 font-medium text-gray-900 dark:text-white">FEB2 - 024</td>
-                                    <td class="px-6 py-4">Sirimewan Dhurayalage</td>
-                                    <td class="px-6 py-4">Bimini Senarathna</td>
-                                    <td class="px-6 py-4">Female</td>
-                                    <td class="px-6 py-4">1971-03-18</td>
-                                    <td class="px-6 py-4">072-1155334</td>
-                                    <td class="px-6 py-4 min-w-[200px]">2/B, Saiber Rd, Colombo 05</td>
-                                    <td class="px-6 py-4 font-medium text-gray-900 dark:text-white">N9988776</td>
-                                    <td class="px-6 py-4">2034-02-28</td>
-                                    <td class="px-6 py-4">20340228</td>
-                                </tr>
-                                <tr class="hover:bg-blue-50/50 dark:hover:bg-blue-900/10 transition-colors bg-green-800">
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center gap-2 min-w-[220px]">
-                                            <select
-                                                class="block w-full text-xs border-gray-300 rounded-md shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 py-1.5 pl-2 pr-8">
-                                                <option>Submitted</option>
-                                                <option>Spellings Checked</option>
-                                                <option>Ready for Visa</option>
-                                                <option>Online Visa Received</option>
-                                                <option>Online Visa Submitted</option>
-                                                <option selected="">Visa Available</option>
+                                                <option>Online Visa received</option>
+                                                <option class="text-gray-900" selected="">Online visa submitted</option>
+                                                <option>Visa available</option>
                                                 <option>Visa to be Ammended</option>
                                                 <option>Online Visa Applicant</option>
+                                                <option>Visa on Ammendment</option>
                                             </select>
                                             <button
-                                                class="flex items-center justify-center px-3 py-1.5 text-xs font-medium text-white bg-secondary rounded hover:bg-green-800 transition-colors shadow-sm whitespace-nowrap">
-                                                Update
-                                            </button>
+                                                class="bg-black/80 text-white px-2 py-1 rounded text-[10px] font-bold uppercase shadow-sm">Update</button>
                                         </div>
                                     </td>
-                                    <td class="px-6 py-4 font-medium text-gray-900 dark:text-white">FEB2 - 024</td>
-                                    <td class="px-6 py-4">Sirimewan Dhurayalage</td>
-                                    <td class="px-6 py-4">Bimini Senarathna</td>
-                                    <td class="px-6 py-4">Female</td>
-                                    <td class="px-6 py-4">1971-03-18</td>
-                                    <td class="px-6 py-4">072-1155334</td>
-                                    <td class="px-6 py-4 min-w-[200px]">2/B, Saiber Rd, Colombo 05</td>
-                                    <td class="px-6 py-4 font-medium text-gray-900 dark:text-white">N9988776</td>
-                                    <td class="px-6 py-4">2034-02-28</td>
-                                    <td class="px-6 py-4">20340228</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">FEB2-026</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">Gunasekara</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">Amara</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">Female</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">1988-04-12</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">071-4433221</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">Matara</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">N3322110</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">2032-09-14</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">20320914</td>
                                 </tr>
-                                <tr class="hover:bg-blue-50/50 dark:hover:bg-blue-900/10 transition-colors bg-blue-900">
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center gap-2 min-w-[220px]">
+                                <tr class="row-visa-available border-b border-black/5">
+                                    <td class="px-4 py-3 whitespace-nowrap">
+                                        <div class="flex items-center space-x-2">
                                             <select
-                                                class="block w-full text-xs border-gray-300 rounded-md shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 py-1.5 pl-2 pr-8">
+                                                class="bg-white/10 border-black/20 text-xs rounded focus:ring-0">
                                                 <option>Submitted</option>
-                                                <option>Spellings Checked</option>
+                                                <option>Spelling checked</option>
                                                 <option>Ready for Visa</option>
-                                                <option>Online Visa Received</option>
-                                                <option selected="">Online Visa Submitted</option>
-                                                <option>Visa Available</option>
+                                                <option>Online Visa received</option>
+                                                <option>Online visa submitted</option>
+                                                <option class="text-gray-900" selected="">Visa available</option>
                                                 <option>Visa to be Ammended</option>
                                                 <option>Online Visa Applicant</option>
+                                                <option>Visa on Ammendment</option>
                                             </select>
                                             <button
-                                                class="flex items-center justify-center px-3 py-1.5 text-xs font-medium text-white bg-secondary rounded hover:bg-green-800 transition-colors shadow-sm whitespace-nowrap">
-                                                Update
-                                            </button>
+                                                class="bg-black/80 text-white px-2 py-1 rounded text-[10px] font-bold uppercase shadow-sm">Update</button>
                                         </div>
                                     </td>
-                                    <td class="px-6 py-4 font-medium text-gray-900 dark:text-white">FEB2 - 024</td>
-                                    <td class="px-6 py-4">Rajendra Arachchige</td>
-                                    <td class="px-6 py-4">Tremana Senarathna</td>
-                                    <td class="px-6 py-4">Female</td>
-                                    <td class="px-6 py-4">1981-02-08</td>
-                                    <td class="px-6 py-4">072-1155334</td>
-                                    <td class="px-6 py-4 min-w-[200px]">221/B, Ranpaya Rd, Siyabalawa, Colombo 05</td>
-                                    <td class="px-6 py-4 font-medium text-gray-900 dark:text-white">N9988776</td>
-                                    <td class="px-6 py-4">2031-02-28</td>
-                                    <td class="px-6 py-4">20310228</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">FEB2-027</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">Perera</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">Sunimal</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">Male</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">1992-01-30</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">077-1122445</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">Negombo</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">N4455667</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">2029-05-18</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">20290518</td>
+                                </tr>
+                                <tr class="row-visa-to-be-amended border-b border-black/5">
+                                    <td class="px-4 py-3 whitespace-nowrap">
+                                        <div class="flex items-center space-x-2">
+                                            <select
+                                                class="bg-white/10 border-black/20 text-xs rounded focus:ring-0">
+                                                <option>Visa available</option>
+                                                <option>Submitted</option>
+                                                <option>Spelling checked</option>
+                                                <option>Ready for Visa</option>
+                                                <option>Online Visa received</option>
+                                                <option>Online visa submitted</option>
+                                                <option>Visa available</option>
+                                                <option class="text-gray-900" selected="">Visa to be Ammended</option>
+                                                <option>Online Visa Applicant</option>
+                                                <option>Visa on Ammendment</option>                                           
+                                            </select>
+                                            <button
+                                                class="bg-black/80 text-white px-2 py-1 rounded text-[10px] font-bold uppercase shadow-sm">Update</button>
+                                        </div>
+                                    </td>
+                                    <td class="px-4 py-3 whitespace-nowrap">FEB2-025</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">Dhurayalage</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">Senarathna</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">Female</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">1971-03-18</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">072-1155334</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">Colombo 05</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">N9988776</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">2034-02-28</td>
+                                     <td class="px-4 py-3 whitespace-nowrap">20340228</td>
+                                </tr>
+                                <tr class="row-online-visa-applicant border-b border-black/5">
+                                    <td class="px-4 py-3 whitespace-nowrap">
+                                        <div class="flex items-center space-x-2">
+                                            <select
+                                                class="bg-white/10 border-black/20 text-xs rounded focus:ring-0">
+                                                <option>Visa available</option>
+                                                <option>Submitted</option>
+                                                <option>Spelling checked</option>
+                                                <option>Ready for Visa</option>
+                                                <option>Online Visa received</option>
+                                                <option>Online visa submitted</option>
+                                                <option>Visa available</option>
+                                                <option>Visa to be Ammended</option>
+                                                <option class="text-gray-900" selected="">Online Visa Applicant</option>
+                                                <option>Visa on Ammendment</option>
+                                            </select>
+                                            <button
+                                                class="bg-black/80 text-white px-2 py-1 rounded text-[10px] font-bold uppercase shadow-sm">Update</button>
+                                        </div>
+                                    </td>
+                                    <td class="px-4 py-3 whitespace-nowrap">FEB2-021</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">Ethugal Pedi</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">Padmini</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">Female</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">1978-03-18</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">072-1122334</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">Galle</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">N9988776</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">2031-02-28</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">20310228</td>
+                                </tr>
+                                <tr class="row-visa-on-amendment">
+                                    <td class="px-4 py-3 whitespace-nowrap">
+                                        <div class="flex items-center space-x-2">
+                                            <select
+                                                class="bg-white/10 border-black/20 text-xs rounded focus:ring-0">
+                                                <option>Visa available</option>
+                                                <option>Submitted</option>
+                                                <option>Spelling checked</option>
+                                                <option>Ready for Visa</option>
+                                                <option>Online Visa received</option>
+                                                <option>Online visa submitted</option>
+                                                <option>Visa available</option>
+                                                <option>Visa to be Ammended</option>
+                                                <option>Online Visa Applicant</option>
+                                                <option class="text-gray-900" selected="">Visa on Ammendment</option>
+                                            </select>
+                                            <button
+                                                class="bg-black/80 text-white px-2 py-1 rounded text-[10px] font-bold uppercase shadow-sm">Update</button>
+                                        </div>
+                                    </td>
+                                    <td class="px-4 py-3 whitespace-nowrap">FEB2-030</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">Silva</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">Kumari</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">Female</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">1984-06-21</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">071-5544667</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">Panadura</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">N1122334</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">2033-10-10</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">20331010</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
-                    <div
-                            class="bg-gray-50 dark:bg-gray-800/50 px-4 py-3 border-t border-gray-200 dark:border-gray-700 sm:px-6">
-                            <div class="flex items-center justify-between">
-                                <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
-                                    <div>
-                                        <p class="text-sm text-gray-700 dark:text-gray-300">
-                                            Showing <span class="font-medium">1</span> to <span
-                                                class="font-medium">8</span> of <span class="font-medium">12</span>
-                                            results
-                                        </p>
-                                    </div>
-                                    <div>
-                                        <nav aria-label="Pagination"
-                                            class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px">
-                                            <a class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-sm font-medium text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600"
-                                                href="#">
-                                                <span class="material-icons-round text-sm">chevron_left</span>
-                                            </a>
-                                            <a aria-current="page"
-                                                class="z-10 bg-blue-50 dark:bg-blue-900/20 border-blue-500 text-blue-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium"
-                                                href="#">1</a>
-                                            <a class="bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium"
-                                                href="#">2</a>
-                                                <a class="bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium"
-                                                href="#">3</a>
-                                            <a class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-sm font-medium text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600"
-                                                href="#">
-                                                <span class="material-icons-round text-sm">chevron_right</span>
-                                            </a>
-                                        </nav>
-                                    </div>
-                                </div>
+                    <div class="bg-gray-50 dark:bg-gray-800/50 px-6 py-4 border-t border-gray-200 dark:border-gray-700">
+                        <div class="flex items-center justify-between">
+                            <div class="text-sm text-gray-700 dark:text-gray-400">
+                                Showing <span class="font-medium">1</span> to <span class="font-medium">9</span> of
+                                <span class="font-medium">85</span> results
                             </div>
+                            <nav aria-label="Pagination"
+                                class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px">
+                                <a class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-sm font-medium text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600"
+                                    href="#">
+                                    <span class="material-icons-round text-sm">chevron_left</span>
+                                </a>
+                                <a aria-current="page"
+                                    class="z-10 bg-primary/10 border-primary text-primary relative inline-flex items-center px-4 py-2 border text-sm font-medium"
+                                    href="#">1</a>
+                                <a class="bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium"
+                                    href="#">2</a>
+                                <a class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-sm font-medium text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600"
+                                    href="#">
+                                    <span class="material-icons-round text-sm">chevron_right</span>
+                                </a>
+                            </nav>
                         </div>
+                    </div>
                 </div>
             </div>
         </main>
     </div>
+
 </body>
 
 </html>
