@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>MDY | Finance - Income Management</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#00b050", // Emerald Green
+                        secondary: "#1e3a8a", // Dark Blue
+                        "sidebar-dark": "#0f172a",
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "sans-serif"],
+                    },
+                },
+            },
+        };
+    </script>
+    <style type="text/tailwindcss">
+        :root {
+            --primary-green: #00b050;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+        .dark .custom-scrollbar::-webkit-scrollbar-thumb { background: #475569; }
+        .payment-cell { @apply flex items-center justify-between gap-2; }
+    </style>
+</head>
+
+<body class="bg-[#f8fafc] dark:bg-[#0f172a] text-slate-900 dark:text-slate-100 min-h-screen flex">
+    <aside class="w-64 bg-[#1e293b] text-slate-300 flex-shrink-0 flex flex-col hidden lg:flex">
+        <div class="h-16 flex items-center px-6 border-b border-gray-800">
+            <span class="text-lg font-bold tracking-wide uppercase">MDY - DASHBOARD</span>
+        </div>
+        <nav class="flex-1 px-3 py-4 space-y-2 overflow-y-auto">
+            <a class="flex items-center px-4 py-3 text-sm font-medium rounded-lg text-gray-300 hover:bg-gray-800 hover:text-white transition-colors"
+                href="#">
+                <span class="material-icons-round mr-3">dashboard</span>
+                Dashboard
+            </a>
+            <a class="flex items-center justify-between px-4 py-3 text-sm font-medium rounded-lg text-gray-300 hover:bg-gray-800 hover:text-white transition-colors"
+                href="viewusers.html">
+                <div class="flex items-center">
+                    <span class="material-icons-round mr-3">people</span>
+                    Users
+                </div>
+                <span class="material-icons-round text-xs">chevron_right</span>
+            </a>
+            <a class="flex items-center justify-between px-4 py-3 text-sm font-medium rounded-lg text-gray-300 hover:bg-gray-800 hover:text-white transition-colors"
+                href="allfollowers.html">
+                <div class="flex items-center">
+                    <span class="material-icons-round mr-3">groups</span>
+                    Followers
+                </div>
+                <span class="material-icons-round text-xs">chevron_right</span>
+            </a>
+            <a class="flex items-center justify-between px-4 py-3 text-sm font-medium rounded-lg text-gray-300 hover:bg-gray-800 hover:text-white transition-colors"
+                href="submittedList.html">
+                <div class="flex items-center">
+                    <span class="material-icons-round mr-3">menu_book</span>
+                    Passports
+                </div>
+                <span class="material-icons-round text-xs">chevron_right</span>
+            </a>
+            <a class="flex items-center px-4 py-3 text-sm font-medium rounded-lg text-gray-300 hover:bg-gray-800 hover:text-white transition-colors"
+                href="projects.html">
+                <span class="material-icons-round mr-3">public</span>
+                Journeys
+            </a>
+            <a class="flex items-center px-4 py-3 text-sm font-medium rounded-lg text-gray-300 hover:bg-gray-800 hover:text-white transition-colors"
+                href="visa.html">
+                <span class="material-icons-round mr-3">assignment_ind</span>
+                Visa
+            </a>
+            <div class="space-y-1">
+                <button
+                    class="w-full flex items-center justify-between px-4 py-3 text-sm font-medium rounded-lg bg-gray-800 text-white transition-colors">
+                    <div class="flex items-center">
+                        <span class="material-icons-round mr-3">payments</span>
+                        Finance
+                    </div>
+                    <span class="material-icons-round text-xs transform">expand_more</span>
+                </button>
+                <div class="pl-11 pr-2 space-y-1">
+                    <a class="block px-4 py-2 text-sm font-medium rounded-lg bg-primary text-white transition-colors"
+                        href="finance_addIncome.html">
+                        Income Management
+                    </a>
+                    <a class="block px-4 py-2 text-sm font-medium rounded-lg text-gray-400 hover:text-white hover:bg-gray-800 transition-colors"
+                        href="#">
+                        Expense Management
+                    </a>
+                </div>
+            </div>
+        </nav>
+        <div class="p-4 border-t border-gray-700">
+            <div class="flex items-center">
+                <div class="w-8 h-8 rounded bg-gray-600 flex items-center justify-center text-xs font-bold">N</div>
+                <div class="ml-3">
+                    <p class="text-sm font-medium">Niman</p>
+                </div>
+                <button class="ml-auto text-gray-400 hover:text-white">
+                    <span class="material-icons-round">unfold_more</span>
+                </button>
+            </div>
+        </div>
+    </aside>
+    <main class="flex-1 flex flex-col min-w-0 overflow-hidden">
+        <header class="bg-primary shadow-sm z-10">
+            <div class="px-6 py-3 flex items-center justify-between">
+                <div class="flex items-center">
+                    <button class="md:hidden text-white mr-4">
+                        <span class="material-icons-round">menu</span>
+                    </button>
+                    <h1 class="text-xl font-bold text-white">Finance</h1>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <button class="p-2 rounded-full hover:bg-white/10 text-white"
+                        onclick="document.documentElement.classList.toggle('dark')">
+                        <span class="material-icons-round block dark:hidden">dark_mode</span>
+                        <span class="material-icons-round hidden dark:block">light_mode</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+        <div class="flex-1 overflow-y-auto p-8 custom-scrollbar">
+            <div class="mb-6">
+                <nav class="flex text-sm text-slate-500 dark:text-slate-400 mb-2">
+                    <a class="hover:text-primary transition-colors" href="#"><span
+                            class="material-icons-round text-base align-middle">home</span></a>
+                    <span class="mx-2">/</span>
+                    <span class="font-medium text-primary">Income Management</span>
+                </nav>
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                    <h1 class="text-2xl font-bold text-slate-900 dark:text-white">Income Management</h1>
+                    <div class="flex items-center space-x-3 pt-2">
+                        <button
+                            class="flex items-center px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded text-sm font-medium transition-colors shadow-sm">
+                            <span class="material-icons-round text-sm mr-2">table_view</span>
+                            Excel
+                        </button>
+                        <button
+                            class="flex items-center px-4 py-2 bg-orange-600 hover:bg-orange-700 text-white rounded text-sm font-medium transition-colors shadow-sm">
+                            <span class="material-icons-round text-sm mr-2">table_view</span>
+                            Full Excel
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="space-y-3 mb-6">
+                <div class="bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                        <div class="relative">
+                            <label class="block text-xs font-semibold text-slate-500 uppercase mb-1">Journey</label>
+                            <select
+                                class="w-full bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700 rounded-lg text-sm focus:ring-[var(--primary-green)] focus:border-[var(--primary-green)]">
+                                <option>2026 February 01</option>
+                                <option>2026 February 02</option>
+                                <option>2026 March 01</option>
+                                <option>2026 March 02</option>
+                            </select>
+                        </div>
+                        <div class="relative">
+                            <label class="block text-xs font-semibold text-slate-500 uppercase mb-1">Search</label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400">
+                                    <span class="material-symbols-outlined text-lg">search</span>
+                                </span>
+                                <input
+                                    class="w-full bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700 pl-10 rounded-lg text-sm focus:ring-[var(--primary-green)] focus:border-[var(--primary-green)]"
+                                    placeholder="Search..." type="text" />
+                            </div>
+                        </div>
+                        <div class="relative">
+                            <label class="block text-xs font-semibold text-slate-500 uppercase mb-1">Due
+                                Status</label>
+                            <select
+                                class="w-full bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700 rounded-lg text-sm focus:ring-[var(--primary-green)] focus:border-[var(--primary-green)]">
+                                <option>Choose...</option>
+                                <option>No Due</option>
+                                <option>Has Due</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div
+                        class="bg-emerald-50 dark:bg-emerald-900/10 border border-emerald-100 dark:border-emerald-800/30 p-4 rounded-xl flex items-center justify-between shadow-sm">
+                        <div class="flex items-center">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-[var(--primary-green)] flex items-center justify-center text-white mr-4">
+                                <span class="material-symbols-outlined">payments</span>
+                            </div>
+                            <div>
+                                <p
+                                    class="text-xs font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider">
+                                    Grand Total</p>
+                                <p class="text-2xl font-black text-slate-900 dark:text-white">1,435,000</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-red-50 dark:bg-red-950/10 border border-red-100 dark:border-red-900/20 p-4 rounded-xl flex items-center justify-between shadow-sm">
+                        <div class="flex items-center">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-red-500 flex items-center justify-center text-white mr-4">
+                                <span class="material-symbols-outlined">account_balance_wallet</span>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-red-600 dark:text-red-400 uppercase tracking-wider">Due
+                                </p>
+                                <p class="text-2xl font-black text-red-500">15,000</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full border-collapse">
+                        <thead>
+                            <tr
+                                class="bg-slate-50 dark:bg-slate-900/50 border-b border-slate-200 dark:border-slate-700">
+                                <th
+                                    class="px-6 py-4 text-left text-xs font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider">
+                                    Reg No</th>
+                                <th
+                                    class="px-6 py-4 text-left text-xs font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider">
+                                    1st Payment</th>
+                                <th
+                                    class="px-6 py-4 text-left text-xs font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider">
+                                    2nd Payment</th>
+                                <th
+                                    class="px-6 py-4 text-left text-xs font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider">
+                                    3rd Payment</th>
+                                <th
+                                    class="px-6 py-4 text-left text-xs font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider">
+                                    Accommodation</th>
+                                <th
+                                    class="px-6 py-4 text-left text-xs font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider">
+                                    Total</th>
+                                <th
+                                    class="px-6 py-4 text-left text-xs font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider">
+                                    Due</th>
+                                <th
+                                    class="px-6 py-4 text-right text-xs font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider">
+                                    Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100 dark:divide-slate-700">
+                            <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
+                                <td
+                                    class="px-6 py-4 whitespace-nowrap text-sm font-semibold text-slate-800 dark:text-slate-100">
+                                    FEB1-001</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-700 dark:text-slate-300">
+                                    <div class="payment-cell">
+                                        <span>100,000</span>
+                                        <span
+                                            class="material-symbols-outlined text-slate-400 text-sm cursor-pointer hover:text-[var(--primary-green)]"
+                                            title="View Slip">image</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-700 dark:text-slate-300">
+                                    <div class="payment-cell">
+                                        <span>155,000</span>
+                                        <span
+                                            class="material-symbols-outlined text-slate-400 text-sm cursor-pointer hover:text-[var(--primary-green)]"
+                                            title="View Slip">image</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-700 dark:text-slate-300">-
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-700 dark:text-slate-300">-
+                                </td>
+                                <td
+                                    class="px-6 py-4 whitespace-nowrap text-sm font-bold text-slate-900 dark:text-white">
+                                    255,000</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-red-500 font-bold">10,000</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-right">
+                                    <button onclick="window.location.href='edit_income.html'"
+                                        class="text-[var(--primary-green)] hover:text-emerald-700 p-1 rounded-full hover:bg-emerald-50 dark:hover:bg-emerald-900/20 transition-all">
+                                        <span class="material-symbols-outlined">edit</span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr
+                                class="bg-slate-50/50 dark:bg-slate-800/50 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
+                                <td
+                                    class="px-6 py-4 whitespace-nowrap text-sm font-semibold text-slate-800 dark:text-slate-100">
+                                    FEB1-002</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-700 dark:text-slate-300">
+                                    <div class="payment-cell">
+                                        <span>290,000</span>
+                                        <span
+                                            class="material-symbols-outlined text-slate-400 text-sm cursor-pointer hover:text-[var(--primary-green)]"
+                                            title="View Slip">image</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-700 dark:text-slate-300">
+                                    <div class="payment-cell">
+                                        <span>5,000</span>
+                                        <span
+                                            class="material-symbols-outlined text-slate-400 text-sm cursor-pointer hover:text-[var(--primary-green)]"
+                                            title="View Slip">image</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-700 dark:text-slate-300">-
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-700 dark:text-slate-300">-
+                                </td>
+                                <td
+                                    class="px-6 py-4 whitespace-nowrap text-sm font-bold text-slate-900 dark:text-white">
+                                    295,000</td>
+                                <td
+                                    class="px-6 py-4 whitespace-nowrap text-sm text-slate-700 dark:text-slate-300 font-medium">
+                                    0</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-right">
+                                    <button onclick="window.location.href='edit_income.html'"
+                                        class="text-[var(--primary-green)] hover:text-emerald-700 p-1 rounded-full hover:bg-emerald-50 dark:hover:bg-emerald-900/20 transition-all">
+                                        <span class="material-symbols-outlined">edit</span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
+                                <td
+                                    class="px-6 py-4 whitespace-nowrap text-sm font-semibold text-slate-800 dark:text-slate-100">
+                                    FEB1-003</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-700 dark:text-slate-300">
+                                    <div class="payment-cell">
+                                        <span>100,000</span>
+                                        <span
+                                            class="material-symbols-outlined text-slate-400 text-sm cursor-pointer hover:text-[var(--primary-green)]"
+                                            title="View Slip">image</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-700 dark:text-slate-300">
+                                    <div class="payment-cell">
+                                        <span>195,000</span>
+                                        <span
+                                            class="material-symbols-outlined text-slate-400 text-sm cursor-pointer hover:text-[var(--primary-green)]"
+                                            title="View Slip">image</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-700 dark:text-slate-300">-
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-700 dark:text-slate-300">-
+                                </td>
+                                <td
+                                    class="px-6 py-4 whitespace-nowrap text-sm font-bold text-slate-900 dark:text-white">
+                                    295,000</td>
+                                <td
+                                    class="px-6 py-4 whitespace-nowrap text-sm text-slate-700 dark:text-slate-300 font-medium">
+                                    0</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-right">
+                                    <button onclick="window.location.href='edit_income.html'"
+                                        class="text-[var(--primary-green)] hover:text-emerald-700 p-1 rounded-full hover:bg-emerald-50 dark:hover:bg-emerald-900/20 transition-all">
+                                        <span class="material-symbols-outlined">edit</span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr
+                                class="bg-slate-50/50 dark:bg-slate-800/50 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
+                                <td
+                                    class="px-6 py-4 whitespace-nowrap text-sm font-semibold text-slate-800 dark:text-slate-100">
+                                    FEB1-004</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-700 dark:text-slate-300">
+                                    <div class="payment-cell">
+                                        <span>100,000</span>
+                                        <span
+                                            class="material-symbols-outlined text-slate-400 text-sm cursor-pointer hover:text-[var(--primary-green)]"
+                                            title="View Slip">image</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-700 dark:text-slate-300">
+                                    <div class="payment-cell">
+                                        <span>15,000</span>
+                                        <span
+                                            class="material-symbols-outlined text-slate-400 text-sm cursor-pointer hover:text-[var(--primary-green)]"
+                                            title="View Slip">image</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-700 dark:text-slate-300">
+                                    <div class="payment-cell">
+                                        <span>180,000</span>
+                                        <span
+                                            class="material-symbols-outlined text-slate-400 text-sm cursor-pointer hover:text-[var(--primary-green)]"
+                                            title="View Slip">image</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-700 dark:text-slate-300">
+                                    35,000</td>
+                                <td
+                                    class="px-6 py-4 whitespace-nowrap text-sm font-bold text-slate-900 dark:text-white">
+                                    295,000</td>
+                                <td
+                                    class="px-6 py-4 whitespace-nowrap text-sm text-slate-700 dark:text-slate-300 font-medium">
+                                    0</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-right">
+                                    <button onclick="window.location.href='edit_income.html'"
+                                        class="text-[var(--primary-green)] hover:text-emerald-700 p-1 rounded-full hover:bg-emerald-50 dark:hover:bg-emerald-900/20 transition-all">
+                                        <span class="material-symbols-outlined">edit</span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
+                                <td
+                                    class="px-6 py-4 whitespace-nowrap text-sm font-semibold text-slate-800 dark:text-slate-100">
+                                    FEB1-005</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-700 dark:text-slate-300">
+                                    <div class="payment-cell">
+                                        <span>100,000</span>
+                                        <span
+                                            class="material-symbols-outlined text-slate-400 text-sm cursor-pointer hover:text-[var(--primary-green)]"
+                                            title="View Slip">image</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-700 dark:text-slate-300">
+                                    <div class="payment-cell">
+                                        <span>190,000</span>
+                                        <span
+                                            class="material-symbols-outlined text-slate-400 text-sm cursor-pointer hover:text-[var(--primary-green)]"
+                                            title="View Slip">image</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-700 dark:text-slate-300">
+                                    <div class="payment-cell">
+                                        <span>5,000</span>
+                                        <span
+                                            class="material-symbols-outlined text-slate-400 text-sm cursor-pointer hover:text-[var(--primary-green)]"
+                                            title="View Slip">image</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-700 dark:text-slate-300">-
+                                </td>
+                                <td
+                                    class="px-6 py-4 whitespace-nowrap text-sm font-bold text-slate-900 dark:text-white">
+                                    295,000</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-red-500 font-bold">5,000</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-right">
+                                    <button onclick="window.location.href='edit_income.html'"
+                                        class="text-[var(--primary-green)] hover:text-emerald-700 p-1 rounded-full hover:bg-emerald-50 dark:hover:bg-emerald-900/20 transition-all">
+                                        <span class="material-symbols-outlined">edit</span>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div
+                    class="bg-gray-50 dark:bg-gray-800 px-4 py-3 border-t border-gray-200 dark:border-gray-700 sm:px-6">
+                    <div class="flex items-center justify-between">
+                        <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
+                            <div>
+                                <p class="text-sm text-gray-700 dark:text-gray-300">
+                                    Showing <span class="font-medium">1</span> to <span class="font-medium">5</span>
+                                    of <span class="font-medium">15</span> results
+                                </p>
+                            </div>
+                            <div>
+                                <nav aria-label="Pagination"
+                                    class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px">
+                                    <a class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-sm font-medium text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600"
+                                        href="#">
+                                        <span class="material-icons-round text-sm">chevron_left</span>
+                                    </a>
+                                    <a aria-current="page"
+                                        class="z-10 bg-blue-50 dark:bg-blue-900 border-primary text-primary relative inline-flex items-center px-4 py-2 border text-sm font-medium"
+                                        href="#">1</a>
+                                    <a class="bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium"
+                                        href="#">2</a>
+                                    <a class="bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium"
+                                        href="#">3</a>
+                                    <a class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-sm font-medium text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600"
+                                        href="#">
+                                        <span class="material-icons-round text-sm">chevron_right</span>
+                                    </a>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-6 flex flex-col md:flex-row md:items-center justify-between gap-2 mt-4">
+                <h3 class="text-xl font-bold text-slate-800 dark:text-white">Other Incomes</h3>
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                    <div class="flex items-center space-x-3 pt-2">
+                        <button
+                            class="flex items-center px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded text-sm font-medium transition-colors shadow-sm">
+                            <span class="material-icons-round text-sm mr-2">table_view</span>
+                            Excel
+                        </button>
+                        <button
+                            class="flex px-4 py-2 bg-blue-600 text-white hover:bg-blue-700 rounded text-sm font-semibold shadow-sm transition-colors">
+                            <span class="material-symbols-outlined text-sm mr-2">add_circle</span> Add Income
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="space-y-4 mb-6">
+                <div
+                    class="bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                        <div class="relative">
+                            <label class="block text-xs font-semibold text-slate-500 uppercase mb-1">Journey</label>
+                            <select
+                                class="w-full bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700 rounded-lg text-sm focus:ring-[var(--primary-green)] focus:border-[var(--primary-green)]">
+                                <option>2026 February 01</option>
+                                <option>2026 February 02</option>
+                                <option>2026 March 01</option>
+                                <option>2026 March 02</option>
+                            </select>
+                        </div>
+                        <div class="relative">
+                            <label class="block text-xs font-semibold text-slate-500 uppercase mb-1">Category</label>
+                            <select
+                                class="w-full bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700 rounded-lg text-sm focus:ring-[var(--primary-green)] focus:border-[var(--primary-green)]">
+                                <option>Choose...</option>
+                                <option>Food</option>
+                                <option>Hotels</option>
+                                <option>Transport</option>
+                                <option>E-Tickets</option>
+                                <option>Puja</option>
+                                <option>Nepal Visa</option>
+                                <option>Salary</option>
+                                <option>Extra</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="relative">
+                            <label class="block text-xs font-semibold text-slate-500 uppercase mb-1">Search</label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400">
+                                    <span class="material-symbols-outlined text-lg">search</span>
+                                </span>
+                                <input
+                                    class="w-full bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700 pl-10 rounded-lg text-sm focus:ring-[var(--primary-green)] focus:border-[var(--primary-green)]"
+                                    placeholder="Search..." type="text" />
+                            </div>
+                        </div>
+                        <div class="relative">
+                            <label class="block text-xs font-semibold text-slate-500 uppercase mb-1">Date Range</label>
+                            <input
+                                class="w-full bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700 rounded-lg text-sm focus:ring-[var(--primary-green)] focus:border-[var(--primary-green)]"
+                                type="date" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden mb-8">
+                <div class="overflow-x-auto">
+                    <table class="w-full border-collapse">
+                        <thead>
+                            <tr
+                                class="bg-slate-50 dark:bg-slate-900/50 border-b border-slate-200 dark:border-slate-700">
+                                <th class="px-6 py-4 text-left text-xs font-bold uppercase tracking-wider">Category</th>
+                                <th class="px-6 py-4 text-left text-xs font-bold uppercase tracking-wider">Journey</th>
+                                <th class="px-6 py-4 text-left text-xs font-bold uppercase tracking-wider">Description
+                                </th>
+                                <th class="px-6 py-4 text-left text-xs font-bold uppercase tracking-wider">Amount</th>
+                                <th class="px-6 py-4 text-left text-xs font-bold uppercase tracking-wider">Date</th>
+                                <th class="px-6 py-4 text-left text-xs font-bold uppercase tracking-wider">Receipt</th>
+                                <th class="px-6 py-4 text-right text-xs font-bold uppercase tracking-wider">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100 dark:divide-slate-700">
+                            <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
+                                <td
+                                    class="px-6 py-4 whitespace-nowrap text-sm font-medium text-slate-800 dark:text-slate-100">
+                                    Food</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-600 dark:text-slate-400">2026
+                                    February 01</td>
+                                <td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400 max-w-xs truncate">
+                                    Special event foods for venue setup</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-bold text-slate-900 text-primary">
+                                    25,000</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-600 dark:text-slate-400">
+                                    2026-01-15</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span
+                                        class="material-symbols-outlined text-slate-400 text-xl cursor-pointer hover:text-[var(--primary-green)]"
+                                        title="View Receipt">image</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-right">
+                                    <button
+                                        class="text-[var(--primary-green)] hover:text-emerald-700 p-1 rounded-full hover:bg-emerald-50 dark:hover:bg-emerald-900/20 transition-all">
+                                        <span class="material-symbols-outlined">edit</span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr
+                                class="bg-slate-50/50 dark:bg-slate-800/50 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
+                                <td
+                                    class="px-6 py-4 whitespace-nowrap text-sm font-medium text-slate-800 dark:text-slate-100">
+                                    Other</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-600 dark:text-slate-400">2026
+                                    February 01</td>
+                                <td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400 max-w-xs truncate">Sales
+                                    from merchandise corner</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-bold text-slate-900 text-primary">
+                                    12,500</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-600 dark:text-slate-400">
+                                    2026-01-18</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span
+                                        class="material-symbols-outlined text-slate-400 text-xl cursor-pointer hover:text-[var(--primary-green)]"
+                                        title="View Receipt">image</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-right">
+                                    <button
+                                        class="text-[var(--primary-green)] hover:text-emerald-700 p-1 rounded-full hover:bg-emerald-50 dark:hover:bg-emerald-900/20 transition-all">
+                                        <span class="material-symbols-outlined">edit</span>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div
+                    class="bg-gray-50 dark:bg-gray-800 px-4 py-3 border-t border-gray-200 dark:border-gray-700 sm:px-6">
+                    <div class="flex items-center justify-between">
+                        <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
+                            <div>
+                                <p class="text-sm text-gray-700 dark:text-gray-300">
+                                    Showing <span class="font-medium">1</span> to <span class="font-medium">2</span>
+                                    of <span class="font-medium">6</span> results
+                                </p>
+                            </div>
+                            <div>
+                                <nav aria-label="Pagination"
+                                    class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px">
+                                    <a class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-sm font-medium text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600"
+                                        href="#">
+                                        <span class="material-icons-round text-sm">chevron_left</span>
+                                    </a>
+                                    <a aria-current="page"
+                                        class="z-10 bg-blue-50 dark:bg-blue-900 border-primary text-primary relative inline-flex items-center px-4 py-2 border text-sm font-medium"
+                                        href="#">1</a>
+                                    <a class="bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium"
+                                        href="#">2</a>
+                                    <a class="bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium"
+                                        href="#">3</a>
+                                    <a class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-sm font-medium text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600"
+                                        href="#">
+                                        <span class="material-icons-round text-sm">chevron_right</span>
+                                    </a>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+    </main>
+
+</body>
+
+</html>
