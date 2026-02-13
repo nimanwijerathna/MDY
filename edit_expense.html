@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Finance - Add Expense Management</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <style type="text/tailwindcss">
+        :root {
+            --primary-green: #00b050;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+        .dark .custom-scrollbar::-webkit-scrollbar-thumb { background: #475569; }
+        .payment-cell { @apply flex items-center justify-between gap-2; }
+    </style>
+</head>
+
+<body class="bg-[#f8fafc] dark:bg-[#0f172a] text-slate-900 dark:text-slate-100 min-h-screen flex">
+    <aside class="w-64 bg-[#1e293b] text-slate-300 flex-shrink-0 flex flex-col hidden lg:flex">
+        <div class="p-6">
+            <h1 class="text-xl font-bold text-white tracking-wider uppercase">Finance Module</h1>
+        </div>
+        <nav class="flex-1 px-4 space-y-1 mt-4">
+            <a class="flex items-center px-4 py-3 text-sm font-medium hover:bg-slate-700 rounded-lg transition-colors"
+                href="#">
+                <span class="material-symbols-outlined mr-3 text-xl">dashboard</span> Management
+            </a>
+            <div class="pt-4 pb-2">
+                <p class="px-4 text-xs font-semibold text-slate-500 uppercase tracking-wider">Finance</p>
+            </div>
+            <div class="space-y-1">
+                <a class="flex items-center px-4 py-3 text-sm font-medium bg-[var(--primary-green)] text-white rounded-lg"
+                    href="#">
+                    <span class="material-symbols-outlined mr-3 text-xl">payments</span> Add Income
+                </a>
+                <a class="flex items-center px-4 py-3 text-sm font-medium hover:bg-slate-700 rounded-lg transition-colors"
+                    href="#">
+                    <span class="material-symbols-outlined mr-3 text-xl">account_balance_wallet</span> Add Expense
+                </a>
+            </div>
+            <div class="pt-4 pb-2">
+                <p class="px-4 text-xs font-semibold text-slate-500 uppercase tracking-wider">Other</p>
+            </div>
+            <a class="flex items-center px-4 py-3 text-sm font-medium hover:bg-slate-700 rounded-lg transition-colors"
+                href="#">
+                <span class="material-symbols-outlined mr-3 text-xl">group</span> Users
+            </a>
+            <a class="flex items-center px-4 py-3 text-sm font-medium hover:bg-slate-700 rounded-lg transition-colors"
+                href="#">
+                <span class="material-symbols-outlined mr-3 text-xl">public</span> Journeys
+            </a>
+        </nav>
+        <div class="p-4 border-t border-slate-700">
+            <div class="flex items-center p-2 rounded-lg bg-slate-800">
+                <div class="w-8 h-8 rounded bg-slate-600 flex items-center justify-center text-xs font-bold mr-3">N
+                </div>
+                <div class="flex-1 overflow-hidden">
+                    <p class="text-sm font-medium text-white truncate">Niman</p>
+                    <p class="text-xs text-slate-500 truncate">Administrator</p>
+                </div>
+                <span class="material-symbols-outlined text-slate-500 text-lg cursor-pointer">unfold_more</span>
+            </div>
+        </div>
+    </aside>
+    <main class="flex-1 flex flex-col min-w-0 overflow-hidden relative">
+        <header class="bg-[var(--primary-green)] h-16 flex items-center px-8 shadow-sm">
+            <h2 class="text-xl font-bold text-white">Finance</h2>
+            <div class="ml-auto flex items-center space-x-4">
+                <button class="text-white hover:bg-white/10 p-2 rounded-full transition-colors"
+                    onclick="document.documentElement.classList.toggle('dark')">
+                    <span class="material-symbols-outlined">dark_mode</span>
+                </button>
+            </div>
+        </header>
+        <div></div>
+        <div class="mb-6">
+            <nav class="flex text-sm text-slate-500 dark:text-slate-400 mb-2">
+                <a class="hover:text-[var(--primary-green)]" href="#">Finance</a>
+                <span class="mx-2">/</span>
+                <span class="font-medium text-slate-900 dark:text-white">Add Income</span>
+            </nav>
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <h1 class="text-2xl font-bold text-slate-900 dark:text-white">Add Income Management</h1>
+                <div class="flex items-center space-x-3">
+                    <button
+                        class="flex items-center px-4 py-2 bg-emerald-50 text-[var(--primary-green)] border border-[var(--primary-green)] hover:bg-emerald-100 dark:bg-emerald-900/30 dark:text-emerald-400 rounded-lg text-sm font-semibold transition-colors">
+                        <span class="material-symbols-outlined text-lg mr-2">description</span> Excel Export
+                    </button>
+                    <button
+                        class="flex items-center px-5 py-2 bg-blue-600 text-white hover:bg-blue-700 rounded-lg text-sm font-semibold shadow-sm transition-colors">
+                        <span class="material-symbols-outlined text-lg mr-2">add_circle</span> Add Income
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="space-y-4 mb-6">
+            <div
+                class="bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div class="relative">
+                        <label class="block text-xs font-semibold text-slate-500 uppercase mb-1">Journey</label>
+                        <select
+                            class="w-full bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700 rounded-lg text-sm focus:ring-[var(--primary-green)] focus:border-[var(--primary-green)]">
+                            <option>2026 February 01</option>
+                            <option>2026 February 02</option>
+                            <option>2026 March 01</option>
+                            <option>2026 March 02</option>
+                        </select>
+                    </div>
+                    <div class="relative">
+                        <label class="block text-xs font-semibold text-slate-500 uppercase mb-1">Search</label>
+                        <div class="relative">
+                            <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400">
+                                <span class="material-symbols-outlined text-lg">search</span>
+                            </span>
+                            <input
+                                class="w-full bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700 pl-10 rounded-lg text-sm focus:ring-[var(--primary-green)] focus:border-[var(--primary-green)]"
+                                placeholder="Search Reg No..." type="text" />
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <label class="block text-xs font-semibold text-slate-500 uppercase mb-1">Due Status</label>
+                        <select
+                            class="w-full bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700 rounded-lg text-sm focus:ring-[var(--primary-green)] focus:border-[var(--primary-green)]">
+                            <option>All</option>
+                            <option>No Due</option>
+                            <option>Has Due</option>
+                        </select>
+                    </div>
+                    <div class="relative">
+                        <label class="block text-xs font-semibold text-slate-500 uppercase mb-1">Date Range</label>
+                        <input
+                            class="w-full bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700 rounded-lg text-sm focus:ring-[var(--primary-green)] focus:border-[var(--primary-green)]"
+                            type="date" />
+                        <input
+                            class="w-full bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700 rounded-lg text-sm focus:ring-[var(--primary-green)] focus:border-[var(--primary-green)]"
+                            type="date" />
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div
+                    class="bg-emerald-50 dark:bg-emerald-900/10 border border-emerald-100 dark:border-emerald-800/30 p-4 rounded-xl flex items-center justify-between shadow-sm">
+                    <div class="flex items-center">
+                        <div
+                            class="w-10 h-10 rounded-lg bg-[var(--primary-green)] flex items-center justify-center text-white mr-4">
+                            <span class="material-symbols-outlined">payments</span>
+                        </div>
+                        <div>
+                            <p
+                                class="text-xs font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider">
+                                Grand Total</p>
+                            <p class="text-2xl font-black text-slate-900 dark:text-white">1,435,000</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="bg-orange-50/70 dark:bg-orange-900/10 border border-orange-200 dark:border-orange-900/30 p-4 rounded-xl flex items-center justify-between shadow-sm">
+                    <div class="flex items-center">
+                        <div
+                            class="w-10 h-10 rounded-lg bg-orange-500 flex items-center justify-center text-white mr-4">
+                            <span class="material-symbols-outlined">account_balance_wallet</span>
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-orange-600 dark:text-orange-400 uppercase tracking-wider">
+                                Due</p>
+                            <p class="text-2xl font-black text-red-500">15,000</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div
+            class="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden">
+            <div class="overflow-x-auto">
+                <table class="w-full border-collapse">
+                    <thead>
+                        <tr class="bg-slate-50 dark:bg-slate-900/50 border-b border-slate-200 dark:border-slate-700">
+                            <th
+                                class="px-6 py-4 text-left text-xs font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider">
+                                Reg No</th>
+                            <th
+                                class="px-6 py-4 text-left text-xs font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider">
+                                1st Payment</th>
+                            <th
+                                class="px-6 py-4 text-left text-xs font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider">
+                                2nd Payment</th>
+                            <th
+                                class="px-6 py-4 text-left text-xs font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider">
+                                3rd Payment</th>
+                            <th
+                                class="px-6 py-4 text-left text-xs font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider">
+                                Accommodation</th>
+                            <th
+                                class="px-6 py-4 text-left text-xs font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider">
+                                Total</th>
+                            <th
+                                class="px-6 py-4 text-left text-xs font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider">
+                                Balance</th>
+                            <th
+                                class="px-6 py-4 text-right text-xs font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider">
+                                Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100 dark:divide-slate-700">
+                        <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
+                            <td
+                                class="px-6 py-4 whitespace-nowrap text-sm font-semibold text-slate-800 dark:text-slate-100">
+                                FEB26-001</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-700 dark:text-slate-300">
+                                <div class="payment-cell">
+                                    <span>100,000</span>
+                                    <span
+                                        class="material-symbols-outlined text-slate-400 text-sm cursor-pointer hover:text-[var(--primary-green)]"
+                                        title="View Slip">image</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-700 dark:text-slate-300">
+                                <div class="payment-cell">
+                                    <span>155,000</span>
+                                    <span
+                                        class="material-symbols-outlined text-slate-400 text-sm cursor-pointer hover:text-[var(--primary-green)]"
+                                        title="View Slip">image</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-700 dark:text-slate-300">-
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-700 dark:text-slate-300">-
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-bold text-slate-900 dark:text-white">
+                                255,000</td>
+                            <td
+                                class="px-6 py-4 whitespace-nowrap text-sm text-slate-700 dark:text-slate-300 font-medium">
+                                0</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-right">
+                                <button
+                                    class="text-[var(--primary-green)] hover:text-emerald-700 p-1 rounded-full hover:bg-emerald-50 dark:hover:bg-emerald-900/20 transition-all">
+                                    <span class="material-symbols-outlined">edit</span>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr
+                            class="bg-slate-50/50 dark:bg-slate-800/50 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
+                            <td
+                                class="px-6 py-4 whitespace-nowrap text-sm font-semibold text-slate-800 dark:text-slate-100">
+                                FEB26-002</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-700 dark:text-slate-300">
+                                <div class="payment-cell">
+                                    <span>290,000</span>
+                                    <span
+                                        class="material-symbols-outlined text-slate-400 text-sm cursor-pointer hover:text-[var(--primary-green)]"
+                                        title="View Slip">image</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-700 dark:text-slate-300">
+                                <div class="payment-cell">
+                                    <span>5,000</span>
+                                    <span
+                                        class="material-symbols-outlined text-slate-400 text-sm cursor-pointer hover:text-[var(--primary-green)]"
+                                        title="View Slip">image</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-700 dark:text-slate-300">-
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-700 dark:text-slate-300">-
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-bold text-slate-900 dark:text-white">
+                                295,000</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-red-500 font-bold">10,000</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-right">
+                                <button
+                                    class="text-[var(--primary-green)] hover:text-emerald-700 p-1 rounded-full hover:bg-emerald-50 dark:hover:bg-emerald-900/20 transition-all">
+                                    <span class="material-symbols-outlined">edit</span>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="px-6 py-4 flex items-center justify-between border-t border-slate-200 dark:border-slate-700">
+                <div class="text-sm text-slate-500 dark:text-slate-400">
+                    Showing <span class="font-medium text-slate-900 dark:text-white">1</span> to <span
+                        class="font-medium text-slate-900 dark:text-white">5</span> of <span
+                        class="font-medium text-slate-900 dark:text-white">50</span> entries
+                </div>
+                <div class="flex space-x-2">
+                    <button
+                        class="px-3 py-1 border border-slate-300 dark:border-slate-600 rounded text-sm text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-700 disabled:opacity-50"
+                        disabled="">Previous</button>
+                    <button
+                        class="px-3 py-1 bg-[var(--primary-green)] text-white rounded text-sm font-medium">1</button>
+                    <button
+                        class="px-3 py-1 border border-slate-300 dark:border-slate-600 rounded text-sm text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-700">2</button>
+                    <button
+                        class="px-3 py-1 border border-slate-300 dark:border-slate-600 rounded text-sm text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-700">3</button>
+                    <button
+                        class="px-3 py-1 border border-slate-300 dark:border-slate-600 rounded text-sm text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-700">Next</button>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4">
+            <div
+                class="bg-white dark:bg-slate-800 w-full max-w-2xl rounded-2xl shadow-2xl overflow-hidden border border-slate-200 dark:border-slate-700">
+                <div
+                    class="px-8 py-5 border-b border-slate-100 dark:border-slate-700 flex justify-between items-center bg-slate-50 dark:bg-slate-900/30">
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white">Edit Expense</h3>
+                    <button onclick="window.location.href='finance_addExpense.html'"
+                        class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
+                        <span class="material-symbols-outlined">close</span>
+                    </button>
+                </div>
+                <form
+                    class="p-8 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700">
+                    <div class="grid grid-cols-1 md:grid-cols-6 gap-6">
+
+                        <div class="md:col-span-3">
+                            <label
+                                class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Category</label>
+                            <select
+                                class="w-full text-slate-600 dark:text-slate-400 bg-transparent border-slate-200 dark:border-slate-700 rounded-lg text-sm focus:ring-[var(--primary-green)] focus:border-[var(--primary-green)]">
+                                <option>Choose...</option>
+                                <option>Food</option>
+                                <option>Hotels</option>
+                                <option>Transport</option>
+                                <option>E-Tickets</option>
+                                <option>Puja</option>
+                                <option>Nepal Visa</option>
+                                <option>Salary</option>
+                                <option>Extra</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+
+                        <div class="md:col-span-3">
+                            <label
+                                class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Transaction
+                                Period</label>
+                            <input
+                                class="w-full bg-slate-50 dark:bg-slate-900/50 border-slate-200 dark:border-slate-700 rounded-lg text-sm font-semibold text-slate-500 cursor-not-allowed"
+                                readonly type="text" value="2026 February 01" />
+                        </div>
+
+                        <div class="md:col-span-6 space-y-2">
+                            <label
+                                class="block text-xs font-bold text-slate-500 uppercase tracking-wider">Description</label>
+                            <input
+                                class="w-full border-slate-200 dark:border-slate-700 rounded-lg text-sm bg-transparent"
+                                type="text" value="Special event catering for staff" />
+                        </div>
+
+                        <div class="md:col-span-3 space-y-2">
+                            <label
+                                class="block text-xs font-bold text-slate-500 uppercase tracking-wider">Amount</label>
+                            <input
+                                class="w-full border-slate-200 dark:border-slate-700 rounded-lg text-sm bg-transparent"
+                                type="text" value="45,000" />
+                        </div>
+
+                        <div class="md:col-span-3 space-y-2">
+                            <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider">Transaction
+                                Date</label>
+                            <input
+                                class="w-full border-slate-200 dark:border-slate-700 rounded-lg text-sm bg-transparent"
+                                type="date" value="2026-01-15" />
+                        </div>
+
+                        <div class="md:col-span-6 pt-2">
+                            <div
+                                class="bg-indigo-50/50 dark:bg-indigo-900/10 border border-indigo-100 dark:border-indigo-900/20 rounded-xl p-5 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                                <div>
+                                    <span
+                                        class="text-sm font-bold text-indigo-700 dark:text-indigo-400 uppercase tracking-widest">Receipt
+                                        Details</span>
+                                    <p class="text-xs text-slate-500 mt-1">Update receipt (optional)</p>
+                                </div>
+
+                                <div class="flex items-center gap-3 w-full sm:w-auto">
+                                    <div class="relative group cursor-pointer flex-shrink-0">
+                                        <div
+                                            class="w-11 h-11 rounded-lg border-2 border-dashed border-indigo-200 dark:border-indigo-800 flex items-center justify-center bg-white dark:bg-slate-800 group-hover:border-indigo-400 transition-colors">
+                                            <span class="material-symbols-outlined text-indigo-500">image</span>
+                                        </div>
+                                        <div
+                                            class="absolute inset-0 bg-indigo-600/10 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg flex items-center justify-center">
+                                            <span
+                                                class="material-symbols-outlined text-indigo-700 text-sm">upload</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="mt-10 pt-6 border-t border-slate-100 dark:border-slate-700 flex justify-end items-center gap-4">
+                        <button onclick="window.location.href='finance_addExpense.html'"
+                            class="text-sm font-semibold text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 transition-colors"
+                            type="button">
+                            Cancel
+                        </button>
+                        <button
+                            class="px-8 py-2.5 rounded-lg bg-emerald-600 hover:bg-indigo-700 text-white text-sm font-bold shadow-md shadow-emerald-500/20 transition-all active:scale-95"
+                            type="submit">
+                            Save Changes
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>
