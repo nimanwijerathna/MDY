@@ -166,7 +166,7 @@
                 <div class="space-y-3 mb-6">
                     <div
                         class="bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700">
-                        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                             <div class="relative">
                                 <label class="block text-xs font-semibold text-slate-500 uppercase mb-1">Journey</label>
                                 <select
@@ -195,15 +195,15 @@
                                 <select
                                     class="w-full bg-slate-50 dark:bg-slate-900 text-slate-600 dark:text-slate-400 border-slate-200 dark:border-slate-700 rounded-lg text-sm focus:ring-[var(--primary-green)] focus:border-[var(--primary-green)]">
                                     <option>Choose...</option>
-                                    <option>No Due</option>
                                     <option>Has Due</option>
+                                    <option>No Due</option>
                                 </select>
                             </div>
                         </div>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div
-                            class="bg-emerald-50 dark:bg-emerald-900/10 border border-emerald-100 dark:border-emerald-800/30 p-4 rounded-xl flex items-center justify-between shadow-sm">
+                            class="bg-emerald-50 dark:bg-emerald-900/10 border border-emerald-100 dark:border-emerald-800/50 p-4 rounded-xl flex items-center justify-between shadow-sm">
                             <div class="flex items-center">
                                 <div
                                     class="w-10 h-10 rounded-lg bg-[var(--primary-green)] flex items-center justify-center text-white mr-4">
@@ -218,7 +218,7 @@
                             </div>
                         </div>
                         <div
-                            class="bg-red-50 dark:bg-red-950/10 border border-red-100 dark:border-red-900/20 p-4 rounded-xl flex items-center justify-between shadow-sm">
+                            class="bg-red-50 dark:bg-red-950/10 border border-red-200 dark:border-red-900/50 p-4 rounded-xl flex items-center justify-between shadow-sm">
                             <div class="flex items-center">
                                 <div
                                     class="w-10 h-10 rounded-lg bg-red-500 flex items-center justify-center text-white mr-4">
@@ -229,7 +229,7 @@
                                         class="text-xs font-bold text-red-600 dark:text-red-400 uppercase tracking-wider">
                                         Due
                                     </p>
-                                    <p class="text-2xl font-black text-red-500">15,000</p>
+                                    <p class="text-2xl font-black text-red-500">45,000</p>
                                 </div>
                             </div>
                         </div>
@@ -296,7 +296,7 @@
                                     <td
                                         class="px-6 py-4 whitespace-nowrap text-sm font-bold text-slate-900 dark:text-white">
                                         255,000</td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-red-500 font-bold">10,000</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-red-500 font-bold">40,000</td>
                                     <td class="px-6 py-4 whitespace-nowrap text-right">
                                         <button onclick="window.location.href='edit_income.html'"
                                             class="text-[var(--primary-green)] hover:text-emerald-700 p-1 rounded-full hover:bg-emerald-50 dark:hover:bg-emerald-900/20 transition-all">
@@ -437,7 +437,7 @@
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-700 dark:text-slate-300">
                                         <div class="payment-cell">
-                                            <span>190,000</span>
+                                            <span>185,000</span>
                                             <span
                                                 class="material-symbols-outlined text-slate-400 text-sm cursor-pointer hover:text-[var(--primary-green)]"
                                                 title="View Slip">image</span>
@@ -455,7 +455,7 @@
                                     </td>
                                     <td
                                         class="px-6 py-4 whitespace-nowrap text-sm font-bold text-slate-900 dark:text-white">
-                                        295,000</td>
+                                        290,000</td>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-red-500 font-bold">5,000</td>
                                     <td class="px-6 py-4 whitespace-nowrap text-right">
                                         <button onclick="window.location.href='edit_income.html'"
@@ -549,24 +549,31 @@
                                     <option>Other</option>
                                 </select>
                             </div>
-                            <div class="relative">
-                                <label class="block text-xs font-semibold text-slate-500 uppercase mb-1">Search</label>
-                                <div class="relative">
-                                    <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400">
-                                        <span class="material-symbols-outlined text-lg">search</span>
-                                    </span>
-                                    <input
-                                        class="text-slate-600 dark:text-slate-400 w-full bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700 pl-10 rounded-lg text-sm focus:ring-[var(--primary-green)] focus:border-[var(--primary-green)]"
-                                        placeholder="Search..." type="text" />
+
+                                <div class="relative flex-1">
+                                    <label
+                                        class="block text-xs font-semibold text-slate-500 uppercase mb-1">Search</label>
+                                    <div class="relative">
+                                        <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400">
+                                            <span class="material-symbols-outlined text-lg">search</span>
+                                        </span>
+                                        <input
+                                            class="text-slate-600 dark:text-slate-400 w-full bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700 pl-10 rounded-lg text-sm focus:ring-[var(--primary-green)] focus:border-[var(--primary-green)]"
+                                            placeholder="Search..." type="text" />
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="relative">
-                                <label class="block text-xs font-semibold text-slate-500 uppercase mb-1">Date
-                                    Range</label>
-                                <input
-                                    class="text-slate-600 dark:text-slate-400 w-full bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700 rounded-lg text-sm focus:ring-[var(--primary-green)] focus:border-[var(--primary-green)]"
-                                    type="date" />
-                            </div>
+
+                                <div class="relative flex-1">
+                                    <label
+                                        class="block text-xs font-semibold text-slate-500 uppercase mb-1">Range</label>
+                                    <div class="relative flex items-center">
+                                        <span
+                                            class="material-icons-round absolute left-3 text-gray-500 text-lg">date_range</span>
+                                        <input
+                                            class="w-full pl-10 pr-4 py-2 text-sm border-gray-200 dark:border-gray-700 rounded-lg text-slate-600 dark:text-slate-400 w-full bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700 focus:ring-primary focus:border-primary"
+                                            placeholder="Date Range" type="text" />
+                                    </div>
+                                </div>
                         </div>
                     </div>
                 </div>
@@ -577,18 +584,32 @@
                             <thead>
                                 <tr
                                     class="bg-slate-50 dark:bg-slate-900/50 border-b border-slate-200 dark:border-slate-700">
-                                    <th class="px-6 py-4 text-left text-xs font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider">Category                                    </th>
-                                    <th class="px-6 py-4 text-left text-xs font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider">Journey
+                                    <th
+                                        class="px-6 py-4 text-left text-xs font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider">
+                                        Category </th>
+                                    <th
+                                        class="px-6 py-4 text-left text-xs font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider">
+                                        Journey
                                     </th>
-                                    <th class="px-6 py-4 text-left text-xs font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider">
+                                    <th
+                                        class="px-6 py-4 text-left text-xs font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider">
                                         Description
                                     </th>
-                                    <th class="px-6 py-4 text-left text-xs font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider">Amount
+                                    <th
+                                        class="px-6 py-4 text-left text-xs font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider">
+                                        Amount
                                     </th>
-                                    <th class="px-6 py-4 text-left text-xs font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider">Date</th>
-                                    <th class="px-6 py-4 text-left text-xs font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider">Receipt
+                                    <th
+                                        class="px-6 py-4 text-left text-xs font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider">
+                                        Date
                                     </th>
-                                    <th class="px-6 py-4 text-left text-xs font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider">Actions
+                                    <th
+                                        class="px-6 py-4 text-left text-xs font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider">
+                                        Receipt
+                                    </th>
+                                    <th
+                                        class="px-6 py-4 text-right text-xs font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider">
+                                        Actions
                                     </th>
                                 </tr>
                             </thead>
@@ -617,6 +638,8 @@
                                             class="text-[var(--primary-green)] hover:text-emerald-700 p-1 rounded-full hover:bg-emerald-50 dark:hover:bg-emerald-900/20 transition-all">
                                             <span class="material-symbols-outlined">edit</span>
                                         </button>
+                                        <button class="p-1 text-red-600 hover:bg-red-50 rounded"><span
+                                                class="material-icons-round">delete</span></button>
                                     </td>
                                 </tr>
                                 <tr
@@ -645,6 +668,8 @@
                                             class="text-[var(--primary-green)] hover:text-emerald-700 p-1 rounded-full hover:bg-emerald-50 dark:hover:bg-emerald-900/20 transition-all">
                                             <span class="material-symbols-outlined">edit</span>
                                         </button>
+                                        <button class="p-1 text-red-600 hover:bg-red-50 rounded"><span
+                                                class="material-icons-round">delete</span></button>
                                     </td>
                                 </tr>
                                 <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
@@ -671,6 +696,8 @@
                                             class="text-[var(--primary-green)] hover:text-emerald-700 p-1 rounded-full hover:bg-emerald-50 dark:hover:bg-emerald-900/20 transition-all">
                                             <span class="material-symbols-outlined">edit</span>
                                         </button>
+                                        <button class="p-1 text-red-600 hover:bg-red-50 rounded"><span
+                                                class="material-icons-round">delete</span></button>
                                     </td>
                                 </tr>
                                 <tr
@@ -684,7 +711,7 @@
                                     <td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400 max-w-xs truncate">
                                         Payment from ABC Company</td>
                                     <td
-                                         class="px-6 py-4 whitespace-nowrap text-sm font-bold text-slate-900 dark:text-white">
+                                        class="px-6 py-4 whitespace-nowrap text-sm font-bold text-slate-900 dark:text-white">
                                         250,000</td>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-600 dark:text-slate-400">
                                         2026-01-30</td>
@@ -698,6 +725,8 @@
                                             class="text-[var(--primary-green)] hover:text-emerald-700 p-1 rounded-full hover:bg-emerald-50 dark:hover:bg-emerald-900/20 transition-all">
                                             <span class="material-symbols-outlined">edit</span>
                                         </button>
+                                        <button class="p-1 text-red-600 hover:bg-red-50 rounded"><span
+                                                class="material-icons-round">delete</span></button>
                                     </td>
                             </tbody>
                         </table>
