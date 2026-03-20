@@ -22,4 +22,4 @@ Any violation of these terms may result in legal action under Sri Lankan law and
 
 For permission or licensing inquiries:
 
-[[nimanwijerathna.com](mailto:nimanwijerathna.com)]
+Email: [nimanwijerathna@gmail.com](mailto:nimanwijerathna@gmail.com)
