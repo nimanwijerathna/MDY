@@ -1,9 +1,25 @@
 # MDY - Design System
 
-This design system is the exclusive property of the Mahamegha Dharmayathra (PVT) LTD. All intellectual property rights, including copyrights and trademarks, are retained by Mahamegha Dharmayathra (PVT) LTD.
+This design system is the exclusive property of Mahamegha Dharmayathra (PVT) LTD. All intellectual property rights, including copyrights and trademarks, are fully reserved.
 
-## Usage Rights
+## License & Usage
 
-Unauthorized copying, reproduction, or distribution of these designs is prohibited. Any use of these materials requires prior written permission from Mahamegha Dharmayathra (PVT) LTD. Violation of these terms may result in legal action in accordance with Sri Lankan law and international copyright regulations.
+This project is **not open source**.
 
-**For permission requests, please contact the Mahamegha Dharmayathra (PVT) LTD directly.**
+Unauthorized copying, reproduction, modification, or distribution of these designs or code is strictly prohibited.
+
+No individual or organization is permitted to use this material for any purpose without **prior written permission**.
+
+## Commercial Use
+
+Commercial usage requires a separate paid license agreement.
+
+## Legal Notice
+
+Any violation of these terms may result in legal action under Sri Lankan law and applicable international copyright regulations.
+
+## Contact
+
+For permission or licensing inquiries:
+
+[[nimanwijerathna.com](mailto:nimanwijerathna.com)]
