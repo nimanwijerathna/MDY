@@ -1,25 +1,49 @@
-# MDY - Design System
+MDY — Design System
 
-This design system is the exclusive property of Mahamegha Dharmayathra (PVT) LTD. All intellectual property rights, including copyrights and trademarks, are fully reserved.
+⚠️ Proprietary Design System — Not Open Source
 
-## License & Usage
+This repository contains visual design assets only, including UI components, layouts, styles, and design specifications (collectively, the “Design System”).
 
-This project is **not open source**.
+No functional application logic, backend systems, or production code are included.
 
-Unauthorized copying, reproduction, modification, or distribution of these designs or code is strictly prohibited.
+All materials are the exclusive property of Mahamegha Dharmayathra (PVT) LTD.
 
-No individual or organization is permitted to use this material for any purpose without **prior written permission**.
+🚫 License & Usage
 
-## Commercial Use
+This project is NOT open source.
 
-Commercial usage requires a separate paid license agreement.
+No rights are granted to use, copy, reproduce, modify, or distribute any part of this Design System without prior written permission from Mahamegha Dharmayathra (PVT) LTD.
 
-## Legal Notice
+This repository is provided for viewing purposes only.
 
-Any violation of these terms may result in legal action under Sri Lankan law and applicable international copyright regulations.
+⛔ Restrictions
 
-## Contact
+Without explicit written authorization, you may NOT:
 
-For permission or licensing inquiries:
+Use the design system in any project (personal or commercial)
+Copy or replicate UI/UX designs, layouts, or styles
+Modify or create derivative designs based on this system
+Distribute, publish, or showcase these assets elsewhere
+Use any part of the design for client or commercial work
+💼 Commercial Licensing
 
-Email: [nimanwijerathna@gmail.com](mailto:nimanwijerathna@gmail.com)
+Any commercial or production use requires a separate paid license agreement issued by:
+
+Niman Wijerathna
+Mahamegha Dharmayathra (PVT) LTD
+⚖️ Legal Notice
+
+All designs are protected under applicable intellectual property and copyright laws.
+
+Unauthorized use, imitation, or reproduction may result in legal action under Sri Lankan and international laws.
+
+📩 Contact
+
+For permissions, licensing, or inquiries:
+
+📧 nimanwijerathna@gmail.com
+
+🔒 Important Note
+
+🚨 This repository is publicly accessible for showcase purposes only.
+No usage rights are granted under any circumstances without written permission.
