@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>MDY | Follower Registration</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon"
+        href="https://mahameghadharmayathra.lk/wp-content/uploads/2023/05/MahameghaDharmayathraLogo.png">
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#1f2937",
+                        "primary-hover": "#111827",
+                        "background-light": "#ffffff",
+                        "background-dark": "#111827",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1f2937",
+                        "input-bg-light": "#f3f4f6",
+                        "input-bg-dark": "#374151",
+                        "border-light": "#e5e7eb",
+                        "border-dark": "#374151",
+                        "text-main-light": "#111827",
+                        "text-main-dark": "#f9fafb",
+                        "text-muted-light": "#6b7280",
+                        "text-muted-dark": "#9ca3af",
+                        "link-blue": "#3b82f6",
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Inter', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                        'xl': "0.75rem",
+                        '2xl': "1rem",
+                    },
+                },
+            },
+        };
+
+        function toggleModal(show) {
+            const modal = document.getElementById('followerModal');
+            if (show) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            } else {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: rgba(156, 163, 175, 0.5);
+            border-radius: 20px;
+        }
+
+        /* Modal Overlay Blur */
+        .modal-overlay {
+            backdrop-filter: blur(4px);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-sans h-screen w-full overflow-hidden flex transition-colors duration-300">
+
+    <div class="hidden lg:block lg:w-1/2 relative h-full">
+        <div class="absolute inset-0 bg-black/10 dark:bg-black/40 z-10 pointer-events-none"></div>
+        <div class="absolute inset-0 w-full h-full overflow-hidden">
+            <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                <source src="resources/bck_v1.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+
+    <div
+        class="w-full lg:w-1/2 h-full flex items-center justify-center p-4 sm:p-8 lg:p-12 relative bg-background-light dark:bg-background-dark">
+        <button aria-label="Toggle Dark Mode"
+            class="absolute top-6 right-6 p-2 rounded-full text-text-muted-light dark:text-text-muted-dark hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors focus:outline-none"
+            onclick="document.documentElement.classList.toggle('dark')">
+            <span class="material-icons text-xl">brightness_medium</span>
+        </button>
+
+        <div
+            class="w-full max-w-md bg-surface-light dark:bg-surface-dark rounded-xl shadow-none lg:shadow-xl lg:border border-border-light dark:border-border-dark p-8 transition-all duration-300">
+            <div class="text-center mb-8">
+                <img src="https://mahameghadharmayathra.lk/wp-content/uploads/2023/05/MahameghaDharmayathraLogo.png"
+                    class="w-24 h-24 mx-auto mb-4 object-contain" alt="Logo">
+                <h1 class="text-2xl font-semibold text-text-main-light dark:text-text-main-dark mb-2">Welcome to MDY
+                </h1>
+                <p class="text-sm text-text-muted-light dark:text-text-muted-dark">Please click the button below to
+                    get registered as a new follower</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-border-light dark:border-border-dark">
+                <button onclick="toggleModal(true)"
+                    class="w-full flex flex-col items-center justify-center p-4 rounded-lg bg-green-300 dark:bg-input-bg-dark hover:bg-green-500 dark:hover:bg-green-600 transition-colors text-center group">
+                    <span
+                        class="material-icons text-2xl text-text-main-light dark:text-text-main-dark group-hover:text-white mb-2">person_add</span>
+                    <span class="ont-medium text-text-main-light dark:text-text-main-dark group-hover:text-white">Create
+                        a New Follower</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="absolute bottom-6 w-full text-center">
+            <p class="text-xs text-text-muted-light dark:text-text-muted-dark opacity-90">© 2019 - 2026 Mahamegha
+                Dharmayathra (PVT) LTD.</p>
+        </div>
+    </div>
+
+    <div id="followerModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6">
+        <div class="absolute inset-0 bg-black/60 modal-overlay" onclick="toggleModal(false)"></div>
+
+        <div
+            class="relative w-full max-w-4xl bg-surface-light dark:bg-surface-dark rounded-2xl shadow-2xl flex flex-col max-h-[90vh] overflow-hidden border border-border-light dark:border-border-dark">
+
+            <div
+                class="px-6 py-4 border-b border-border-light dark:border-border-dark flex items-center justify-between bg-gray-50 dark:bg-gray-800/50">
+                <div class="flex items-center gap-3">
+                    <span class="material-icons text-green-500">how_to_reg</span>
+                    <h2 class="text-xl font-bold text-text-main-light dark:text-text-main-dark">Follower Registration
+                    </h2>
+                </div>
+                <button onclick="toggleModal(false)"
+                    class="p-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-full transition-colors">
+                    <span class="material-icons text-text-muted-light">close</span>
+                </button>
+            </div>
+
+            <div class="flex-1 overflow-y-auto p-6 sm:p-8">
+                <form id="followerForm" class="space-y-8">
+
+                    <div>
+                        <h3
+                            class="text-sm font-bold uppercase tracking-wider text-blue-500 mb-4 flex items-center gap-2">
+                            <span class="material-icons text-sm">person</span> Personal Identity
+                        </h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-semibold mb-1 dark:text-gray-400 uppercase">Surname (As
+                                    in Passport) *</label>
+                                <input type="text" required
+                                    class="w-full px-4 py-2.5 rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-sm focus:ring-2 focus:ring-green-500 transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold mb-1 dark:text-gray-400 uppercase">Other Name
+                                    (As
+                                    in Passport) *</label>
+                                <input type="text" required
+                                    class="w-full px-4 py-2.5 rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-sm focus:ring-2 focus:ring-green-500 transition-all">
+                            </div>
+                            <div class="md:col-span-2">
+                                <label class="block text-xs font-semibold mb-1 dark:text-gray-400 uppercase">Full Name
+                                    *</label>
+                                <input type="text" required
+                                    class="w-full px-4 py-2.5 rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-sm focus:ring-2 focus:ring-green-500 transition-all">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-6 border-t border-border-light dark:border-border-dark">
+                        <h3
+                            class="text-sm font-bold uppercase tracking-wider text-blue-500 mb-4 flex items-center gap-2">
+                            <span class="material-icons text-sm">home</span> Contact & Background
+                        </h3>
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                            <div class="md:col-span-2">
+                                <label class="block text-xs font-semibold mb-1 dark:text-gray-400 uppercase">Address
+                                    Line 1 *</label>
+                                <input type="text" required
+                                    class="w-full px-4 py-2.5 rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-sm focus:ring-2 focus:ring-green-500 transition-all">
+                            </div>
+                            <div class="md:col-span-2">
+                                <label class="block text-xs font-semibold mb-1 dark:text-gray-400 uppercase">Address
+                                    Line 2 *</label>
+                                <input type="text" required
+                                    class="w-full px-4 py-2.5 rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-sm focus:ring-2 focus:ring-green-500 transition-all">
+                            </div>
+                            <div class="md:col-span-2">
+                                <label class="block text-xs font-semibold mb-1 dark:text-gray-400 uppercase">Address
+                                    Line 3</label>
+                                <input type="text" required
+                                    class="w-full px-4 py-2.5 rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-sm focus:ring-2 focus:ring-green-500 transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold mb-1 dark:text-gray-400 uppercase">Birthplace
+                                    *</label>
+                                <input type="text" required
+                                    class="w-full px-4 py-2.5 rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-sm focus:ring-2 focus:ring-green-500 transition-all">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold mb-1 dark:text-gray-400 uppercase">Birth Date
+                                    *</label>
+                                <input type="date" required
+                                    class="w-full px-4 py-2.5 rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-sm focus:ring-2 focus:ring-green-500 transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold mb-1 dark:text-gray-400 uppercase">Mobile 1
+                                    *</label>
+                                <input type="tel" required
+                                    class="w-full px-4 py-2.5 rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-sm focus:ring-2 focus:ring-green-500 transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold mb-1 dark:text-gray-400 uppercase">Mobile 2
+                                    (Whatsapp)</label>
+                                <input type="tel"
+                                    class="w-full px-4 py-2.5 rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-sm focus:ring-2 focus:ring-green-500 transition-all">
+                            </div>
+                            <div class="md:col-span-2">
+                                <label
+                                    class="block text-xs font-semibold mb-1 dark:text-gray-400 uppercase">Email</label>
+                                <input type="email"
+                                    class="w-full px-4 py-2.5 rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-sm focus:ring-2 focus:ring-green-500 transition-all">
+                            </div>
+                            <div class="md:col-span-2">
+                                <label class="block text-xs font-semibold mb-1 dark:text-gray-400 uppercase">Occupation
+                                    *</label>
+                                <input type="text" required
+                                    class="w-full px-4 py-2.5 rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-sm focus:ring-2 focus:ring-green-500 transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold mb-1 dark:text-gray-400 uppercase">Gender
+                                    *</label>
+                                <select
+                                    class="w-full px-4 py-2.5 rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-sm focus:ring-2 focus:ring-green-500 transition-all">
+                                    <option>Male</option>
+                                    <option>Female</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold mb-1 dark:text-gray-400 uppercase">Civil
+                                    Status *</label>
+                                <select
+                                    class="w-full px-4 py-2.5 rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-sm focus:ring-2 focus:ring-green-500 transition-all">
+                                    <option>Married</option>
+                                    <option>Single</option>
+                                    <option>Divorced</option>
+                                    <option>Rev</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-6 border-t border-border-light dark:border-border-dark">
+                        <h3
+                            class="text-sm font-bold uppercase tracking-wider text-blue-500 mb-4 flex items-center gap-2">
+                            <span class="material-icons text-sm">groups</span> Family & Background
+                        </h3>
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                            <div class="md:col-span-2">
+                                <label class="block text-xs font-semibold mb-1 dark:text-gray-400 uppercase">Spouse's
+                                    Name</label>
+                                <input type="text" required
+                                    class="w-full px-4 py-2.5 rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-sm focus:ring-2 focus:ring-green-500 transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold mb-1 dark:text-gray-400 uppercase">Spouse's
+                                    Birthplace</label>
+                                <input type="text" required
+                                    class="w-full px-4 py-2.5 rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-sm focus:ring-2 focus:ring-green-500 transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold mb-1 dark:text-gray-400 uppercase">Spouse's
+                                    Occupation</label>
+                                <input type="text" required
+                                    class="w-full px-4 py-2.5 rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-sm focus:ring-2 focus:ring-green-500 transition-all">
+                            </div>
+                            <div class="md:col-span-2">
+                                <label class="block text-xs font-semibold mb-1 dark:text-gray-400 uppercase">Father's
+                                    Name *</label>
+                                <input type="text" required
+                                    class="w-full px-4 py-2.5 rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-sm focus:ring-2 focus:ring-green-500 transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold mb-1 dark:text-gray-400 uppercase">Father's
+                                    Birthplace</label>
+                                <input type="tel" required
+                                    class="w-full px-4 py-2.5 rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-sm focus:ring-2 focus:ring-green-500 transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold mb-1 dark:text-gray-400 uppercase">Father's
+                                    Occupation</label>
+                                <input type="tel"
+                                    class="w-full px-4 py-2.5 rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-sm focus:ring-2 focus:ring-green-500 transition-all">
+                            </div>
+                            <div class="md:col-span-2">
+                                <label class="block text-xs font-semibold mb-1 dark:text-gray-400 uppercase">Mother's
+                                    Name *</label>
+                                <input type="email"
+                                    class="w-full px-4 py-2.5 rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-sm focus:ring-2 focus:ring-green-500 transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold mb-1 dark:text-gray-400 uppercase">Mother's
+                                    Birthplace</label>
+                                <input type="text" required
+                                    class="w-full px-4 py-2.5 rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-sm focus:ring-2 focus:ring-green-500 transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold mb-1 dark:text-gray-400 uppercase">Mother's
+                                    Occupation</label>
+                                <input type="tel"
+                                    class="w-full px-4 py-2.5 rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-sm focus:ring-2 focus:ring-green-500 transition-all">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-6 border-t border-border-light dark:border-border-dark">
+                        <h3
+                            class="text-sm font-bold uppercase tracking-wider text-blue-500 mb-4 flex items-center gap-2">
+                            <span class="material-icons text-sm">card_travel</span> Identity Documents
+                        </h3>
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                            <div>
+                                <label class="block text-xs font-semibold mb-1 dark:text-gray-400 uppercase">Passport No
+                                    *</label>
+                                <input type="text" required
+                                    class="w-full px-4 py-2.5 rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-sm focus:ring-2 focus:ring-green-500 transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold mb-1 dark:text-gray-400 uppercase">Issue Date
+                                    *</label>
+                                <input type="date" required
+                                    class="w-full px-4 py-2.5 rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-sm focus:ring-2 focus:ring-green-500 transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold mb-1 dark:text-gray-400 uppercase">Expiry Date
+                                    *</label>
+                                <input type="date" required
+                                    class="w-full px-4 py-2.5 rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-sm focus:ring-2 focus:ring-green-500 transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold mb-1 dark:text-gray-400 uppercase">NIC No
+                                    *</label>
+                                <input type="text" required
+                                    class="w-full px-4 py-2.5 rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-sm focus:ring-2 focus:ring-green-500 transition-all">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-6 border-t border-border-light dark:border-border-dark">
+                        <h3
+                            class="text-sm font-bold uppercase tracking-wider text-blue-500 mb-4 flex items-center gap-2">
+                            <span class="material-icons text-sm">man</span> Guardian & Background
+                        </h3>
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                            <div>
+                                <label class="block text-xs font-semibold mb-1 dark:text-gray-400 uppercase">Guardian
+                                    Name</label>
+                                <input type="text" required
+                                    class="w-full px-4 py-2.5 rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-sm focus:ring-2 focus:ring-green-500 transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold mb-1 dark:text-gray-400 uppercase">Guardian
+                                    Mobile</label>
+                                <input type="text" required
+                                    class="w-full px-4 py-2.5 rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-sm focus:ring-2 focus:ring-green-500 transition-all">
+                            </div>
+                            <div class="md:col-span-2">
+                                <label class="block text-xs font-semibold mb-1 dark:text-gray-400 uppercase">Guardian
+                                    Address</label>
+                                <input type="text" required
+                                    class="w-full px-4 py-2.5 rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-sm focus:ring-2 focus:ring-green-500 transition-all">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-6 border-t border-border-light dark:border-border-dark">
+                        <h3
+                            class="text-sm font-bold uppercase tracking-wider text-blue-500 mb-4 flex items-center gap-2">
+                            <span class="material-icons text-sm">medical_services</span> Health Information
+                        </h3>
+                        <div
+                            class="grid grid-cols-2 md:grid-cols-4 gap-4 bg-gray-50 dark:bg-gray-800/30 p-4 rounded-xl">
+                            <label class="flex items-center gap-2 text-sm cursor-pointer"><input type="checkbox"
+                                    class="rounded text-green-500"> Diabetes</label>
+                            <label class="flex items-center gap-2 text-sm cursor-pointer"><input type="checkbox"
+                                    class="rounded text-green-500"> High Blood Pressure</label>
+                            <label class="flex items-center gap-2 text-sm cursor-pointer"><input type="checkbox"
+                                    class="rounded text-green-500"> Asthma</label>
+                            <label class="flex items-center gap-2 text-sm cursor-pointer"><input type="checkbox"
+                                    class="rounded text-green-500"> Apoplexy</label>
+                            <label class="flex items-center gap-2 text-sm cursor-pointer"><input type="checkbox"
+                                    class="rounded text-green-500"> Heart Disease</label>
+                            <label class="flex items-center gap-2 text-sm cursor-pointer"><input type="checkbox"
+                                    class="rounded text-green-500"> Arthritis</label>
+                            <label class="flex items-center gap-2 text-sm cursor-pointer"><input type="checkbox"
+                                    class="rounded text-green-500"> Heart or Other Operation</label>
+                            <label class="flex items-center gap-2 text-sm cursor-pointer"><input type="checkbox"
+                                    class="rounded text-green-500"> Artificial Hand/Leg</label>
+                            <label class="flex items-center gap-2 text-sm cursor-pointer"><input type="checkbox"
+                                    class="rounded text-green-500"> Mental Illness</label>
+                            <label class="flex items-center gap-2 text-sm cursor-pointer">
+                                <input type="checkbox" class="rounded text-green-500"
+                                    onchange="document.getElementById('otherHealthInput').classList.toggle('hidden')">
+                                Other
+                            </label>
+                            <input type="text" id="otherHealthInput" placeholder="Please specify..."
+                                class="hidden border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-sm focus:ring-2 focus:ring-green-500 transition-all">
+                        </div>
+                    </div>
+                    <div class="pt-6 border-t border-border-light dark:border-border-dark">
+                        <h3
+                            class="text-sm font-bold uppercase tracking-wider text-blue-500 mb-4 flex items-center gap-2">
+                            <span class="material-icons text-sm">chat</span> Other Information
+                        </h3>
+                        <div
+                            class="grid grid-cols-2 md:grid-cols-4 gap-4 bg-gray-50 dark:bg-gray-800/30 p-4 rounded-xl">
+                            <label class="flex items-center gap-2 text-sm cursor-pointer"><input type="checkbox"
+                                    class="rounded text-green-500"> Forces</label>
+                            <label class="flex items-center gap-2 text-sm cursor-pointer"><input type="checkbox"
+                                    class="rounded text-green-500"> Forces Removal</label>
+                            <label class="flex items-center gap-2 text-sm cursor-pointer"><input type="checkbox"
+                                    class="rounded text-green-500"> Court Order</label>
+                            <label class="flex items-center gap-2 text-sm cursor-pointer">
+                                <input type="checkbox" class="rounded text-green-500"
+                                    onchange="document.getElementById('otherHealthInput1').classList.toggle('hidden')">
+                                Other
+                            </label>
+                            <input type="text" id="otherHealthInput1" placeholder="Please specify..."
+                                class="hidden border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-sm focus:ring-2 focus:ring-green-500 transition-all">
+                       
+                        </div>
+                    </div>
+                    <div class="pt-6 border-t border-border-light dark:border-border-dark">
+                        <h3
+                            class="text-sm font-bold uppercase tracking-wider text-blue-500 mb-4 flex items-center gap-2">
+                            <span class="material-icons text-sm">cloud_upload</span> File Uploads
+                        </h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div
+                                class="p-4 border-2 border-dashed border-border-light dark:border-border-dark rounded-xl text-center">
+                                <label class="block text-xs font-bold mb-2 uppercase">2x2inch Image *</label>
+                                <input type="file"
+                                    class="text-xs text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+                            </div>
+                            <div
+                                class="p-4 border-2 border-dashed border-border-light dark:border-border-dark rounded-xl text-center">
+                                <label class="block text-xs font-bold mb-2 uppercase">Birth Certificate</label>
+                                <input type="file"
+                                    class="text-xs text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+                            </div>
+                            <div
+                                class="p-4 border-2 border-dashed border-border-light dark:border-border-dark rounded-xl text-center">
+                                <label class="block text-xs font-bold mb-2 uppercase">National Identification Card
+                                    (NIC)</label>
+                                <input type="file"
+                                    class="text-xs text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+                            </div>
+                            <div
+                                class="p-4 border-2 border-dashed border-border-light dark:border-border-dark rounded-xl text-center">
+                                <label class="block text-xs font-bold mb-2 uppercase">Passport *</label>
+                                <input type="file"
+                                    class="text-xs text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+                            </div>
+                            <div
+                                class="p-4 border-2 border-dashed border-border-light dark:border-border-dark rounded-xl text-center">
+                                <label class="block text-xs font-bold mb-2 uppercase">Old Passport</label>
+                                <input type="file"
+                                    class="text-xs text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+                            </div>
+                            <div
+                                class="p-4 border-2 border-dashed border-border-light dark:border-border-dark rounded-xl text-center">
+                                <label class="block text-xs font-bold mb-2 uppercase">Medical Document</label>
+                                <input type="file"
+                                    class="text-xs text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+                            </div>
+                            <div
+                                class="p-4 border-2 border-dashed border-border-light dark:border-border-dark rounded-xl text-center">
+                                <label class="block text-xs font-bold mb-2 uppercase">Police Document</label>
+                                <input type="file"
+                                    class="text-xs text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+                            </div>
+                            <div
+                                class="p-4 border-2 border-dashed border-border-light dark:border-border-dark rounded-xl text-center">
+                                <label class="block text-xs font-bold mb-2 uppercase">Other Document</label>
+                                <input type="file"
+                                    class="text-xs text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div
+                class="px-6 py-4 border-t border-border-light dark:border-border-dark bg-gray-50 dark:bg-gray-800/50 flex justify-end gap-3">
+                <button onclick="toggleModal(false)"
+                    class="px-6 py-2 text-sm font-medium text-text-muted-light hover:text-text-main-light transition-colors">Cancel</button>
+                <button type="button" onclick="showConfirmDialog()"
+                    class="px-8 py-2 bg-green-500 hover:bg-green-600 text-white text-sm font-bold rounded-lg shadow-lg shadow-green-500/20 transition-all transform hover:-translate-y-0.5">Save</button>
+
+                <div id="confirmDialog" class="fixed inset-0 z-[60] hidden items-center justify-center p-4">
+                    <div class="absolute inset-0 bg-black/60 modal-overlay" onclick="hideConfirmDialog()"></div>
+                    <div
+                        class="relative bg-surface-light dark:bg-surface-dark rounded-2xl shadow-2xl p-6 max-w-sm border border-border-light dark:border-border-dark">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="material-icons text-yellow-500 text-2xl">info</span>
+                            <h3 class="text-lg font-bold text-text-main-light dark:text-text-main-dark">Confirm
+                                Submission</h3>
+                        </div>
+                        <p class="text-text-muted-light dark:text-text-muted-dark mb-6">Please review your information
+                            carefully before saving. Are you sure you want to proceed?</p>
+                        <div class="flex justify-end gap-3">
+                            <button onclick="hideConfirmDialog()"
+                                class="px-4 py-2 text-sm font-medium text-text-muted-light hover:text-text-main-light transition-colors">No,
+                                Review Again</button>
+                            <button onclick="submitForm()"
+                                class="px-6 py-2 bg-green-500 hover:bg-green-600 text-white text-sm font-bold rounded-lg transition-all">Yes,
+                                Submit</button>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    function showConfirmDialog() {
+                        document.getElementById('confirmDialog').classList.remove('hidden');
+                        document.getElementById('confirmDialog').classList.add('flex');
+                    }
+
+                    function hideConfirmDialog() {
+                        document.getElementById('confirmDialog').classList.add('hidden');
+                        document.getElementById('confirmDialog').classList.remove('flex');
+                    }
+
+                    function submitForm() {
+                        document.getElementById('followerForm').submit();
+                        hideConfirmDialog();
+                    }
+                </script>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
