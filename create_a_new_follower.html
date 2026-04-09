@@ -437,7 +437,7 @@
                             </label>
                             <input type="text" id="otherHealthInput1" placeholder="Please specify..."
                                 class="hidden border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-sm focus:ring-2 focus:ring-green-500 transition-all">
-                       
+
                         </div>
                     </div>
                     <div class="pt-6 border-t border-border-light dark:border-border-dark">
@@ -449,52 +449,229 @@
                             <div
                                 class="p-4 border-2 border-dashed border-border-light dark:border-border-dark rounded-xl text-center">
                                 <label class="block text-xs font-bold mb-2 uppercase">2x2inch Image *</label>
-                                <input type="file"
+                                <div
+                                    class="mb-3 flex items-center justify-center w-32 h-32 mx-auto bg-gray-100 dark:bg-gray-700 rounded-lg">
+                                    <img id="imagePreview" src="" alt="Image preview"
+                                        class="w-32 h-32 object-cover rounded hidden">
+                                    <span id="imagePlaceholder" class="material-icons text-gray-400">image</span>
+                                </div>
+                                <input type="file" accept=".jpg,.jpeg,.png" required onchange="previewImage(this)"
                                     class="text-xs text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+                                <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">JPG, JPEG, or PNG only</p>
                             </div>
+
+                            <script>
+                                function previewImage(input) {
+                                    const preview = document.getElementById('imagePreview');
+                                    const placeholder = document.getElementById('imagePlaceholder');
+
+                                    if (input.files && input.files[0]) {
+                                        const reader = new FileReader();
+                                        reader.onload = function (e) {
+                                            preview.src = e.target.result;
+                                            preview.classList.remove('hidden');
+                                            placeholder.classList.add('hidden');
+                                        };
+                                        reader.readAsDataURL(input.files[0]);
+                                    }
+                                }
+                            </script>
                             <div
                                 class="p-4 border-2 border-dashed border-border-light dark:border-border-dark rounded-xl text-center">
                                 <label class="block text-xs font-bold mb-2 uppercase">Birth Certificate</label>
-                                <input type="file"
+                                <div
+                                    class="mb-3 flex items-center justify-center w-32 h-32 mx-auto bg-gray-100 dark:bg-gray-700 rounded-lg">
+                                    <button id="pdfPreviewBtn" type="button"
+                                        class="hidden px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white text-xs font-bold rounded-lg transition-all">View
+                                        File</button>
+                                    <span id="pdfPlaceholder" class="material-icons text-gray-400">description</span>
+                                </div>
+                                <input type="file" accept=".pdf,.jpg,.jpeg,.png" onchange="previewPDF(this)"
                                     class="text-xs text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+                                <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">PDF, JPG, JPEG, or PNG only</p>
                             </div>
+
+                            <script>
+                                let fileData = null;
+                                function previewPDF(input) {
+                                    const btn = document.getElementById('pdfPreviewBtn');
+                                    const placeholder = document.getElementById('pdfPlaceholder');
+
+                                    if (input.files && input.files[0]) {
+                                        fileData = input.files[0];
+                                        btn.classList.remove('hidden');
+                                        placeholder.classList.add('hidden');
+                                        btn.onclick = () => window.open(URL.createObjectURL(fileData));
+                                    }
+                                }
+                            </script>
                             <div
                                 class="p-4 border-2 border-dashed border-border-light dark:border-border-dark rounded-xl text-center">
                                 <label class="block text-xs font-bold mb-2 uppercase">National Identification Card
                                     (NIC)</label>
-                                <input type="file"
+                                <div
+                                    class="mb-3 flex items-center justify-center w-32 h-32 mx-auto bg-gray-100 dark:bg-gray-700 rounded-lg">
+                                    <button id="nicPreviewBtn" type="button"
+                                        class="hidden px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white text-xs font-bold rounded-lg transition-all">View
+                                        File</button>
+                                    <img id="nicImagePreview" src="" alt="NIC preview"
+                                        class="w-32 h-32 object-cover rounded hidden">
+                                    <span id="nicPlaceholder" class="material-icons text-gray-400">description</span>
+                                </div>
+                                <input type="file" accept=".pdf,.jpg,.jpeg,.png"
+                                    onchange="previewImageOrFile(this, 'nicImagePreview', 'nicPlaceholder')"
                                     class="text-xs text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+                                <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">PDF, JPG, JPEG, or PNG only</p>
                             </div>
                             <div
                                 class="p-4 border-2 border-dashed border-border-light dark:border-border-dark rounded-xl text-center">
                                 <label class="block text-xs font-bold mb-2 uppercase">Passport *</label>
-                                <input type="file"
+                                <div
+                                    class="mb-3 flex items-center justify-center w-32 h-32 mx-auto bg-gray-100 dark:bg-gray-700 rounded-lg">
+                                    <img id="passportPreview" src="" alt="Passport preview"
+                                        class="w-32 h-32 object-cover rounded hidden">
+                                    <span id="passportPlaceholder" class="material-icons text-gray-400">image</span>
+                                </div>
+                                <input type="file" accept=".jpg,.jpeg,.png,.pdf" required
+                                    onchange="previewImageOrFile(this, 'passportPreview', 'passportPlaceholder')"
                                     class="text-xs text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+                                <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">PDF, JPG, JPEG, or PNG only</p>
                             </div>
                             <div
                                 class="p-4 border-2 border-dashed border-border-light dark:border-border-dark rounded-xl text-center">
                                 <label class="block text-xs font-bold mb-2 uppercase">Old Passport</label>
-                                <input type="file"
+                                <div
+                                    class="mb-3 flex items-center justify-center w-32 h-32 mx-auto bg-gray-100 dark:bg-gray-700 rounded-lg">
+                                    <img id="oldPassportPreview" src="" alt="Old Passport preview"
+                                        class="w-32 h-32 object-cover rounded hidden">
+                                    <span id="oldPassportPlaceholder" class="material-icons text-gray-400">image</span>
+                                </div>
+                                <input type="file" accept=".jpg,.jpeg,.png,.pdf"
+                                    onchange="previewImageOrFile(this, 'oldPassportPreview', 'oldPassportPlaceholder')"
                                     class="text-xs text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+                                <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">PDF, JPG, JPEG, or PNG only</p>
                             </div>
                             <div
                                 class="p-4 border-2 border-dashed border-border-light dark:border-border-dark rounded-xl text-center">
                                 <label class="block text-xs font-bold mb-2 uppercase">Medical Document</label>
-                                <input type="file"
+                                <div
+                                    class="mb-3 flex items-center justify-center w-32 h-32 mx-auto bg-gray-100 dark:bg-gray-700 rounded-lg">
+                                    <button id="medicalPreviewBtn" type="button"
+                                        class="hidden px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white text-xs font-bold rounded-lg transition-all">View
+                                        File</button>
+                                    <span id="medicalPlaceholder"
+                                        class="material-icons text-gray-400">description</span>
+                                </div>
+                                <input type="file" accept=".pdf"
+                                    onchange="previewFile(this, 'medicalPreviewBtn', 'medicalPlaceholder')"
                                     class="text-xs text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+                                <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">PDF only</p>
                             </div>
                             <div
                                 class="p-4 border-2 border-dashed border-border-light dark:border-border-dark rounded-xl text-center">
                                 <label class="block text-xs font-bold mb-2 uppercase">Police Document</label>
-                                <input type="file"
+                                <div
+                                    class="mb-3 flex items-center justify-center w-32 h-32 mx-auto bg-gray-100 dark:bg-gray-700 rounded-lg">
+                                    <button id="policePreviewBtn" type="button"
+                                        class="hidden px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white text-xs font-bold rounded-lg transition-all">View
+                                        File</button>
+                                    <span id="policePlaceholder" class="material-icons text-gray-400">description</span>
+                                </div>
+                                <input type="file" accept=".pdf"
+                                    onchange="previewFile(this, 'policePreviewBtn', 'policePlaceholder')"
                                     class="text-xs text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+                                <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">PDF only</p>
                             </div>
-                            <div
-                                class="p-4 border-2 border-dashed border-border-light dark:border-border-dark rounded-xl text-center">
-                                <label class="block text-xs font-bold mb-2 uppercase">Other Document</label>
-                                <input type="file"
-                                    class="text-xs text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+                            <div id="otherDocumentsContainer" class="space-y-4">
+                                <div
+                                    class="p-4 border-2 border-dashed border-border-light dark:border-border-dark rounded-xl text-center">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <label class="block text-xs font-bold uppercase">Other Document</label>
+                                        <button type="button" onclick="addOtherDocument()"
+                                            class="px-4 py-2 bg-blue-500 hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-700 text-white text-sm font-bold rounded-lg transition-all flex items-center justify-center gap-2">
+                                            <span class="material-icons text-sm">add_circle</span>
+                                        </button>
+                                        <button type="button" onclick="this.parentElement.parentElement.remove()"
+                                            class="text-red-500 hover:text-red-700 transition-colors hidden"
+                                            id="removeFirstDoc">
+                                            <span class="material-icons text-sm">delete</span>
+                                        </button>
+                                    </div>
+                                    <div
+                                        class="mb-3 flex items-center justify-center w-32 h-32 mx-auto bg-gray-100 dark:bg-gray-700 rounded-lg">
+                                        <img class="otherDocPreview w-32 h-32 object-cover rounded hidden" src=""
+                                            alt="Other Document preview">
+                                        <span class="otherDocPlaceholder material-icons text-gray-400">image</span>
+                                    </div>
+                                    <input type="file" accept=".jpg,.jpeg,.png,.pdf"
+                                        onchange="previewImageOrFile(this, this.parentElement.querySelector('.otherDocPreview'), this.parentElement.querySelector('.otherDocPlaceholder'))"
+                                        class="text-xs text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+                                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">PDF, JPG, JPEG, or PNG only
+                                    </p>
+                                </div>
                             </div>
+
+                            <script>
+                                function addOtherDocument() {
+                                    const container = document.getElementById('otherDocumentsContainer');
+                                    const newDoc = document.createElement('div');
+                                    newDoc.className = 'p-4 border-2 border-dashed border-border-light dark:border-border-dark rounded-xl text-center mb-4';
+                                    newDoc.innerHTML = `
+                                        <div class="flex items-center justify-between mb-2">
+                                            <label class="block text-xs font-bold uppercase">Other Document</label>
+                                            <button type="button" onclick="this.parentElement.parentElement.remove()" class="text-red-500 hover:text-red-700 transition-colors">
+                                                <span class="material-icons text-sm">delete</span>
+                                            </button>
+                                        </div>
+                                        <div class="mb-3 flex items-center justify-center w-32 h-32 mx-auto bg-gray-100 dark:bg-gray-700 rounded-lg">
+                                            <img class="otherDocPreview w-32 h-32 object-cover rounded hidden" src="" alt="Other Document preview">
+                                            <span class="otherDocPlaceholder material-icons text-gray-400">image</span>
+                                        </div>
+                                        <input type="file" accept=".jpg,.jpeg,.png,.pdf" onchange="previewImageOrFile(this, this.parentElement.querySelector('.otherDocPreview'), this.parentElement.querySelector('.otherDocPlaceholder'))"
+                                            class="text-xs text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+                                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">PDF, JPG, JPEG, or PNG only</p>
+                                    `;
+                                    container.appendChild(newDoc);
+                                }
+                            </script>
+
+                            <script>
+                                let fileDataMap = {};
+
+                                function previewFile(input, btnId, placeholderId) {
+                                    const btn = document.getElementById(btnId);
+                                    const placeholder = document.getElementById(placeholderId);
+
+                                    if (input.files && input.files[0]) {
+                                        fileDataMap[btnId] = input.files[0];
+                                        btn.classList.remove('hidden');
+                                        placeholder.classList.add('hidden');
+                                        btn.onclick = () => window.open(URL.createObjectURL(fileDataMap[btnId]));
+                                    }
+                                }
+
+                                function previewImageOrFile(input, imgId, placeholderId) {
+                                    const preview = document.getElementById(imgId);
+                                    const placeholder = document.getElementById(placeholderId);
+
+                                    if (input.files && input.files[0]) {
+                                        const file = input.files[0];
+                                        if (file.type.startsWith('image/')) {
+                                            const reader = new FileReader();
+                                            reader.onload = function (e) {
+                                                preview.src = e.target.result;
+                                                preview.classList.remove('hidden');
+                                                placeholder.classList.add('hidden');
+                                            };
+                                            reader.readAsDataURL(file);
+                                        } else if (file.type === 'application/pdf') {
+                                            preview.classList.add('hidden');
+                                            placeholder.classList.remove('hidden');
+                                            placeholder.textContent = 'description';
+                                        }
+                                    }
+                                }
+                            </script>
                         </div>
                     </div>
                 </form>
