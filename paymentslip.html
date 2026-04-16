@@ -340,23 +340,23 @@
               <div
                 class="bg-surface-light dark:bg-surface-dark rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm overflow-hidden">
 
-                <!-- Header -->
                 <div
                   class="px-6 py-5 border-b border-gray-200 dark:border-gray-700/60 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-                  <div class="flex items-center">
-                    <div>
-                      <h4 class="text-lg font-bold text-gray-900 dark:text-white">Transaction Configuration</h4>
+                  <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
+                      <span class="material-symbols-outlined text-primary text-xl">payments</span>
                     </div>
+                    <h4 class="text-lg font-bold text-gray-900 dark:text-white">Transaction Configuration</h4>
                   </div>
                   <div
                     class="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700">
                     <span
-                      class="text-[10px] font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide">Total</span>
+                      class="text-[10px] font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide">Total
+                      Package</span>
                     <span class="font-mono font-bold text-primary">Rs. 275,000.00</span>
                   </div>
                 </div>
 
-                <!-- Context Info Cards -->
                 <div class="px-6 pt-5 pb-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div
                     class="flex items-center gap-3 p-3 rounded-xl bg-gray-50 dark:bg-gray-800/40 border border-gray-200 dark:border-gray-700/50">
@@ -384,308 +384,295 @@
                   </div>
                 </div>
 
-                <!-- Form Fields -->
                 <div class="px-6 pb-6 space-y-5">
                   <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-
-                    <!-- Payment Category -->
                     <div class="space-y-2">
                       <label
                         class="text-xs font-semibold text-gray-600 dark:text-gray-300 uppercase tracking-wide flex items-center gap-1.5">
                         <span class="material-symbols-outlined text-sm text-primary">category</span> Payment Category
-                        <span class="text-red-500">*</span>
                       </label>
                       <div class="relative">
                         <select
-                          class="w-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg px-3.5 py-2.5 pr-9 text-sm font-medium focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all appearance-none cursor-pointer text-gray-900 dark:text-white"
-                          required>
-                          <option value="">Select category</option>
+                          class="w-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg px-3.5 py-2.5 pr-9 text-sm font-medium focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all appearance-none cursor-pointer text-gray-900 dark:text-white">
                           <option value="installment">Journey Installment</option>
-                          <option value="monthly">Monthly Contribution</option>
-                          <option value="donation">General Donation</option>
-                          <option value="event">Special Event Fund</option>
+                          <option value="donation">Donation</option>
                         </select>
                         <span
                           class="absolute right-3.5 top-1/2 -translate-y-1/2 material-symbols-outlined text-gray-400 text-base pointer-events-none">expand_more</span>
                       </div>
                     </div>
 
-                    <!-- Payment Date -->
                     <div class="space-y-2">
                       <label
                         class="text-xs font-semibold text-gray-600 dark:text-gray-300 uppercase tracking-wide flex items-center gap-1.5">
-                        <span class="material-symbols-outlined text-sm text-primary">calendar_today</span> Payment Date
-                        <span class="text-red-500">*</span>
+                        <span class="material-symbols-outlined text-sm text-primary">monetization_on</span> Amount (LKR)
                       </label>
-                      <input
-                        class="w-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg px-3.5 py-2.5 text-sm font-medium focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all text-gray-900 dark:text-white"
-                        type="date" value="2024-05-24" required />
-                    </div>
-                  </div>
-
-                  <!-- Payable Amount -->
-                  <div class="space-y-2">
-                    <label
-                      class="text-xs font-semibold text-gray-600 dark:text-gray-300 uppercase tracking-wide flex items-center gap-1.5">
-                      <span class="material-symbols-outlined text-sm text-primary">monetization_on</span> Amount to Pay
-                      (LKR)
-                      <span class="text-red-500">*</span>
-                    </label>
-                    <div class="relative group">
-                      <span
-                        class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500 font-medium text-base">Rs.</span>
-                      <input id="amountInput"
-                        class="w-full pl-14 pr-28 py-3 bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 focus:border-primary rounded-lg text-xl font-bold text-gray-900 dark:text-white focus:ring-4 focus:ring-primary/20 transition-all placeholder-gray-400"
-                        type="number" value="55000.00" min="0" step="100" required />
-
-                      <!-- Quick Actions -->
-                      <div
-                        class="absolute right-2 top-1/2 -translate-y-1/2 flex bg-gray-100 dark:bg-gray-700 rounded-md p-0.5 border border-gray-200 dark:border-gray-600">
-                        <button type="button"
-                          class="quick-add px-2.5 py-1.5 text-[10px] font-bold text-gray-600 
-                          dark:text-gray-300 hover:text-primary hover:bg-white dark:hover:bg-gray-600 
-                          rounded transition-colors">Clear</button>
-                      </div>
-                    </div>
-                    <div class="flex justify-between items-center mt-2 px-1">
-                      <span class="text-xs font-medium text-gray-500 dark:text-gray-400">Remaining Balance:</span>
-                      <span class="font-mono font-bold text-red-500">Rs. 220,000.00</span>
-                    </div>
-                  </div>
-
-                  <!-- Installments & Notes -->
-                  <div
-                    class="pt-4 border-t border-gray-200 dark:border-gray-700/60 grid grid-cols-1 lg:grid-cols-3 gap-6">
-
-                    <!-- Installment Plan -->
-                    <div class="lg:col-span-3 space-y-3">
-                      <label
-                        class="text-xs font-semibold text-gray-600 dark:text-gray-300 uppercase tracking-wide flex items-center gap-1.5">
-                        <span class="material-symbols-outlined text-sm text-primary">repeat</span> Select Installment
-                        <span class="text-red-500">*</span>
-                      </label>
-                      <div class="flex flex-wrap gap-2">
-                        <button
-                          class="installment-btn flex-1 min-w-[90px] py-2.5 bg-primary text-white rounded-lg text-xs font-bold transition-all shadow-sm border-2 border-primary">
-                          <span class="block text-[9px] opacity-90 uppercase tracking-wider mb-0.5">Current</span>
-                          1st Payment
-                        </button>
-                        <button
-                          class="installment-btn flex-1 min-w-[90px] py-2.5 bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded-lg text-xs font-bold hover:bg-gray-50 dark:hover:bg-gray-700 transition-all border-2 border-gray-300 dark:border-gray-600">
-                          <span class="block text-[9px] opacity-70 uppercase tracking-wider mb-0.5">Next</span>
-                          2nd Payment
-                        </button>
-                        <button
-                          class="installment-btn flex-1 min-w-[90px] py-2.5 bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded-lg text-xs font-bold hover:bg-gray-50 dark:hover:bg-gray-700 transition-all border-2 border-gray-300 dark:border-gray-600">
-                          <span class="block text-[9px] opacity-70 uppercase tracking-wider mb-0.5">Later</span>
-                          3rd Payment
-                        </button>
-                        <button
-                          class="installment-btn flex-1 min-w-[90px] py-2.5 bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded-lg text-xs font-bold hover:bg-gray-50 dark:hover:bg-gray-700 transition-all border-2 border-gray-300 dark:border-gray-600">
-                          <span class="block text-[9px] opacity-70 uppercase tracking-wider mb-0.5">Later</span>
-                          4th Payment
-                        </button>
-                        <button
-                          class="installment-btn flex-1 min-w-[90px] py-2.5 bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded-lg text-xs font-bold hover:bg-gray-50 dark:hover:bg-gray-700 transition-all border-2 border-gray-300 dark:border-gray-600">
-                          <span class="block text-[9px] opacity-70 uppercase tracking-wider mb-0.5">Final</span>
-                          5th Payment
-                        </button>
-                      </div>
-                    </div>
-
-                    <!-- Notes -->
-                    <div class="space-y-2 lg:col-span-3 ">
-                      <label
-                        class="text-xs font-semibold text-gray-600 dark:text-gray-300 uppercase tracking-wide flex items-center gap-1.5">
-                        <span class="material-symbols-outlined text-sm text-primary">note_alt</span> Remarks
-                      </label>
-                      <textarea
-                        class="w-full h-24 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg px-3.5 py-2.5 text-sm focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all placeholder-gray-400 text-gray-900 dark:text-white resize-none"
-                        placeholder="Transaction Notes..."></textarea>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- RIGHT SIDEBAR - PROFESSIONAL BANKING STYLE -->
-            <aside class="lg:col-span-4 space-y-5">
-              <div class="sticky top-6 space-y-5">
-
-                <!-- Transaction Summary Card - Banking Premium -->
-                <div
-                  class="bg-gradient-to-br from-gray-900 to-gray-800 dark:from-gray-800 dark:to-gray-900 text-white rounded-xl shadow-lg border border-gray-700/50 overflow-hidden">
-                  <div class="p-4 border-b border-gray-700/50 flex items-center justify-between">
-                    <h4 class="font-bold text-base flex items-center gap-2">
-                      <span class="material-symbols-outlined text-emerald-400">verified_user</span>
-                      Transaction Summary
-                    </h4>
-                    <span
-                      class="px-2 py-0.5 bg-emerald-500/20 text-emerald-300 text-[10px] font-bold uppercase rounded-full border border-emerald-500/30 animate-pulse-success">Verified</span>
-                  </div>
-
-                  <div class="p-4 space-y-4">
-                    <!-- Amount Display - Banking Style -->
-                    <div class="text-center py-3.5 bg-gray-800/60 rounded-lg border border-gray-700/40">
-                      <p class="text-[10px] text-gray-400 uppercase tracking-wider mb-1">Total Amount</p>
-                      <p id="displayAmount" class="text-3xl font-extrabold text-emerald-400 font-mono tracking-tight">
-                        Rs. 275,000.00</p>
-                    </div>
-
-                    <div class="space-y-2.5 pt-1">
-                      <div
-                        class="flex justify-between items-center py-2 px-2.5 bg-gray-800/40 rounded-lg border border-gray-700/30">
-                        <span class="text-gray-400 text-xs flex items-center gap-1.5">
-                          <span class="material-symbols-outlined text-sm opacity-70">category</span> Type
-                        </span>
-                        <span class="font-medium text-white text-xs bg-gray-700/60 px-2 py-0.5 rounded">Journey
-                          Installment</span>
-                      </div>
-                      <div
-                        class="flex justify-between items-center py-2 px-2.5 bg-gray-800/40 rounded-lg border border-gray-700/30">
-                        <span class="text-gray-400 text-xs flex items-center gap-1.5">
-                          <span class="material-symbols-outlined text-sm opacity-70">confirmation_number</span>
-                          Slip No
-                        </span>
+                      <div class="relative">
                         <span
-                          class="font-mono font-medium text-white text-xs bg-gray-700/60 px-2 py-0.5 rounded">#SNC‑2024‑8842</span>
+                          class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 font-medium text-sm">Rs.</span>
+                        <input
+                          class="w-full pl-10 pr-4 py-2.5 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg text-sm font-bold text-gray-900 dark:text-white focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all"
+                          type="number" value="55000.00" />
                       </div>
-                      <div
-                        class="flex justify-between items-center py-2 px-2.5 bg-gray-800/40 rounded-lg border border-gray-700/30">
-                        <span class="text-gray-400 text-xs flex items-center gap-1.5">
-                          <span class="material-symbols-outlined text-sm opacity-70">fingerprint</span>
-                          Reg No
-                        </span>
-                        <span class="font-mono font-medium text-white text-xs bg-gray-700/60 px-2 py-0.5 rounded">AUG1 -
-                          002</span>
-                      </div>
-                      <div
-                        class="flex justify-between items-center py-2 px-2.5 bg-gray-800/40 rounded-lg border border-gray-700/30">
-                        <span class="text-gray-400 text-xs flex items-center gap-1.5">
-                          <span class="material-symbols-outlined text-sm opacity-70">person</span> Follower
-                        </span>
-                        <span class="font-medium text-white text-xs">Anura P. Kumara</span>
-                      </div>
-                      <div
-                        class="flex justify-between items-center py-2 px-2.5 bg-gray-800/40 rounded-lg border border-gray-700/30">
-                        <span class="text-gray-400 text-xs flex items-center gap-1.5">
-                          <span class="material-symbols-outlined text-sm opacity-70">calendar_today</span> Process Date
-                        </span>
-                        <span class="font-medium text-white text-xs">24 May 2024</span>
-                      </div>
-                      <!-- Transaction Notes (Collapsible) -->
-                      <div class="pt-2 mt-2 border-t border-gray-700/30">
-                        <button
-                          class="flex items-center gap-1.5 text-gray-400 hover:text-gray-200 transition-colors w-full text-left mb-1.5"
-                          onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.material-symbols-outlined').textContent = this.nextElementSibling.classList.contains('hidden') ? 'expand_more' : 'expand_less';">
-                          <span class="material-symbols-outlined text-sm opacity-70">expand_more</span>
-                          <span class="text-xs font-medium uppercase tracking-wide">Transaction Notes</span>
+                      <span class="text-xs font-bold text-red-400 tracking-tight">Remaining: Rs.
+                        220,000.00</span>
+                    </div>
+                  </div>
+                  
+
+                    <div class="space-y-3">
+                      <label
+                        class="text-xs font-semibold text-gray-600 dark:text-gray-300 uppercase tracking-wide flex items-center gap-1.5">
+                        <span class="material-symbols-outlined text-sm text-primary">account_tree</span> Allocate to
+                        Installment
+                        <span class="text-red-500">*</span>
+                      </label>
+                      <div class="grid grid-cols-2 sm:grid-cols-5 gap-2">
+                        <button type="button"
+                          class="py-2 rounded-lg text-[10px] font-bold border-2 border-emerald-500 bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 flex flex-col items-center opacity-60 cursor-not-allowed">
+                          <span>1st PMT</span>
+                          <span class="material-symbols-outlined text-xs">check_circle</span>
                         </button>
-                        <p
-                          class="text-xs text-gray-300 leading-relaxed bg-gray-800/30 rounded-lg px-3 py-2 border border-gray-700/20 hidden">
-                          This is the full payment for the requested services. Additional reference: Journey installment
-                          plan 2026, first of three scheduled payments.
-                        </p>
-                      </div>
-
-                    </div>
-
-                    <!-- Generate Button - Banking Action -->
-                    <button id="generateBtn"
-                      class="generate-btn w-full bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-white py-3.5 rounded-lg font-bold text-sm flex items-center justify-center gap-2.5 transition-all shadow-md shadow-emerald-900/30 active:scale-[0.99] group">
-                      <span id="btnIcon"
-                        class="material-symbols-outlined group-hover:scale-105 transition-transform">print</span>
-                      <span id="btnText">Generate Official Slip</span>
-                    </button>
-
-                    <p
-                      class="text-[10px] text-gray-500 text-center leading-relaxed px-2 py-2 bg-gray-800/30 rounded border border-gray-700/20">
-                      This transaction will be recorded in the secure ledger with full audit trail compliance.
-                    </p>
-
-                    <!-- Success Message -->
-                    <div id="successMessage"
-                      class="hidden mt-2 p-3 bg-emerald-500/10 border border-emerald-500/30 rounded-lg text-center fade-in">
-                      <div class="flex items-center justify-center gap-2 text-emerald-400">
-                        <span class="material-symbols-outlined text-base">check_circle</span>
-                        <span class="text-sm font-medium">Slip generated successfully</span>
-                      </div>
-                      <p class="text-[10px] text-gray-400 mt-1">PDF downloaded • Ref: #SNC‑2024‑8842</p>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Quick Details Card - Clean Banking Style -->
-                <div
-                  class="bg-surface-light dark:bg-surface-dark rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm p-4 space-y-4">
-                  <h4
-                    class="font-bold text-sm text-gray-500 dark:text-gray-400 uppercase tracking-wide flex items-center gap-2 pb-2 border-b border-gray-200 dark:border-gray-700">
-                    <span class="material-symbols-outlined text-base">today summary</span>
-                  </h4>
-
-                  <div class="space-y-3">
-                    <div
-                      class="flex items-start gap-3 p-2.5 rounded-lg bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700">
-                      <div class="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                        <span class="material-symbols-outlined text-primary text-lg">person</span>
-                      </div>
-                      <div class="min-w-0 flex-1">
-                        <p class="text-sm font-bold text-gray-900 dark:text-white truncate">Anura P. Kumara</p>
-                        <p
-                          class="text-[10px] text-gray-500 dark:text-gray-400 font-mono bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded inline-block mt-0.5">
-                          AUG1‑002</p>
-                      </div>
-                    </div>
-                    <div
-                      class="flex items-start gap-3 p-2.5 rounded-lg bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700">
-                      <div class="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                        <span class="material-symbols-outlined text-primary text-lg">person</span>
-                      </div>
-                      <div class="min-w-0 flex-1">
-                        <p class="text-sm font-bold text-gray-900 dark:text-white truncate">Anura P. Kumara</p>
-                        <p
-                          class="text-[10px] text-gray-500 dark:text-gray-400 font-mono bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded inline-block mt-0.5">
-                          AUG1‑002</p>
-                      </div>
-                    </div>
-                    <div
-                      class="flex items-start gap-3 p-2.5 rounded-lg bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700">
-                      <div class="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                        <span class="material-symbols-outlined text-primary text-lg">person</span>
-                      </div>
-                      <div class="min-w-0 flex-1">
-                        <p class="text-sm font-bold text-gray-900 dark:text-white truncate">Anura P. Kumara</p>
-                        <p
-                          class="text-[10px] text-gray-500 dark:text-gray-400 font-mono bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded inline-block mt-0.5">
-                          AUG1‑002</p>
-                      </div>
-                    </div>
-                    <div
-                      class="flex items-start gap-3 p-2.5 rounded-lg bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700">
-                      <div class="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                        <span class="material-symbols-outlined text-primary text-lg">person</span>
-                      </div>
-                      <div class="min-w-0 flex-1">
-                        <p class="text-sm font-bold text-gray-900 dark:text-white truncate">Anura P. Kumara</p>
-                        <p
-                          class="text-[10px] text-gray-500 dark:text-gray-400 font-mono bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded inline-block mt-0.5">
-                          AUG1‑002</p>
+                        <button type="button"
+                          class="py-2 rounded-lg text-[10px] font-bold border-2 border-primary bg-primary text-white flex flex-col items-center shadow-sm shadow-primary/30">
+                          <span>2nd PMT</span>
+                          <span class="opacity-70 text-[8px]">ACTIVE</span>
+                        </button>
+                        <button type="button"
+                          class="py-2 rounded-lg text-[10px] font-bold border-2 border-gray-200 dark:border-gray-700 text-gray-400 flex flex-col items-center hover:border-primary/50 transition-colors">
+                          <span>3rd PMT</span>
+                        </button>
+                        <button type="button"
+                          class="py-2 rounded-lg text-[10px] font-bold border-2 border-gray-200 dark:border-gray-700 text-gray-400 flex flex-col items-center hover:border-primary/50 transition-colors">
+                          <span>4th PMT</span>
+                        </button>
+                        <button type="button"
+                          class="py-2 rounded-lg text-[10px] font-bold border-2 border-gray-200 dark:border-gray-700 text-gray-400 flex flex-col items-center hover:border-primary/50 transition-colors">
+                          <span>5th PMT</span>
+                        </button>
                       </div>
                     </div>
                   </div>
 
-                  <div class="pt-3 border-t border-gray-200 dark:border-gray-700 flex">
-                    <button
-                      class="flex-1 py-2 text-xs font-medium text-gray-600 dark:text-gray-300 bg-primary/10 dark:bg-primary/20 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-lg transition-colors flex items-center justify-center gap-1.5 border border-gray-300 dark:border-gray-600">
-                      <span class="material-symbols-outlined text-sm">download</span> PDF
-                    </button>
+                  <div class="border-t border-gray-200 dark:border-gray-700/60 bg-gray-50/50 dark:bg-gray-800/20">
+                    <details class="group">
+                      <summary
+                        class="flex items-center justify-between px-6 py-4 cursor-pointer list-none hover:bg-gray-100 dark:hover:bg-gray-700/30 transition-colors">
+                        <div class="flex items-center gap-3">
+                          <span
+                            class="material-symbols-outlined text-gray-500 group-open:text-primary transition-colors">history</span>
+                          <span class="text-sm font-bold text-gray-700 dark:text-gray-300">View Journey History & Issued
+                            Slips</span>
+                          <span
+                            class="px-2 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 text-[10px] font-bold">1
+                            Slip Issued</span>
+                        </div>
+                        <span
+                          class="material-symbols-outlined text-gray-400 group-open:rotate-180 transition-transform">expand_more</span>
+                      </summary>
+
+                      <div class="px-6 pb-6 pt-2">
+                        <div
+                          class="relative space-y-4 before:absolute before:inset-0 before:ml-4 before:-translate-x-px before:h-full before:w-0.5 before:bg-gray-200 dark:before:bg-gray-700">
+
+                          <div class="relative flex items-start gap-3">
+                            <div
+                              class="absolute left-0 w-8 h-8 rounded-full bg-white dark:bg-gray-900 border-2 border-primary flex items-center justify-center z-10 shadow-sm">
+                              <span class="material-symbols-outlined text-primary text-[16px]">receipt_long</span>
+                            </div>
+                            <div
+                              class="ml-10 flex-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-3 rounded-xl">
+                              <div class="flex justify-between items-start mb-1">
+                                <span class="text-xs font-bold text-gray-900 dark:text-white">1st Payment -
+                                  Installment</span>
+                                <span class="text-[10px] font-mono text-gray-400">#SL-9921</span>
+                              </div>
+                              <div class="flex items-center gap-3 text-[11px] font-bold text-primary">
+                                <span>Rs. 55,000.00</span>
+                                <span class="text-gray-400 font-normal">|</span>
+                                <span class="text-gray-500 font-medium italic">24 May, 2024</span>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="relative flex items-start gap-3 opacity-60">
+                            <div
+                              class="absolute left-0 w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-800 border-2 border-gray-300 flex items-center justify-center z-10">
+                              <span class="material-symbols-outlined text-gray-400 text-[16px]">hourglass_empty</span>
+                            </div>
+                            <div
+                              class="ml-10 flex-1 p-3 rounded-xl border border-dashed border-gray-300 dark:border-gray-600">
+                              <span class="text-xs font-bold text-gray-500 uppercase tracking-tight">Remaining: Rs.
+                                220,000.00</span>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </details>
                   </div>
                 </div>
               </div>
-            </aside>
+
+              <!-- RIGHT SIDEBAR - PROFESSIONAL BANKING STYLE -->
+              <aside class="lg:col-span-4 space-y-5">
+                <div class="sticky top-6 space-y-5">
+
+                  <!-- Transaction Summary Card - Banking Premium -->
+                  <div
+                    class="bg-gradient-to-br from-gray-900 to-gray-800 dark:from-gray-800 dark:to-gray-900 dark:bg-light  text-white rounded-xl shadow-lg border border-gray-700/50 overflow-hidden">
+                    <div class="p-4 border-b border-gray-700/50 flex items-center justify-between">
+                      <h4 class="font-bold text-base flex items-center gap-2">
+                        <span class="material-symbols-outlined text-emerald-400">verified_user</span>
+                        Transaction Summary
+                      </h4>
+                      <span
+                        class="px-2 py-0.5 bg-emerald-500/20 text-emerald-300 text-[10px] font-bold uppercase rounded-full border border-emerald-500/30 animate-pulse-success">Verified</span>
+                    </div>
+
+                    <div class="p-4 space-y-4">
+                      <!-- Amount Display - Banking Style -->
+                      <div class="text-center py-3.5 bg-gray-800/60 rounded-lg border border-gray-700/40">
+                        <p class="text-[10px] text-gray-400 uppercase tracking-wider mb-1">Total Amount</p>
+                        <p id="displayAmount" class="text-3xl font-extrabold text-emerald-400 font-mono tracking-tight">
+                          Rs. 55,000.00</p>
+                      </div>
+
+                      <div class="space-y-2.5 pt-1">
+                        <div
+                          class="flex justify-between items-center py-2 px-2.5 bg-gray-800/40 rounded-lg border border-gray-700/30">
+                          <span class="text-gray-400 text-xs flex items-center gap-1.5">
+                            <span class="material-symbols-outlined text-sm opacity-70">category</span> Type
+                          </span>
+                          <span class="font-medium text-white text-xs bg-gray-700/60 px-2 py-0.5 rounded">Journey
+                            Installment</span>
+                        </div>
+                        <div
+                          class="flex justify-between items-center py-2 px-2.5 bg-gray-800/40 rounded-lg border border-gray-700/30">
+                          <span class="text-gray-400 text-xs flex items-center gap-1.5">
+                            <span class="material-symbols-outlined text-sm opacity-70">confirmation_number</span>
+                            Slip No
+                          </span>
+                          <span
+                            class="font-mono font-medium text-white text-xs bg-gray-700/60 px-2 py-0.5 rounded">#SNC‑2024‑8842</span>
+                        </div>
+                        <div
+                          class="flex justify-between items-center py-2 px-2.5 bg-gray-800/40 rounded-lg border border-gray-700/30">
+                          <span class="text-gray-400 text-xs flex items-center gap-1.5">
+                            <span class="material-symbols-outlined text-sm opacity-70">fingerprint</span>
+                            Reg No
+                          </span>
+                          <span class="font-mono font-medium text-white text-xs bg-gray-700/60 px-2 py-0.5 rounded">AUG1
+                            -
+                            002</span>
+                        </div>
+                        <div
+                          class="flex justify-between items-center py-2 px-2.5 bg-gray-800/40 rounded-lg border border-gray-700/30">
+                          <span class="text-gray-400 text-xs flex items-center gap-1.5">
+                            <span class="material-symbols-outlined text-sm opacity-70">person</span> Follower
+                          </span>
+                          <span class="font-medium text-white text-xs">Anura P. Kumara</span>
+                        </div>
+                        <div
+                          class="flex justify-between items-center py-2 px-2.5 bg-gray-800/40 rounded-lg border border-gray-700/30">
+                          <span class="text-gray-400 text-xs flex items-center gap-1.5">
+                            <span class="material-symbols-outlined text-sm opacity-70">calendar_today</span> Process
+                            Date
+                          </span>
+                          <span class="font-medium text-white text-xs">24 May 2024</span>
+                        </div>
+                        <!-- Transaction Notes (Collapsible) -->
+                        <div class="pt-2 mt-2 border-t border-gray-700/30">
+                          <button
+                            class="flex items-center gap-1.5 text-gray-400 hover:text-gray-200 transition-colors w-full text-left mb-1.5"
+                            onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.material-symbols-outlined').textContent = this.nextElementSibling.classList.contains('hidden') ? 'expand_more' : 'expand_less';">
+                            <span class="material-symbols-outlined text-sm opacity-70">expand_more</span>
+                            <span class="text-xs font-medium uppercase tracking-wide">Transaction Notes</span>
+                          </button>
+                          <p
+                            class="text-xs text-gray-300 leading-relaxed bg-gray-800/30 rounded-lg px-3 py-2 border border-gray-700/20 hidden">
+                            This is the full payment for the requested services. Additional reference: Journey
+                            installment
+                            plan 2026, first of three scheduled payments.
+                          </p>
+                        </div>
+
+                      </div>
+
+                      <!-- Generate Button - Banking Action -->
+                      <button id="generateBtn"
+                        class="generate-btn w-full bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-white py-3.5 rounded-lg font-bold text-sm flex items-center justify-center gap-2.5 transition-all shadow-md shadow-emerald-900/30 active:scale-[0.99] group">
+                        <span id="btnIcon"
+                          class="material-symbols-outlined group-hover:scale-105 transition-transform">print</span>
+                        <span id="btnText">Generate Official Slip</span>
+                      </button>
+
+                      <p
+                        class="text-[10px] text-gray-500 text-center leading-relaxed px-2 py-2 bg-gray-800/30 rounded border border-gray-700/20">
+                        This transaction will be recorded in the secure ledger with full audit trail compliance.
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- Quick Details Card - Clean Banking Style -->
+                  <div
+                    class="bg-surface-light dark:bg-surface-dark rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm p-4 space-y-4">
+                    <h4
+                      class="font-bold text-sm text-gray-500 dark:text-gray-400 uppercase tracking-wide flex items-center gap-2 pb-2 border-b border-gray-200 dark:border-gray-700">
+                      <span class="material-symbols-outlined text-base">today summary</span>
+                    </h4>
+
+                    <div class="space-y-3">
+                      <div
+                        class="flex items-start gap-3 p-2.5 rounded-lg bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700">
+                        <div class="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                          <span class="material-symbols-outlined text-primary text-lg">person</span>
+                        </div>
+                        <div class="min-w-0 flex-1">
+                          <p class="text-sm font-bold text-gray-900 dark:text-white truncate">Anura P. Kumara</p>
+                          <p
+                            class="text-[10px] text-gray-500 dark:text-gray-400 font-mono bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded inline-block mt-0.5">
+                            AUG1‑002</p>
+                        </div>
+                      </div>
+                      <div
+                        class="flex items-start gap-3 p-2.5 rounded-lg bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700">
+                        <div class="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                          <span class="material-symbols-outlined text-primary text-lg">person</span>
+                        </div>
+                        <div class="min-w-0 flex-1">
+                          <p class="text-sm font-bold text-gray-900 dark:text-white truncate">Anura P. Kumara</p>
+                          <p
+                            class="text-[10px] text-gray-500 dark:text-gray-400 font-mono bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded inline-block mt-0.5">
+                            AUG1‑002</p>
+                        </div>
+                      </div>
+                      <div
+                        class="flex items-start gap-3 p-2.5 rounded-lg bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700">
+                        <div class="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                          <span class="material-symbols-outlined text-primary text-lg">person</span>
+                        </div>
+                        <div class="min-w-0 flex-1">
+                          <p class="text-sm font-bold text-gray-900 dark:text-white truncate">Anura P. Kumara</p>
+                          <p
+                            class="text-[10px] text-gray-500 dark:text-gray-400 font-mono bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded inline-block mt-0.5">
+                            AUG1‑002</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="pt-3 border-t border-gray-200 dark:border-gray-700 flex">
+                      <button
+                        class="flex-1 py-2 text-xs font-medium text-gray-600 dark:text-gray-300 bg-primary/10 dark:bg-primary/20 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-lg transition-colors flex items-center justify-center gap-1.5 border border-gray-300 dark:border-gray-600">
+                        <span class="material-symbols-outlined text-sm">download</span> PDF
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </aside>
+            </div>
           </div>
         </div>
-      </div>
     </main>
   </div>
 
