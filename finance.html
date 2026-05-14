@@ -111,7 +111,7 @@
                         <span class="material-icons-round mr-3">groups</span>
                         Journeys
                     </div>
-                     <span class="material-icons-round text-xs">chevron_right</span>
+                    <span class="material-icons-round text-xs">chevron_right</span>
                 </a>
                 <a class="flex items-center px-4 py-3 text-sm font-medium rounded-lg text-gray-300 hover:bg-gray-800 hover:text-white transition-colors"
                     href="visa.html">
@@ -135,6 +135,10 @@
                         <a class="block px-4 py-2 text-sm font-medium rounded-lg text-gray-400 hover:text-white hover:bg-gray-800 transition-colors"
                             href="finance_addExpense.html">
                             Expense Management
+                        </a>
+                        <a class="block px-4 py-2 text-sm font-medium rounded-lg text-gray-400 hover:text-white hover:bg-gray-800 transition-colors"
+                            href="#">
+                            Payment
                         </a>
                     </div>
                 </div>
@@ -170,62 +174,343 @@
                 </div>
             </header>
             <div class="flex-1 overflow-y-auto p-6 space-y-6">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+                    <!-- Total Income -->
                     <div
-                        class="bg-white dark:bg-slate-900 p-5 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800">
+                        class="group bg-white dark:bg-slate-900 p-5 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:border-green-500/50 transition-all duration-300">
                         <div class="flex justify-between items-start">
                             <span
                                 class="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider">Total
                                 Income</span>
-                            <div class="p-2 bg-green-50 dark:bg-green-900/20 rounded-lg"><span
-                                    class="material-icons-round text-primary text-xl">trending_up</span></div>
+                            <div
+                                class="p-2 bg-green-50 dark:bg-green-900/20 rounded-lg group-hover:scale-110 transition-transform">
+                                <span class="material-icons-round text-green-600 text-xl">trending_up</span>
+                            </div>
                         </div>
                         <div class="mt-4">
-                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">LKR 4,520,000.00</h3>
-                            <p class="text-xs text-primary font-medium mt-1">↑ 12.5% from last month</p>
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white truncate">LKR 4,520,000</h3>
+                            <p class="text-xs text-green-600 font-medium mt-1 flex items-center">
+                                <span class="material-icons-round text-sm mr-1">arrow_upward</span> 12.5% vs last month
+                            </p>
                         </div>
                     </div>
+
+                    <!-- Total Expenses -->
                     <div
-                        class="bg-white dark:bg-slate-900 p-5 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800">
+                        class="group bg-white dark:bg-slate-900 p-5 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:border-red-500/50 transition-all duration-300">
                         <div class="flex justify-between items-start">
                             <span
                                 class="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider">Total
                                 Expenses</span>
-                            <div class="p-2 bg-red-50 dark:bg-red-900/20 rounded-lg"><span
-                                    class="material-icons-round text-red-500 text-xl">trending_down</span></div>
+                            <div
+                                class="p-2 bg-red-50 dark:bg-red-900/20 rounded-lg group-hover:scale-110 transition-transform">
+                                <span class="material-icons-round text-red-500 text-xl">payments</span>
+                            </div>
                         </div>
                         <div class="mt-4">
-                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">LKR 1,240,500.00</h3>
-                            <p class="text-xs text-red-500 font-medium mt-1">↑ 4.2% from last month</p>
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white truncate">LKR 1,240,500</h3>
+                            <p class="text-xs text-red-500 font-medium mt-1 flex items-center">
+                                <span class="material-icons-round text-sm mr-1">arrow_upward</span> 4.2% (Higher spend)
+                            </p>
                         </div>
                     </div>
+
+                    <!-- Net Balance -->
                     <div
-                        class="bg-white dark:bg-slate-900 p-5 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800">
+                        class="group bg-white dark:bg-slate-900 p-5 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:border-blue-500/50 transition-all duration-300">
                         <div class="flex justify-between items-start">
                             <span
                                 class="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider">Net
                                 Balance</span>
-                            <div class="p-2 bg-blue-50 dark:bg-blue-900/20 rounded-lg"><span
-                                    class="material-icons-round text-blue-600 text-xl">account_balance</span>
+                            <div
+                                class="p-2 bg-blue-50 dark:bg-blue-900/20 rounded-lg group-hover:scale-110 transition-transform">
+                                <span class="material-icons-round text-blue-500 text-xl">account_balance_wallet</span>
                             </div>
                         </div>
                         <div class="mt-4">
-                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">LKR 3,279,500.00</h3>
-                            <p class="text-xs text-blue-600 font-medium mt-1">Positive Cash Flow</p>
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white truncate">LKR 3,279,500</h3>
+                            <p class="text-xs text-blue-500 font-medium mt-1 flex items-center">
+                                <span class="material-symbols-outlined text-xl text-blue-500">restart_alt</span>
+                                Positive Cash Flow
+                            </p>
                         </div>
                     </div>
+
+                    <!-- Total Pending -->
                     <div
-                        class="bg-white dark:bg-slate-900 p-5 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800">
+                        class="group bg-white dark:bg-slate-900 p-5 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:border-orange-500/50 transition-all duration-300">
                         <div class="flex justify-between items-start">
                             <span
                                 class="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider">Total
                                 Pending</span>
-                            <div class="p-2 bg-orange-50 dark:bg-orange-900/20 rounded-lg"><span
-                                    class="material-icons-round text-orange-500 text-xl">pending_actions</span></div>
+                            <div
+                                class="p-2 bg-orange-50 dark:bg-orange-900/20 rounded-lg group-hover:scale-110 transition-transform">
+                                <span class="material-icons-round text-orange-500 text-xl">schedule</span>
+                            </div>
                         </div>
                         <div class="mt-4">
-                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">LKR 450,200.00</h3>
-                            <p class="text-xs text-orange-500 font-medium mt-1">15 Payments Pending</p>
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white truncate">LKR 450,200</h3>
+                            <p class="text-xs text-orange-500 font-medium mt-1 flex items-center">
+                                <span class="material-symbols-outlined text-xl">priority_high</span> 15 Payments Pending
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Other Income -->
+                    <div
+                        class="group bg-white dark:bg-slate-900 p-5 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:border-purple-500/50 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start">
+                                <span
+                                    class="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider">Other
+                                    Income</span>
+                                <div
+                                    class="p-2 bg-purple-50 dark:bg-purple-900/20 rounded-lg group-hover:scale-110 transition-transform">
+                                    <span class="material-icons-round text-purple-500 text-xl">savings</span>
+                                </div>
+                            </div>
+                            <div class="mt-4">
+                                <div class="mt-4 flex items-center justify-between gap-2">
+                                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white truncate">LKR 585,000
+                                    </h3>
+                                    <button onclick="openOtherIncomeModal()"
+                                        class="flex items-center px-4 py-1 bg-purple-600 text-white rounded-xl hover:bg-opacity-90 transition-all font-semibold shadow-sm">
+                                        View
+                                    </button>
+
+                                    <!-- Other Income Modal -->
+                                    <div id="otherIncomeModal"
+                                        class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+                                        <div
+                                            class="bg-white dark:bg-slate-900 w-full max-w-6xl max-h-[90vh] rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-800 overflow-hidden flex flex-col transform transition-all">
+
+                                            <!-- Header Section -->
+                                            <div
+                                                class="p-6 border-b border-gray-100 dark:border-gray-800 flex justify-between items-center bg-gray-50/50 dark:bg-gray-800/30">
+                                                <div>
+                                                    <h3
+                                                        class="text-xl font-bold text-gray-900 dark:text-white uppercase tracking-tight">
+                                                        Other Incomes</h3>
+                                                    <p class="text-xs text-gray-500 dark:text-gray-400">Manage
+                                                        donations, refunds, and miscellaneous entries</p>
+                                                </div>
+                                                <button onclick="closeOtherIncomeModal()"
+                                                    class="p-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-full transition-colors">
+                                                    <span class="material-icons-round text-gray-500">close</span>
+                                                </button>
+                                            </div>
+
+                                            <!-- Filter & Action Bar -->
+                                            <div
+                                                class="p-4 bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-gray-800 space-y-4">
+                                                <div class="flex flex-wrap items-center gap-3">
+                                                    <!-- Search -->
+                                                    <div class="relative flex-grow max-w-xs">
+                                                        <span
+                                                            class="material-icons-round absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">search</span>
+                                                        <input type="text" placeholder="Search description..."
+                                                            class="w-full pl-10 pr-4 py-2 bg-gray-100 dark:bg-gray-800 border-none rounded-xl text-sm focus:ring-2 ring-primary transition-all">
+                                                    </div>
+
+                                                    <!-- Sort Category -->
+                                                    <select
+                                                        class="bg-gray-100 dark:bg-gray-800 border-none rounded-xl text-sm py-2 px-8 focus:ring-2 ring-primary">
+                                                        <option value="">All Categories</option>
+                                                        <option value="donation">Donation</option>
+                                                        <option value="refund">Refund</option>
+                                                    </select>
+
+                                                    <!-- Sort Journey -->
+                                                    <select
+                                                        class="bg-gray-100 dark:bg-gray-800 border-none rounded-xl text-sm py-2 px-8 focus:ring-2 ring-primary">
+                                                        <option value="">All Journeys</option>
+                                                        <option value="2026" class="font-bold">2026</option>
+                                                        <option>&nbsp;&nbsp;Quarter 01</option>
+                                                        <option>&nbsp;&nbsp;Quarter 02</option>
+                                                        <option value="2025" class="font-bold">2025</option>
+                                                        <option value="2024" class="font-bold">2024</option>
+                                                    </select>
+
+                                                    <!-- Date Picker -->
+                                                    <input type="date"
+                                                        class="bg-gray-100 dark:bg-gray-800 border-none rounded-xl text-sm py-2 px-4 focus:ring-2 ring-primary text-gray-500">
+
+                                                    <!-- Right Aligned Actions -->
+                                                    <div class="flex items-center gap-2 ml-auto">
+                                                        <button
+                                                            class="p-2 bg-red-50 dark:bg-red-900/20 text-red-600 rounded-xl hover:bg-red-100 transition-colors shadow-sm border border-red-100 dark:border-red-900/30"
+                                                            title="Export PDF">
+                                                            <span class="material-icons-round">picture_as_pdf</span>
+                                                        </button>
+                                                        <button
+                                                            class="flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded-xl hover:bg-green-700 transition-all font-bold text-sm shadow-md shadow-green-200 dark:shadow-none">
+                                                            <span class="material-icons-round text-sm">add</span>
+                                                            New Income
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Table Content -->
+                                            <div class="flex-grow overflow-auto p-4">
+                                                <table class="w-full text-left border-separate border-spacing-y-2">
+                                                    <thead>
+                                                        <tr
+                                                            class="text-gray-400 text-[10px] uppercase tracking-widest font-bold px-4">
+                                                            <th class="px-4 pb-2">Date</th>
+                                                            <th class="px-4 pb-2">Journey</th>
+                                                            <th class="px-4 pb-2">Category</th>
+                                                            <th class="px-4 pb-2">Description</th>
+                                                            <th class="px-4 pb-2 text-right">Amount</th>
+                                                            <th class="px-4 pb-2 text-center">Attachments</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="text-sm">
+                                                        <!-- Row Example -->
+                                                        <tr
+                                                            class="bg-gray-50/50 dark:bg-gray-800/40 hover:bg-white dark:hover:bg-gray-800 transition-all border border-transparent hover:border-gray-100 dark:hover:border-gray-700">
+                                                            <td class="px-4 py-3 rounded-l-xl font-medium">2026-02-01
+                                                            </td>
+                                                            <td class="px-4 py-3"><span
+                                                                    class="px-2 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-600 text-[11px] rounded-md font-bold">2026-FEB-01</span>
+                                                            </td>
+                                                            <td class="px-4 py-3">Donation</td>
+                                                            <td class="px-4 py-3 text-gray-500 italic text-xs">Pooja
+                                                                contribution from main hall</td>
+                                                            <td class="px-4 py-3 text-right font-bold text-green-600">
+                                                                LKR 25,000.00</td>
+                                                            <td class="px-4 py-3 rounded-r-xl text-center">
+                                                                <div class="flex justify-center gap-1">
+                                                                    <img src="https://via.placeholder.com/40"
+                                                                        class="w-8 h-8 rounded-lg object-cover cursor-pointer hover:ring-2 ring-primary transition-all shadow-sm"
+                                                                        alt="attachment">
+                                                                    <img src="https://via.placeholder.com/40"
+                                                                        class="w-8 h-8 rounded-lg object-cover cursor-pointer hover:ring-2 ring-primary transition-all shadow-sm"
+                                                                        alt="attachment">
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <!-- Row Example 2 -->
+                                                        <tr
+                                                            class="bg-gray-50/50 dark:bg-gray-800/40 hover:bg-white dark:hover:bg-gray-800 transition-all border border-transparent hover:border-gray-100 dark:hover:border-gray-700">
+                                                            <td class="px-4 py-3 rounded-l-xl font-medium">2026-02-05
+                                                            </td>
+                                                            <td class="px-4 py-3"><span
+                                                                    class="px-2 py-1 bg-purple-50 dark:bg-purple-900/20 text-purple-600 text-[11px] rounded-md font-bold">2026-FEB-02</span>
+                                                            </td>
+                                                            <td class="px-4 py-3">Refund</td>
+                                                            <td class="px-4 py-3 text-gray-500 italic text-xs">Fuel
+                                                                adjustment refund</td>
+                                                            <td class="px-4 py-3 text-right font-bold text-green-600">
+                                                                LKR 5,400.00</td>
+                                                            <td class="px-4 py-3 rounded-r-xl text-center">
+                                                                <span
+                                                                    class="material-icons-round text-gray-300">image_not_supported</span>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+
+                                            <!-- Footer -->
+                                            <div
+                                                class="p-4 bg-gray-50 dark:bg-gray-800/50 border-t border-gray-100 dark:border-gray-800 text-right">
+                                                <span class="text-xs text-gray-500 mr-4">Total Other Income: <span
+                                                        class="font-bold text-gray-900 dark:text-white text-sm ml-1">LKR
+                                                        30,400.00</span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <script>/**
+* Opens the Other Income Management Modal
+*/
+                                        function openOtherIncomeModal() {
+                                            const modal = document.getElementById('otherIncomeModal');
+                                            modal.classList.remove('hidden');
+                                            modal.classList.add('flex');
+                                            // Prevent background scrolling when modal is open
+                                            document.body.style.overflow = 'hidden';
+                                        }
+
+                                        /**
+                                         * Closes the Other Income Management Modal
+                                         */
+                                        function closeOtherIncomeModal() {
+                                            const modal = document.getElementById('otherIncomeModal');
+                                            modal.classList.add('hidden');
+                                            modal.classList.remove('flex');
+                                            // Restore background scrolling
+                                            document.body.style.overflow = 'auto';
+                                        }
+
+                                        /**
+                                         * Filter Logic (Basic Implementation)
+                                         * This function can be expanded to filter the table rows dynamically
+                                         */
+                                        function filterOtherIncomes() {
+                                            const searchTerm = document.querySelector('#otherIncomeModal input[type="text"]').value.toLowerCase();
+                                            const categoryFilter = document.querySelector('#otherIncomeModal select:nth-of-type(1)').value;
+                                            const journeyFilter = document.querySelector('#otherIncomeModal select:nth-of-type(2)').value;
+
+                                            const rows = document.querySelectorAll('#otherIncomeModal tbody tr');
+
+                                            rows.forEach(row => {
+                                                const description = row.cells[3].innerText.toLowerCase();
+                                                const category = row.cells[2].innerText.toLowerCase();
+                                                const journey = row.cells[1].innerText.toLowerCase();
+
+                                                const matchesSearch = description.includes(searchTerm);
+                                                const matchesCategory = categoryFilter === "" || category.includes(categoryFilter.toLowerCase());
+                                                const matchesJourney = journeyFilter === "" || journey.includes(journeyFilter.toLowerCase());
+
+                                                if (matchesSearch && matchesCategory && matchesJourney) {
+                                                    row.style.display = "";
+                                                } else {
+                                                    row.style.display = "none";
+                                                }
+                                            });
+                                        }
+
+                                        // Event Listeners for Live Filtering
+                                        document.addEventListener('DOMContentLoaded', () => {
+                                            const modal = document.getElementById('otherIncomeModal');
+
+                                            // 1. Close modal when clicking outside the content area
+                                            modal.addEventListener('click', (event) => {
+                                                if (event.target === modal) {
+                                                    closeOtherIncomeModal();
+                                                }
+                                            });
+
+                                            // 2. Attach Filter Listeners (Search and Selects)
+                                            const filters = modal.querySelectorAll('input, select');
+                                            filters.forEach(filter => {
+                                                filter.addEventListener('input', filterOtherIncomes);
+                                            });
+
+                                            // 3. Close with Escape Key
+                                            document.addEventListener('keydown', (e) => {
+                                                if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                                                    closeOtherIncomeModal();
+                                                }
+                                            });
+                                        });
+
+                                        /**
+                                         * Placeholder for PDF Export
+                                         */
+                                        function exportIncomeToPDF() {
+                                            console.log("Generating PDF Report...");
+                                            // You would typically use a library like jsPDF or window.print() here
+                                            window.print();
+                                        }</script>
+                                </div>
+                                <p class="text-xs text-gray-500 font-medium mt-1 flex items-center">
+                                    <span class="material-symbols-outlined text-xl">other_admission</span>&nbsp;
+                                    Includes 5 Invoices
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -239,11 +524,11 @@
                                 <select
                                     class="text-[10px] font-bold border-gray-200 dark:border-gray-700 rounded-md dark:bg-slate-800 dark:text-gray-300">
                                     <option>All Data</option>
-                                    <option>2026</option>
-                                    <option>2026</option>
-                                    <option>2025</option>
-                                    <option>2024</option>
-                                    <option>2023</option>
+                                    <option value="2026" class="font-bold">2026</option>
+                                    <option>&nbsp;&nbsp;Quarter 01</option>
+                                    <option>&nbsp;&nbsp;Quarter 02</option>
+                                    <option value="2025" class="font-bold">2025</option>
+                                    <option value="2024" class="font-bold">2024</option>
                                 </select>
                             </div>
                         </div>
@@ -274,16 +559,198 @@
                                         </div>
                                     </div>
                                     <div class="flex-1 flex justify-around items-end">
+                                        <!-- 1. CHART BAR UNIT (JANUARY) -->
                                         <div class="flex flex-col items-center gap-2 group">
                                             <div class="flex gap-1 items-end h-48">
-                                                <div class="w-4 bg-primary rounded-t-sm shadow-sm opacity-80 group-hover:opacity-100"
+                                                <!-- Income Bar (Green) -->
+                                                <!-- Passing: Month, Type, Total, Count, Dambadiwa Val, Lakdiwa Val -->
+                                                <div onclick="openSummary('January', 'Income', 'LKR 10,000,000', '24', '8,000,000', '2,000,000')"
+                                                    class="w-4 bg-primary rounded-t-sm shadow-sm opacity-80 group-hover:opacity-100 cursor-pointer hover:ring-1 ring-primary ring-offset-1 transition-all"
                                                     style="height: 70%"></div>
-                                                <div class="w-4 bg-red-500 rounded-t-sm shadow-sm opacity-80 group-hover:opacity-100"
+
+                                                <!-- Expense Bar (Red) -->
+                                                <div onclick="openSummary('January', 'Expense', 'LKR 5,000,000', '12', '4,500,000', '500,000')"
+                                                    class="w-4 bg-red-500 rounded-t-sm shadow-sm opacity-80 group-hover:opacity-100 cursor-pointer hover:ring-1 ring-red-500 ring-offset-1 transition-all"
                                                     style="height: 30%"></div>
                                             </div>
                                             <span
                                                 class="text-[10px] font-bold text-gray-500 dark:text-gray-400 uppercase">Jan</span>
                                         </div>
+
+                                        <!-- 2. MODAL OVERLAY -->
+                                        <div id="summaryModal"
+                                            class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+
+                                            <!-- Modal Content -->
+                                            <div
+                                                class="bg-white dark:bg-slate-900 w-full max-w-sm rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-800 overflow-hidden transform transition-all">
+                                                <div class="p-6">
+                                                    <!-- Header -->
+                                                    <div class="flex justify-between items-center mb-4">
+                                                        <h3 id="modalTitle"
+                                                            class="text-lg font-bold text-gray-900 dark:text-white">
+                                                            Monthly Summary</h3>
+                                                        <button onclick="closeModal()"
+                                                            class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200">
+                                                            <span class="material-icons-round">close</span>
+                                                        </button>
+                                                    </div>
+
+                                                    <div class="space-y-4">
+                                                        <!-- Top Info Section -->
+                                                        <div class="flex items-center gap-4">
+                                                            <div id="modalIconBg" class="p-3 rounded-xl">
+                                                                <span id="modalIcon"
+                                                                    class="material-icons-round"></span>
+                                                            </div>
+                                                            <div>
+                                                                <p id="modalCategory"
+                                                                    class="text-sm text-gray-500 dark:text-gray-400 uppercase tracking-wider font-semibold">
+                                                                </p>
+                                                                <h4 id="modalAmount"
+                                                                    class="text-2xl font-bold text-gray-900 dark:text-white">
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="space-y-3">
+                                                            <!-- Dynamic Transaction Count Pill -->
+                                                            <div
+                                                                class="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-800/50 rounded-xl border border-gray-100 dark:border-gray-700">
+                                                                <span
+                                                                    class="text-xs font-semibold text-gray-500 uppercase tracking-wider">Transactions</span>
+                                                                <span id="modalTxCount"
+                                                                    class="px-2.5 py-0.5 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 text-xs font-bold rounded-full">0</span>
+                                                            </div>
+
+                                                            <!-- Dynamic Income Breakdown (Hidden by default) -->
+                                                            <div id="incomeBreakdown"
+                                                                class="p-4 bg-green-50/50 dark:bg-green-900/10 rounded-xl border border-green-100 dark:border-green-900/20">
+                                                                <h5
+                                                                    class="text-[10px] font-bold text-green-700 dark:text-green-400 uppercase tracking-widest mb-3">
+                                                                    Income Breakdown</h5>
+                                                                <div class="space-y-2">
+                                                                    <div class="flex justify-between items-center">
+                                                                        <span
+                                                                            class="text-xs text-gray-600 dark:text-gray-400">Dambadiwa</span>
+                                                                        <span id="valDambadiwaIn"
+                                                                            class="text-xs font-bold text-gray-900 dark:text-white">LKR
+                                                                            0</span>
+                                                                    </div>
+                                                                    <div class="flex justify-between items-center">
+                                                                        <span
+                                                                            class="text-xs text-gray-600 dark:text-gray-400">Lakdiwa</span>
+                                                                        <span id="valLakdiwaIn"
+                                                                            class="text-xs font-bold text-gray-900 dark:text-white">LKR
+                                                                            0</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!-- Dynamic Expense Breakdown (Hidden by default) -->
+                                                            <div id="expenseBreakdown"
+                                                                class="p-4 bg-red-50/50 dark:bg-red-900/10 rounded-xl border border-red-100 dark:border-red-900/20">
+                                                                <h5
+                                                                    class="text-[10px] font-bold text-red-700 dark:text-red-400 uppercase tracking-widest mb-3">
+                                                                    Expense Breakdown</h5>
+                                                                <div class="space-y-2">
+                                                                    <div class="flex justify-between items-center">
+                                                                        <span
+                                                                            class="text-xs text-gray-600 dark:text-gray-400">Dambadiwa</span>
+                                                                        <span id="valDambadiwaEx"
+                                                                            class="text-xs font-bold text-gray-900 dark:text-white">LKR
+                                                                            0</span>
+                                                                    </div>
+                                                                    <div class="flex justify-between items-center">
+                                                                        <span
+                                                                            class="text-xs text-gray-600 dark:text-gray-400">Lakdiwa</span>
+                                                                        <span id="valLakdiwaEx"
+                                                                            class="text-xs font-bold text-gray-900 dark:text-white">LKR
+                                                                            0</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <button onclick="closeModal()" class="mt-6 w-full py-3 bg-gray-900 dark:text-gray-900 text-white font-bold rounded-xl hover:bg-green-600 hover:text-white transition-all
+                                                        dark:bg-green-500 dark:hover:bg-blue-500">
+                                                        Got it
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <script>
+                                            function openSummary(month, type, amount, txCount, dVal, lVal) {
+                                                const modal = document.getElementById('summaryModal');
+                                                const title = document.getElementById('modalTitle');
+                                                const category = document.getElementById('modalCategory');
+                                                const amountLabel = document.getElementById('modalAmount');
+                                                const icon = document.getElementById('modalIcon');
+                                                const iconBg = document.getElementById('modalIconBg');
+
+                                                const txCountLabel = document.getElementById('modalTxCount');
+                                                const incomeSec = document.getElementById('incomeBreakdown');
+                                                const expenseSec = document.getElementById('expenseBreakdown');
+
+                                                // Update Text Content
+                                                title.innerText = `${month} Summary`;
+                                                category.innerText = type;
+                                                amountLabel.innerText = amount;
+                                                txCountLabel.innerText = txCount;
+
+                                                // Apply Theme and Toggle Breakdown Sections
+                                                if (type === 'Income') {
+                                                    // UI Styling
+                                                    icon.innerText = 'trending_up';
+                                                    icon.className = 'material-icons-round text-green-600';
+                                                    iconBg.className = 'p-3 bg-green-50 dark:bg-green-900/20 rounded-xl';
+
+                                                    // Toggle visibility
+                                                    incomeSec.classList.remove('hidden');
+                                                    expenseSec.classList.add('hidden');
+
+                                                    // Set dynamic values for Income
+                                                    document.getElementById('valDambadiwaIn').innerText = `LKR ${dVal}`;
+                                                    document.getElementById('valLakdiwaIn').innerText = `LKR ${lVal}`;
+                                                } else {
+                                                    // UI Styling
+                                                    icon.innerText = 'trending_down';
+                                                    icon.className = 'material-icons-round text-red-500';
+                                                    iconBg.className = 'p-3 bg-red-50 dark:bg-red-900/20 rounded-xl';
+
+                                                    // Toggle visibility
+                                                    incomeSec.classList.add('hidden');
+                                                    expenseSec.classList.remove('hidden');
+
+                                                    // Set dynamic values for Expense
+                                                    document.getElementById('valDambadiwaEx').innerText = `LKR ${dVal}`;
+                                                    document.getElementById('valLakdiwaEx').innerText = `LKR ${lVal}`;
+                                                }
+
+                                                // Show Modal
+                                                modal.classList.remove('hidden');
+                                                modal.classList.add('flex');
+                                            }
+
+                                            function closeModal() {
+                                                const modal = document.getElementById('summaryModal');
+                                                modal.classList.add('hidden');
+                                                modal.classList.remove('flex');
+                                            }
+
+                                            // Close modal if user clicks the backdrop
+                                            window.onclick = function (event) {
+                                                const modal = document.getElementById('summaryModal');
+                                                if (event.target === modal) closeModal();
+                                            }
+
+                                            // Close modal with 'Escape' key
+                                            document.addEventListener('keydown', (e) => {
+                                                if (e.key === 'Escape') closeModal();
+                                            });
+                                        </script>
                                         <div class="flex flex-col items-center gap-2 group">
                                             <div class="flex gap-1 items-end h-48">
                                                 <div class="w-4 bg-primary rounded-t-sm shadow-sm opacity-80 group-hover:opacity-100"
@@ -411,95 +878,164 @@
                             <select
                                 class="text-[10px] font-bold border-gray-200 dark:border-gray-700 rounded-md dark:bg-slate-800 dark:text-gray-300 focus:outline-none focus:ring-1 focus:ring-emerald-500">
                                 <option>All Data</option>
-                                <option>2026</option>
-                                <option>2025</option>
-                                <option>2024</option>
-                                <option>2023</option>
+                                <option value="2026" class="font-bold">2026</option>
+                                <option>&nbsp;&nbsp;Quarter 01</option>
+                                <option>&nbsp;&nbsp;Quarter 02</option>
+                                <option value="2025" class="font-bold">2025</option>
+                                <option value="2024" class="font-bold">2024</option>
                             </select>
                         </div>
                         <div class="relative w-86 h-86 flex items-center justify-center donut-container">
-    <svg class="w-full h-full transform -rotate-90" viewBox="0 0 42 42">
-        <circle class="donut-segment" cx="21" cy="21" fill="transparent" r="15.91549430918954"
-            stroke="#06b6d4" stroke-dasharray="15 85" stroke-dashoffset="100" stroke-width="6"></circle>
-        <g class="donut-data">
-            <text class="fill-gray-900 dark:fill-white font-bold text-[3px]" text-anchor="middle" transform="rotate(90 21 21)" x="21" y="21">Rs 180,000</text>
-            <text class="fill-gray-400 font-bold text-[2px]" text-anchor="middle" transform="rotate(90 21 21)" x="21" y="25">FOOD (15%)</text>
-        </g>
-        
-        <circle class="donut-segment" cx="21" cy="21" fill="transparent" r="15.91549430918954"
-            stroke="#1e3a8a" stroke-dasharray="15 85" stroke-dashoffset="85" stroke-width="6"></circle>
-        <g class="donut-data">
-            <text class="fill-gray-900 dark:fill-white font-bold text-[3px]" text-anchor="middle" transform="rotate(90 21 21)" x="21" y="21">Rs 180,000</text>
-            <text class="fill-gray-400 font-bold text-[2px]" text-anchor="middle" transform="rotate(90 21 21)" x="21" y="25">HOTELS (15%)</text>
-        </g>
-            
-        <circle class="donut-segment" cx="21" cy="21" fill="transparent" r="15.91549430918954"
-            stroke="#8b5cf6" stroke-dasharray="10 90" stroke-dashoffset="70" stroke-width="6"></circle>
-        <g class="donut-data">
-            <text class="fill-gray-900 dark:fill-white font-bold text-[3px]" text-anchor="middle" transform="rotate(90 21 21)" x="21" y="21">Rs 120,000</text>
-            <text class="fill-gray-400 font-bold text-[2px]" text-anchor="middle" transform="rotate(90 21 21)" x="21" y="25">TRANSPORT (10%)</text>
-        </g>
+                            <svg class="w-full h-full transform -rotate-90" viewBox="0 0 42 42">
+                                <circle class="donut-segment" cx="21" cy="21" fill="transparent" r="15.91549430918954"
+                                    stroke="#06b6d4" stroke-dasharray="15 85" stroke-dashoffset="100" stroke-width="6">
+                                </circle>
+                                <g class="donut-data">
+                                    <text class="fill-gray-900 dark:fill-white font-bold text-[3px]"
+                                        text-anchor="middle" transform="rotate(90 21 21)" x="21" y="21">Rs
+                                        180,000</text>
+                                    <text class="fill-gray-400 font-bold text-[2px]" text-anchor="middle"
+                                        transform="rotate(90 21 21)" x="21" y="25">FOOD (15%)</text>
+                                </g>
 
-        <circle class="donut-segment" cx="21" cy="21" fill="transparent" r="15.91549430918954"
-            stroke="#00b050" stroke-dasharray="15 85" stroke-dashoffset="60" stroke-width="6"></circle>
-        <g class="donut-data">
-            <text class="fill-gray-900 dark:fill-white font-bold text-[3px]" text-anchor="middle" transform="rotate(90 21 21)" x="21" y="21">Rs 180,000</text>
-            <text class="fill-gray-400 font-bold text-[2px]" text-anchor="middle" transform="rotate(90 21 21)" x="21" y="25">E-TICKETS (15%)</text>
-        </g>
+                                <circle class="donut-segment" cx="21" cy="21" fill="transparent" r="15.91549430918954"
+                                    stroke="#1e3a8a" stroke-dasharray="15 85" stroke-dashoffset="85" stroke-width="6">
+                                </circle>
+                                <g class="donut-data">
+                                    <text class="fill-gray-900 dark:fill-white font-bold text-[3px]"
+                                        text-anchor="middle" transform="rotate(90 21 21)" x="21" y="21">Rs
+                                        180,000</text>
+                                    <text class="fill-gray-400 font-bold text-[2px]" text-anchor="middle"
+                                        transform="rotate(90 21 21)" x="21" y="25">HOTELS (15%)</text>
+                                </g>
 
-        <circle class="donut-segment" cx="21" cy="21" fill="transparent" r="15.91549430918954"
-            stroke="#f59e0b" stroke-dasharray="10 90" stroke-dashoffset="45" stroke-width="6"></circle>
-        <g class="donut-data">
-            <text class="fill-gray-900 dark:fill-white font-bold text-[3px]" text-anchor="middle" transform="rotate(90 21 21)" x="21" y="21">Rs 120,000</text>
-            <text class="fill-gray-400 font-bold text-[2px]" text-anchor="middle" transform="rotate(90 21 21)" x="21" y="25">PUJA (10%)</text>
-        </g>
+                                <circle class="donut-segment" cx="21" cy="21" fill="transparent" r="15.91549430918954"
+                                    stroke="#8b5cf6" stroke-dasharray="10 90" stroke-dashoffset="70" stroke-width="6">
+                                </circle>
+                                <g class="donut-data">
+                                    <text class="fill-gray-900 dark:fill-white font-bold text-[3px]"
+                                        text-anchor="middle" transform="rotate(90 21 21)" x="21" y="21">Rs
+                                        120,000</text>
+                                    <text class="fill-gray-400 font-bold text-[2px]" text-anchor="middle"
+                                        transform="rotate(90 21 21)" x="21" y="25">TRANSPORT (10%)</text>
+                                </g>
 
-        <circle class="donut-segment" cx="21" cy="21" fill="transparent" r="15.91549430918954"
-            stroke="#ef4444" stroke-dasharray="10 90" stroke-dashoffset="35" stroke-width="6"></circle>
-        <g class="donut-data">
-            <text class="fill-gray-900 dark:fill-white font-bold text-[3px]" text-anchor="middle" transform="rotate(90 21 21)" x="21" y="21">Rs 120,000</text>
-            <text class="fill-gray-400 font-bold text-[2px]" text-anchor="middle" transform="rotate(90 21 21)" x="21" y="25">VISA (10%)</text>
-        </g>
+                                <circle class="donut-segment" cx="21" cy="21" fill="transparent" r="15.91549430918954"
+                                    stroke="#00b050" stroke-dasharray="15 85" stroke-dashoffset="60" stroke-width="6">
+                                </circle>
+                                <g class="donut-data">
+                                    <text class="fill-gray-900 dark:fill-white font-bold text-[3px]"
+                                        text-anchor="middle" transform="rotate(90 21 21)" x="21" y="21">Rs
+                                        180,000</text>
+                                    <text class="fill-gray-400 font-bold text-[2px]" text-anchor="middle"
+                                        transform="rotate(90 21 21)" x="21" y="25">E-TICKETS (15%)</text>
+                                </g>
 
-        <circle class="donut-segment" cx="21" cy="21" fill="transparent" r="15.91549430918954"
-            stroke="#ec4899" stroke-dasharray="10 90" stroke-dashoffset="25" stroke-width="6"></circle>
-        <g class="donut-data">
-            <text class="fill-gray-900 dark:fill-white font-bold text-[3px]" text-anchor="middle" transform="rotate(90 21 21)" x="21" y="21">Rs 120,000</text>
-            <text class="fill-gray-400 font-bold text-[2px]" text-anchor="middle" transform="rotate(90 21 21)" x="21" y="25">SALARY (10%)</text>
-        </g>
+                                <circle class="donut-segment" cx="21" cy="21" fill="transparent" r="15.91549430918954"
+                                    stroke="#f59e0b" stroke-dasharray="10 90" stroke-dashoffset="45" stroke-width="6">
+                                </circle>
+                                <g class="donut-data">
+                                    <text class="fill-gray-900 dark:fill-white font-bold text-[3px]"
+                                        text-anchor="middle" transform="rotate(90 21 21)" x="21" y="21">Rs
+                                        120,000</text>
+                                    <text class="fill-gray-400 font-bold text-[2px]" text-anchor="middle"
+                                        transform="rotate(90 21 21)" x="21" y="25">PUJA (10%)</text>
+                                </g>
 
-        <circle class="donut-segment" cx="21" cy="21" fill="transparent" r="15.91549430918954"
-            stroke="#64748b" stroke-dasharray="10 90" stroke-dashoffset="15" stroke-width="6"></circle>
-        <g class="donut-data">
-            <text class="fill-gray-900 dark:fill-white font-bold text-[3px]" text-anchor="middle" transform="rotate(90 21 21)" x="21" y="21">Rs 120,000</text>
-            <text class="fill-gray-400 font-bold text-[2px]" text-anchor="middle" transform="rotate(90 21 21)" x="21" y="25">EXTRA (10%)</text>
-        </g>
+                                <circle class="donut-segment" cx="21" cy="21" fill="transparent" r="15.91549430918954"
+                                    stroke="#ef4444" stroke-dasharray="10 90" stroke-dashoffset="35" stroke-width="6">
+                                </circle>
+                                <g class="donut-data">
+                                    <text class="fill-gray-900 dark:fill-white font-bold text-[3px]"
+                                        text-anchor="middle" transform="rotate(90 21 21)" x="21" y="21">Rs
+                                        120,000</text>
+                                    <text class="fill-gray-400 font-bold text-[2px]" text-anchor="middle"
+                                        transform="rotate(90 21 21)" x="21" y="25">VISA (10%)</text>
+                                </g>
 
-        <circle class="donut-segment" cx="21" cy="21" fill="transparent" r="15.91549430918954"
-            stroke="#94a3b8" stroke-dasharray="5 95" stroke-dashoffset="5" stroke-width="6"></circle>
-        <g class="donut-data">
-            <text class="fill-gray-900 dark:fill-white font-bold text-[3px]" text-anchor="middle" transform="rotate(90 21 21)" x="21" y="21">Rs 60,000</text>
-            <text class="fill-gray-400 font-bold text-[2px]" text-anchor="middle" transform="rotate(90 21 21)" x="21" y="25">OTHER (5%)</text>
-        </g>
-    </svg>
+                                <circle class="donut-segment" cx="21" cy="21" fill="transparent" r="15.91549430918954"
+                                    stroke="#ec4899" stroke-dasharray="10 90" stroke-dashoffset="25" stroke-width="6">
+                                </circle>
+                                <g class="donut-data">
+                                    <text class="fill-gray-900 dark:fill-white font-bold text-[3px]"
+                                        text-anchor="middle" transform="rotate(90 21 21)" x="21" y="21">Rs
+                                        120,000</text>
+                                    <text class="fill-gray-400 font-bold text-[2px]" text-anchor="middle"
+                                        transform="rotate(90 21 21)" x="21" y="25">SALARY (10%)</text>
+                                </g>
 
-    <div class="absolute inset-0 flex flex-col items-center justify-center center-summary pointer-events-none">
-        <span class="text-2xl font-bold dark:text-white leading-none">1.2M</span>
-        <span class="text-[8px] uppercase text-gray-400 font-bold tracking-widest">Total Rs</span>
-    </div>
-</div>
+                                <circle class="donut-segment" cx="21" cy="21" fill="transparent" r="15.91549430918954"
+                                    stroke="#64748b" stroke-dasharray="10 90" stroke-dashoffset="15" stroke-width="6">
+                                </circle>
+                                <g class="donut-data">
+                                    <text class="fill-gray-900 dark:fill-white font-bold text-[3px]"
+                                        text-anchor="middle" transform="rotate(90 21 21)" x="21" y="21">Rs
+                                        120,000</text>
+                                    <text class="fill-gray-400 font-bold text-[2px]" text-anchor="middle"
+                                        transform="rotate(90 21 21)" x="21" y="25">EXTRA (10%)</text>
+                                </g>
 
-<div class="mt-8 grid grid-cols-3 gap-x-6 gap-y-3 w-full">
-    <div class="flex items-center gap-2"><span class="w-2.5 h-2.5 bg-cyan-500 rounded-full"></span><span class="text-[10px] font-semibold text-gray-500 dark:text-gray-400">Food (15%)</span></div>
-    <div class="flex items-center gap-2"><span class="w-2.5 h-2.5 bg-blue-900 rounded-full"></span><span class="text-[10px] font-semibold text-gray-500 dark:text-gray-400">Hotels (15%)</span></div>
-    <div class="flex items-center gap-2"><span class="w-2.5 h-2.5 bg-purple-500 rounded-full"></span><span class="text-[10px] font-semibold text-gray-500 dark:text-gray-400">Transport (10%)</span></div>
-    <div class="flex items-center gap-2"><span class="w-2.5 h-2.5 bg-green-600 rounded-full"></span><span class="text-[10px] font-semibold text-gray-500 dark:text-gray-400">E-Tickets (15%)</span></div>
-    <div class="flex items-center gap-2"><span class="w-2.5 h-2.5 bg-orange-400 rounded-full"></span><span class="text-[10px] font-semibold text-gray-500 dark:text-gray-400">Puja (10%)</span></div>
-    <div class="flex items-center gap-2"><span class="w-2.5 h-2.5 bg-red-500 rounded-full"></span><span class="text-[10px] font-semibold text-gray-500 dark:text-gray-400">Nepal Visa (10%)</span></div>
-    <div class="flex items-center gap-2"><span class="w-2.5 h-2.5 bg-pink-500 rounded-full"></span><span class="text-[10px] font-semibold text-gray-500 dark:text-gray-400">Salary (10%)</span></div>
-    <div class="flex items-center gap-2"><span class="w-2.5 h-2.5 bg-slate-500 rounded-full"></span><span class="text-[10px] font-semibold text-gray-500 dark:text-gray-400">Extra (10%)</span></div>
-    <div class="flex items-center gap-2"><span class="w-2.5 h-2.5 bg-slate-400 rounded-full"></span><span class="text-[10px] font-semibold text-gray-500 dark:text-gray-400">Other (5%)</span></div>
-</div>
+                                <circle class="donut-segment" cx="21" cy="21" fill="transparent" r="15.91549430918954"
+                                    stroke="#94a3b8" stroke-dasharray="5 95" stroke-dashoffset="5" stroke-width="6">
+                                </circle>
+                                <g class="donut-data">
+                                    <text class="fill-gray-900 dark:fill-white font-bold text-[3px]"
+                                        text-anchor="middle" transform="rotate(90 21 21)" x="21" y="21">Rs
+                                        60,000</text>
+                                    <text class="fill-gray-400 font-bold text-[2px]" text-anchor="middle"
+                                        transform="rotate(90 21 21)" x="21" y="25">OTHER (5%)</text>
+                                </g>
+                            </svg>
+
+                            <div
+                                class="absolute inset-0 flex flex-col items-center justify-center center-summary pointer-events-none">
+                                <span class="text-2xl font-bold dark:text-white leading-none">1.2M</span>
+                                <span class="text-[8px] uppercase text-gray-400 font-bold tracking-widest">Total
+                                    Rs</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-8 grid grid-cols-3 gap-x-6 gap-y-3 w-full">
+                            <div class="flex items-center gap-2"><span
+                                    class="w-2.5 h-2.5 bg-cyan-500 rounded-full"></span><span
+                                    class="text-[10px] font-semibold text-gray-500 dark:text-gray-400">Food
+                                    (15%)</span>
+                            </div>
+                            <div class="flex items-center gap-2"><span
+                                    class="w-2.5 h-2.5 bg-blue-900 rounded-full"></span><span
+                                    class="text-[10px] font-semibold text-gray-500 dark:text-gray-400">Hotels
+                                    (15%)</span></div>
+                            <div class="flex items-center gap-2"><span
+                                    class="w-2.5 h-2.5 bg-purple-500 rounded-full"></span><span
+                                    class="text-[10px] font-semibold text-gray-500 dark:text-gray-400">Transport
+                                    (10%)</span></div>
+                            <div class="flex items-center gap-2"><span
+                                    class="w-2.5 h-2.5 bg-green-600 rounded-full"></span><span
+                                    class="text-[10px] font-semibold text-gray-500 dark:text-gray-400">E-Tickets
+                                    (15%)</span></div>
+                            <div class="flex items-center gap-2"><span
+                                    class="w-2.5 h-2.5 bg-orange-400 rounded-full"></span><span
+                                    class="text-[10px] font-semibold text-gray-500 dark:text-gray-400">Puja
+                                    (10%)</span>
+                            </div>
+                            <div class="flex items-center gap-2"><span
+                                    class="w-2.5 h-2.5 bg-red-500 rounded-full"></span><span
+                                    class="text-[10px] font-semibold text-gray-500 dark:text-gray-400">Nepal Visa
+                                    (10%)</span></div>
+                            <div class="flex items-center gap-2"><span
+                                    class="w-2.5 h-2.5 bg-pink-500 rounded-full"></span><span
+                                    class="text-[10px] font-semibold text-gray-500 dark:text-gray-400">Salary
+                                    (10%)</span></div>
+                            <div class="flex items-center gap-2"><span
+                                    class="w-2.5 h-2.5 bg-slate-500 rounded-full"></span><span
+                                    class="text-[10px] font-semibold text-gray-500 dark:text-gray-400">Extra
+                                    (10%)</span></div>
+                            <div class="flex items-center gap-2"><span
+                                    class="w-2.5 h-2.5 bg-slate-400 rounded-full"></span><span
+                                    class="text-[10px] font-semibold text-gray-500 dark:text-gray-400">Other
+                                    (5%)</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div
@@ -619,8 +1155,9 @@
                                         </td>
                                     </tr>
                                     <tr class="border-b border-gray-50 dark:border-gray-800 hover:bg-gray-50/10">
-                                         <td class="px-6 py-4 font-semibold">Puja</td>
-                                        <td class="px-6 py-4 text-gray-500">Donation Grant Annual Temple Fund Grant</td>
+                                        <td class="px-6 py-4 font-semibold">Puja</td>
+                                        <td class="px-6 py-4 text-gray-500">Donation Grant Annual Temple Fund Grant
+                                        </td>
                                         <td class="px-6 py-4 font-bold text-primary text-right">120,000</td>
                                         <td class="px-6 py-4 text-xs text-center">2026-01-15</td>
                                         <td class="px-6 py-4 text-center">
