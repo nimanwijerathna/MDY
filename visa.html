@@ -155,7 +155,7 @@
                                 <option>2024</option>
                             </select>
                         </div>
-                         <div class="space-y-1">
+                        <div class="space-y-1">
                             <label
                                 class="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider">Sort
                                 by Quarter</label>
@@ -219,342 +219,596 @@
                         </div>
                         <div class="space-y-1">
                             <div class="flex gap-2 w-full shrink-0">
-                            <button
-                                class="flex items-center px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-md text-sm font-medium transition-colors shadow-sm whitespace-nowrap">
-                                <span class="material-icons-round text-sm mr-2">picture_as_pdf</span>
-                                PDF
-                            </button>
-                            <button
-                                class="flex items-center px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-md text-sm font-medium transition-colors shadow-sm whitespace-nowrap">
-                                <span class="material-icons-round text-sm mr-2">table_view</span>
-                                Excel
-                            </button>
+                                <button
+                                    class="flex items-center px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-md text-sm font-medium transition-colors shadow-sm whitespace-nowrap">
+                                    <span class="material-icons-round text-sm mr-2">picture_as_pdf</span>
+                                    PDF
+                                </button>
+                                <button
+                                    class="flex items-center px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-md text-sm font-medium transition-colors shadow-sm whitespace-nowrap">
+                                    <span class="material-icons-round text-sm mr-2">table_view</span>
+                                    Excel
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm overflow-hidden border border-gray-100 dark:border-gray-700">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead class="bg-secondary text-white text-[11px] uppercase tracking-wider">
+                                <tr>
+                                    <th class="px-4 py-4 font-semibold whitespace-nowrap">Status</th>
+                                    <th class="px-4 py-4 font-semibold whitespace-nowrap">Reg No</th>
+                                    <th class="px-4 py-4 font-semibold whitespace-nowrap">Surname</th>
+                                    <th class="px-4 py-4 font-semibold whitespace-nowrap">Other Name</th>
+                                    <th class="px-4 py-4 font-semibold whitespace-nowrap">Gender</th>
+                                    <th class="px-4 py-4 font-semibold whitespace-nowrap">DOB</th>
+                                    <th class="px-4 py-4 font-semibold whitespace-nowrap">Contact</th>
+                                    <th class="px-4 py-4 font-semibold whitespace-nowrap">Address</th>
+                                    <th class="px-4 py-4 font-semibold whitespace-nowrap">Passport No</th>
+                                    <th class="px-4 py-4 font-semibold whitespace-nowrap">Passport Exp Date</th>
+                                    <th class="px-4 py-4 font-semibold whitespace-nowrap">Visa Number</th>
+                                    <th class="px-4 py-4 font-semibold whitespace-nowrap">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-[13px] font-medium">
+                                <tr class="row-submitted border-b border-black/5">
+                                    <td class="px-4 py-3 whitespace-nowrap">
+                                        <div class="flex items-center space-x-2">
+                                            <select
+                                                class="bg-white/10 border-white/20 text-white text-xs rounded focus:ring-0">
+                                                <option class="text-gray-900" selected="">Submitted</option>
+                                                <option>Spelling checked</option>
+                                                <option>Ready for Visa</option>
+                                                <option>Online Visa received</option>
+                                                <option>Online visa submitted</option>
+                                                <option>Visa available</option>
+                                                <option>Visa to be Ammended</option>
+                                                <option>Online Visa Applicant</option>
+                                                <option>Visa on Ammendment</option>
+                                            </select>
+                                            <button
+                                                class="bg-white text-gray-800 px-2 py-1 rounded text-[10px] font-bold uppercase shadow-sm">Update</button>
+                                        </div>
+                                    </td>
+                                    <td class="px-4 py-3 whitespace-nowrap">FEB2 - 002</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">ATHTHILI GODAGE</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">IROSHA USHANTHI</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">F</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">1985-05-12</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">071-2345678</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">246/A/3, UDARA RD, PAHALA KARAGAHAMUNA,
+                                        KADAWATHA</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">N1234567</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">2030-01-15</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">20300115</td>
+                                    <td class="px-4 py-3 whitespace-nowrap text-sm">
+                                        <button
+                                            class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-1.5 px-3 rounded transition duration-150 ease-in-out edit-action-btn"
+                                            data-reg="FEB2 - 002" data-surname="ATHTHILI GODAGE"
+                                            data-othername="IROSHA USHANTHI" data-gender="F" data-dob="1985-05-12"
+                                            data-contact="071-2345678"
+                                            data-address="246/A/3, UDARA RD, PAHALA KARAGAHAMUNA, KADAWATHA"
+                                            data-passport="N1234567" data-pass-exp="2030-01-15" data-visa="20300115">
+                                            Edit
+                                        </button>
+                                    </td>
+
+                                    <!-- Modal Background Overlay -->
+                                    <div id="editModal"
+                                        class="hidden fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center z-50 p-4">
+
+                                        <!-- Modal Container -->
+                                        <div
+                                            class="bg-white rounded-xl shadow-xl max-w-2xl w-full max-h-[90vh] flex flex-col transform transition-all p-3">
+
+                                            <!-- Modal Header -->
+                                            <div
+                                                class="px-6 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50 rounded-t-xl">
+                                                <h3 class="text-base font-semibold text-gray-900">
+                                                    Edit Record: <span id="modalTitleReg"
+                                                        class="text-blue-600 font-bold"></span>
+                                                </h3>
+                                                <button type="button" onclick="closeModal()"
+                                                    class="text-gray-400 hover:text-gray-600 text-xl font-bold">&times;</button>
+                                            </div>
+
+                                            <!-- Form Body (Scrollable if viewport is small) -->
+                                            <form id="editForm"
+                                                class="p-6 overflow-y-auto space-y-4 flex-1 text-sm text-gray-700">
+                                                <input type="hidden" id="edit_reg">
+
+                                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                                    <div>
+                                                        <label
+                                                            class="block text-xs font-medium text-gray-500 mb-1">Surname</label>
+                                                        <input type="text" id="edit_surname"
+                                                            class="w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none">
+                                                    </div>
+                                                    <div>
+                                                        <label
+                                                            class="block text-xs font-medium text-gray-500 mb-1">Other
+                                                            Name</label>
+                                                        <input type="text" id="edit_othername"
+                                                            class="w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none">
+                                                    </div>
+                                                    <div>
+                                                        <label
+                                                            class="block text-xs font-medium text-gray-500 mb-1">Gender</label>
+                                                        <select id="edit_gender"
+                                                            class="w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none">
+                                                            <option value="M">M</option>
+                                                            <option value="F">F</option>
+                                                        </select>
+                                                    </div>
+                                                    <div>
+                                                        <label class="block text-xs font-medium text-gray-500 mb-1">Date
+                                                            of Birth</label>
+                                                        <input type="date" id="edit_dob"
+                                                            class="w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none">
+                                                    </div>
+                                                    <div>
+                                                        <label
+                                                            class="block text-xs font-medium text-gray-500 mb-1">Contact
+                                                            No</label>
+                                                        <input type="text" id="edit_contact"
+                                                            class="w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none">
+                                                    </div>
+                                                    <div>
+                                                        <label
+                                                            class="block text-xs font-medium text-gray-500 mb-1">Passport
+                                                            No</label>
+                                                        <input type="text" id="edit_passport"
+                                                            class="w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none">
+                                                    </div>
+                                                    <div>
+                                                        <label
+                                                            class="block text-xs font-medium text-gray-500 mb-1">Passport
+                                                            Exp Date</label>
+                                                        <input type="date" id="edit_pass_exp"
+                                                            class="w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none">
+                                                    </div>
+                                                    <div>
+                                                        <label class="block text-xs font-medium text-gray-500 mb-1">Visa
+                                                            Number</label>
+                                                        <input type="text" id="edit_visa"
+                                                            class="w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none">
+                                                    </div>
+                                                </div>
+
+                                                <div>
+                                                    <label
+                                                        class="block text-xs font-medium text-gray-500 mb-1 mt-3">Address</label>
+                                                    <textarea id="edit_address" rows="2"
+                                                        class="w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none"></textarea>
+                                                </div>
+                                            </form>
+
+                                            <!-- Action Controls -->
+                                            <div
+                                                class="px-6 py-4 border-t border-gray-100 flex justify-end gap-3 bg-gray-50 rounded-b-xl">
+                                                <button type="button" onclick="closeModal()"
+                                                    class="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-100 font-medium transition">
+                                                    Cancel
+                                                </button>
+                                                <button type="button" onclick="saveData()"
+                                                    class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium shadow-sm transition">
+                                                    Save Changes
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </tr>
+                                <tr class="row-spelling-checked border-b border-black/5">
+                                    <td class="px-4 py-3 whitespace-nowrap">
+                                        <div class="flex items-center space-x-2">
+                                            <select
+                                                class="bg-white/10 border-white/20 text-white text-xs rounded focus:ring-0">
+                                                <option>Submitted</option>
+                                                <option class="text-gray-900" selected="">Spelling checked</option>
+                                                <option>Ready for Visa</option>
+                                                <option>Online Visa received</option>
+                                                <option>Online visa submitted</option>
+                                                <option>Visa available</option>
+                                                <option>Visa to be Ammended</option>
+                                                <option>Online Visa Applicant</option>
+                                                <option>Visa on Ammendment</option>
+                                            </select>
+                                            <button
+                                                class="bg-white text-gray-800 px-2 py-1 rounded text-[10px] font-bold uppercase shadow-sm">Update</button>
+                                        </div>
+                                    </td>
+                                    <td class="px-4 py-3 whitespace-nowrap">FEB2-003</td>
+                                    <td class="px-4 py-3 whitespace-nowrap uppercase">Wikrama</td>
+                                    <td class="px-4 py-3 whitespace-nowrap uppercase">Thanuja Lalani</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">F</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">1990-08-22</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">077-9876543</td>
+                                    <td class="px-4 py-3 whitespace-nowrap uppercase">219/4, Pahala Karagahamuna,
+                                        Kadawatha</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">N8765432</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">2029-11-20</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">20291120</td>
+                                    <td class="px-4 py-3 whitespace-nowrap text-sm">
+                                        <button
+                                            class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-1.5 px-3 rounded transition duration-150 ease-in-out edit-action-btn"
+                                            data-reg="FEB2 - 002" data-surname="ATHTHILI GODAGE"
+                                            data-othername="IROSHA USHANTHI" data-gender="F" data-dob="1985-05-12"
+                                            data-contact="071-2345678"
+                                            data-address="246/A/3, UDARA RD, PAHALA KARAGAHAMUNA, KADAWATHA"
+                                            data-passport="N1234567" data-pass-exp="2030-01-15" data-visa="20300115">
+                                            Edit
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr class="row-ready-for-visa border-b border-black/5">
+                                    <td class="px-4 py-3 whitespace-nowrap">
+                                        <div class="flex items-center space-x-2">
+                                            <select
+                                                class="bg-white/10 border-white/20 text-white text-xs rounded focus:ring-0">
+                                                <option>Submitted</option>
+                                                <option>Spelling checked</option>
+                                                <option class="text-gray-900" selected="">Ready for Visa</option>
+                                                <option>Online Visa received</option>
+                                                <option>Online visa submitted</option>
+                                                <option>Visa available</option>
+                                                <option>Visa to be Ammended</option>
+                                                <option>Online Visa Applicant</option>
+                                                <option>Visa on Ammendment</option>
+                                            </select>
+                                            <button
+                                                class="bg-white text-gray-800 px-2 py-1 rounded text-[10px] font-bold uppercase shadow-sm">Update</button>
+                                        </div>
+                                    </td>
+                                    <td class="px-4 py-3 whitespace-nowrap">FEB2-015</td>
+                                    <td class="px-4 py-3 whitespace-nowrap uppercase">Kasthuriarachchige</td>
+                                    <td class="px-4 py-3 whitespace-nowrap uppercase">Nilmini</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">F</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">1982-12-05</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">076-5544332</td>
+                                    <td class="px-4 py-3 whitespace-nowrap uppercase">No 26/10, 2nd Lane, Wickramasinghepura,
+                                        Battaramulla</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">N5544332</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">2028-06-10</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">20280610</td>
+                                    <td class="px-4 py-3 whitespace-nowrap text-sm">
+                                        <button
+                                            class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-1.5 px-3 rounded transition duration-150 ease-in-out edit-action-btn"
+                                            data-reg="FEB2 - 002" data-surname="ATHTHILI GODAGE"
+                                            data-othername="IROSHA USHANTHI" data-gender="F" data-dob="1985-05-12"
+                                            data-contact="071-2345678"
+                                            data-address="246/A/3, UDARA RD, PAHALA KARAGAHAMUNA, KADAWATHA"
+                                            data-passport="N1234567" data-pass-exp="2030-01-15" data-visa="20300115">
+                                            Edit
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr class="row-online-visa-received border-b border-black/5">
+                                    <td class="px-4 py-3 whitespace-nowrap">
+                                        <div class="flex items-center space-x-2">
+                                            <select class="bg-white/10 border-black/20 text-xs rounded focus:ring-0">
+                                                <option>Submitted</option>
+                                                <option>Spelling checked</option>
+                                                <option>Ready for Visa</option>
+                                                <option class="text-gray-900" selected="">Online Visa received</option>
+                                                <option>Online visa submitted</option>
+                                                <option>Visa available</option>
+                                                <option>Visa to be Ammended</option>
+                                                <option>Online Visa Applicant</option>
+                                                <option>Visa on Ammendment</option>
+                                            </select>
+                                            <button
+                                                class="bg-white text-gray-800 px-2 py-1 rounded text-[10px] font-bold uppercase shadow-sm">Update</button>
+                                        </div>
+                                    </td>
+                                    <td class="px-4 py-3 whitespace-nowrap">FEB2-024</td>
+                                    <td class="px-4 py-3 whitespace-nowrap uppercase">Sirimewan</td>
+                                    <td class="px-4 py-3 whitespace-nowrap uppercase">Bimini</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">F</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">1971-03-18</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">072-1155334</td>
+                                    <td class="px-4 py-3 whitespace-nowrap uppercase">265, 04 Ela, Weheragama, Moraketiya,
+                                        Embilipitiya</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">N9988776</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">2034-02-28</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">20340228</td>
+                                    <td class="px-4 py-3 whitespace-nowrap text-sm">
+                                        <button
+                                            class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-1.5 px-3 rounded transition duration-150 ease-in-out edit-action-btn"
+                                            data-reg="FEB2 - 002" data-surname="ATHTHILI GODAGE"
+                                            data-othername="IROSHA USHANTHI" data-gender="F" data-dob="1985-05-12"
+                                            data-contact="071-2345678"
+                                            data-address="246/A/3, UDARA RD, PAHALA KARAGAHAMUNA, KADAWATHA"
+                                            data-passport="N1234567" data-pass-exp="2030-01-15" data-visa="20300115">
+                                            Edit
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr class="row-online-visa-submitted border-b border-black/5">
+                                    <td class="px-4 py-3 whitespace-nowrap">
+                                        <div class="flex items-center space-x-2">
+                                            <select class="bg-white/10 border-black/20 text-xs rounded focus:ring-0">
+                                                <option>Submitted</option>
+                                                <option>Spelling checked</option>
+                                                <option>Ready for Visa</option>
+                                                <option>Online Visa received</option>
+                                                <option class="text-gray-900" selected="">Online visa submitted</option>
+                                                <option>Visa available</option>
+                                                <option>Visa to be Ammended</option>
+                                                <option>Online Visa Applicant</option>
+                                                <option>Visa on Ammendment</option>
+                                            </select>
+                                            <button
+                                                class="bg-white text-gray-800 px-2 py-1 rounded text-[10px] font-bold uppercase shadow-sm">Update</button>
+                                        </div>
+                                    </td>
+                                    <td class="px-4 py-3 whitespace-nowrap">FEB2-026</td>
+                                    <td class="px-4 py-3 whitespace-nowrap uppercase">Gunasekara</td>
+                                    <td class="px-4 py-3 whitespace-nowrap uppercase">Amara</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">F</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">1988-04-12</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">071-4433221</td>
+                                    <td class="px-4 py-3 whitespace-nowrap uppercase">210/8, Sri Sudarshana Rd, Malabe</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">N3322110</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">2032-09-14</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">20320914</td>
+                                    <td class="px-4 py-3 whitespace-nowrap text-sm">
+                                        <button
+                                            class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-1.5 px-3 rounded transition duration-150 ease-in-out edit-action-btn"
+                                            data-reg="FEB2 - 002" data-surname="ATHTHILI GODAGE"
+                                            data-othername="IROSHA USHANTHI" data-gender="F" data-dob="1985-05-12"
+                                            data-contact="071-2345678"
+                                            data-address="246/A/3, UDARA RD, PAHALA KARAGAHAMUNA, KADAWATHA"
+                                            data-passport="N1234567" data-pass-exp="2030-01-15" data-visa="20300115">
+                                            Edit
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr class="row-visa-available border-b border-black/5">
+                                    <td class="px-4 py-3 whitespace-nowrap">
+                                        <div class="flex items-center space-x-2">
+                                            <select class="bg-white/10 border-black/20 text-xs rounded focus:ring-0">
+                                                <option>Submitted</option>
+                                                <option>Spelling checked</option>
+                                                <option>Ready for Visa</option>
+                                                <option>Online Visa received</option>
+                                                <option>Online visa submitted</option>
+                                                <option class="text-gray-900" selected="">Visa available</option>
+                                                <option>Visa to be Ammended</option>
+                                                <option>Online Visa Applicant</option>
+                                                <option>Visa on Ammendment</option>
+                                            </select>
+                                            <button
+                                                class="bg-white text-gray-800 px-2 py-1 rounded text-[10px] font-bold uppercase shadow-sm">Update</button>
+                                        </div>
+                                    </td>
+                                    <td class="px-4 py-3 whitespace-nowrap">FEB2-027</td>
+                                    <td class="px-4 py-3 whitespace-nowrap uppercase">Perera</td>
+                                    <td class="px-4 py-3 whitespace-nowrap uppercase">Sunimal</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">M</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">1992-01-30</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">077-1122445</td>
+                                    <td class="px-4 py-3 whitespace-nowrap uppercase">Yapa Stores, Dambarawa, Mahiyanganaya</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">N4455667</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">2029-05-18</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">20290518</td>
+                                    <td class="px-4 py-3 whitespace-nowrap text-sm">
+                                        <button
+                                            class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-1.5 px-3 rounded transition duration-150 ease-in-out edit-action-btn"
+                                            data-reg="FEB2 - 002" data-surname="ATHTHILI GODAGE"
+                                            data-othername="IROSHA USHANTHI" data-gender="F" data-dob="1985-05-12"
+                                            data-contact="071-2345678"
+                                            data-address="246/A/3, UDARA RD, PAHALA KARAGAHAMUNA, KADAWATHA"
+                                            data-passport="N1234567" data-pass-exp="2030-01-15" data-visa="20300115">
+                                            Edit
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr class="row-visa-to-be-amended border-b border-black/5">
+                                    <td class="px-4 py-3 whitespace-nowrap">
+                                        <div class="flex items-center space-x-2">
+                                            <select class="bg-white/10 border-black/20 text-xs rounded focus:ring-0">
+                                                <option>Visa available</option>
+                                                <option>Submitted</option>
+                                                <option>Spelling checked</option>
+                                                <option>Ready for Visa</option>
+                                                <option>Online Visa received</option>
+                                                <option>Online visa submitted</option>
+                                                <option>Visa available</option>
+                                                <option class="text-gray-900" selected="">Visa to be Ammended</option>
+                                                <option>Online Visa Applicant</option>
+                                                <option>Visa on Ammendment</option>
+                                            </select>
+                                            <button
+                                                class="bg-white text-gray-800 px-2 py-1 rounded text-[10px] font-bold uppercase shadow-sm">Update</button>
+                                        </div>
+                                    </td>
+                                    <td class="px-4 py-3 whitespace-nowrap">FEB2-028</td>
+                                    <td class="px-4 py-3 whitespace-nowrap uppercase">Dhurayalage</td>
+                                    <td class="px-4 py-3 whitespace-nowrap uppercase">Senarathna</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">F</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">1971-03-18</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">072-1155334</td>
+                                    <td class="px-4 py-3 whitespace-nowrap uppercase">Yapa Stores, Dambarawa, Mahiyanganaya</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">N9988776</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">2034-02-28</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">20340228</td>
+                                    <td class="px-4 py-3 whitespace-nowrap text-sm">
+                                        <button
+                                            class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-1.5 px-3 rounded transition duration-150 ease-in-out edit-action-btn"
+                                            data-reg="FEB2 - 002" data-surname="ATHTHILI GODAGE"
+                                            data-othername="IROSHA USHANTHI" data-gender="F" data-dob="1985-05-12"
+                                            data-contact="071-2345678"
+                                            data-address="246/A/3, UDARA RD, PAHALA KARAGAHAMUNA, KADAWATHA"
+                                            data-passport="N1234567" data-pass-exp="2030-01-15" data-visa="20300115">
+                                            Edit
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr class="row-online-visa-applicant border-b border-black/5">
+                                    <td class="px-4 py-3 whitespace-nowrap">
+                                        <div class="flex items-center space-x-2">
+                                            <select class="bg-white/10 border-black/20 text-xs rounded focus:ring-0">
+                                                <option>Visa available</option>
+                                                <option>Submitted</option>
+                                                <option>Spelling checked</option>
+                                                <option>Ready for Visa</option>
+                                                <option>Online Visa received</option>
+                                                <option>Online visa submitted</option>
+                                                <option>Visa available</option>
+                                                <option>Visa to be Ammended</option>
+                                                <option class="text-gray-900" selected="">Online Visa Applicant</option>
+                                                <option>Visa on Ammendment</option>
+                                            </select>
+                                            <button
+                                                class="bg-white text-gray-800 px-2 py-1 rounded text-[10px] font-bold uppercase shadow-sm">Update</button>
+                                        </div>
+                                    </td>
+                                    <td class="px-4 py-3 whitespace-nowrap">FEB2-035</td>
+                                    <td class="px-4 py-3 whitespace-nowrap uppercase">Ethugal Pedi</td>
+                                    <td class="px-4 py-3 whitespace-nowrap uppercase">Padmini</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">F</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">1978-03-18</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">072-1122334</td>
+                                    <td class="px-4 py-3 whitespace-nowrap uppercase">203/2, Uduwila Rd, Godigamuwa, Akaragama
+                                    </td>
+                                    <td class="px-4 py-3 whitespace-nowrap">N9988776</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">2031-02-28</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">20310228</td>
+                                    <td class="px-4 py-3 whitespace-nowrap text-sm">
+                                        <button
+                                            class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-1.5 px-3 rounded transition duration-150 ease-in-out edit-action-btn"
+                                            data-reg="FEB2 - 002" data-surname="ATHTHILI GODAGE"
+                                            data-othername="IROSHA USHANTHI" data-gender="F" data-dob="1985-05-12"
+                                            data-contact="071-2345678"
+                                            data-address="246/A/3, UDARA RD, PAHALA KARAGAHAMUNA, KADAWATHA"
+                                            data-passport="N1234567" data-pass-exp="2030-01-15" data-visa="20300115">
+                                            Edit
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr class="row-visa-on-amendment">
+                                    <td class="px-4 py-3 whitespace-nowrap">
+                                        <div class="flex items-center space-x-2">
+                                            <select class="bg-white/10 border-black/20 text-xs rounded focus:ring-0">
+                                                <option>Visa available</option>
+                                                <option>Submitted</option>
+                                                <option>Spelling checked</option>
+                                                <option>Ready for Visa</option>
+                                                <option>Online Visa received</option>
+                                                <option>Online visa submitted</option>
+                                                <option>Visa available</option>
+                                                <option>Visa to be Ammended</option>
+                                                <option>Online Visa Applicant</option>
+                                                <option class="text-gray-900" selected="">Visa on Ammendment</option>
+                                            </select>
+                                            <button
+                                                class="bg-white text-gray-800 px-2 py-1 rounded text-[10px] font-bold uppercase shadow-sm">Update</button>
+                                        </div>
+                                    </td>
+                                    <td class="px-4 py-3 whitespace-nowrap">FEB2-121</td>
+                                    <td class="px-4 py-3 whitespace-nowrap uppercase">Silva</td>
+                                    <td class="px-4 py-3 whitespace-nowrap uppercase">Kumari</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">F</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">1984-06-21</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">071-5544667</td>
+                                    <td class="px-4 py-3 whitespace-nowrap uppercase">246/78, Soisa Niwasa Yojana Kramaya,
+                                        Thewatta Rd, Ragama</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">N1122334</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">2033-10-10</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">20331010</td>
+                                    <td class="px-4 py-3 whitespace-nowrap text-sm">
+                                        <button
+                                            class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-1.5 px-3 rounded transition duration-150 ease-in-out edit-action-btn"
+                                            data-reg="FEB2 - 002" data-surname="ATHTHILI GODAGE"
+                                            data-othername="IROSHA USHANTHI" data-gender="F" data-dob="1985-05-12"
+                                            data-contact="071-2345678"
+                                            data-address="246/A/3, UDARA RD, PAHALA KARAGAHAMUNA, KADAWATHA"
+                                            data-passport="N1234567" data-pass-exp="2030-01-15" data-visa="20300115">
+                                            Edit
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="bg-gray-50 dark:bg-gray-800/50 px-6 py-4 border-t border-gray-200 dark:border-gray-700">
+                        <div class="flex items-center justify-between">
+                            <div class="text-sm text-gray-700 dark:text-gray-400">
+                                Showing <span class="font-medium">1</span> to <span class="font-medium">9</span> of
+                                <span class="font-medium">18</span> results
+                            </div>
+                            <nav aria-label="Pagination"
+                                class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px">
+                                <a class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-sm font-medium text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600"
+                                    href="#">
+                                    <span class="material-icons-round text-sm">chevron_left</span>
+                                </a>
+                                <a aria-current="page"
+                                    class="z-10 bg-primary/10 border-primary text-primary relative inline-flex items-center px-4 py-2 border text-sm font-medium"
+                                    href="#">1</a>
+                                <a class="bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium"
+                                    href="#">2</a>
+                                <a class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-sm font-medium text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600"
+                                    href="#">
+                                    <span class="material-icons-round text-sm">chevron_right</span>
+                                </a>
+                            </nav>
                         </div>
                     </div>
                 </div>
             </div>
-            <div
-                class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm overflow-hidden border border-gray-100 dark:border-gray-700">
-                <div class="overflow-x-auto">
-                    <table class="w-full text-left border-collapse">
-                        <thead class="bg-secondary text-white text-[11px] uppercase tracking-wider">
-                            <tr>
-                                <th class="px-4 py-4 font-semibold whitespace-nowrap">Status</th>
-                                <th class="px-4 py-4 font-semibold whitespace-nowrap">Reg No</th>
-                                <th class="px-4 py-4 font-semibold whitespace-nowrap">Surname</th>
-                                <th class="px-4 py-4 font-semibold whitespace-nowrap">Other Name</th>
-                                <th class="px-4 py-4 font-semibold whitespace-nowrap">Gender</th>
-                                <th class="px-4 py-4 font-semibold whitespace-nowrap">DOB</th>
-                                <th class="px-4 py-4 font-semibold whitespace-nowrap">Contact</th>
-                                <th class="px-4 py-4 font-semibold whitespace-nowrap">Address</th>
-                                <th class="px-4 py-4 font-semibold whitespace-nowrap">Passport No</th>
-                                <th class="px-4 py-4 font-semibold whitespace-nowrap">Passport Exp Date</th>
-                                <th class="px-4 py-4 font-semibold whitespace-nowrap">Visa Number</th>
-                            </tr>
-                        </thead>
-                        <tbody class="text-[13px] font-medium">
-                            <tr class="row-submitted border-b border-black/5">
-                                <td class="px-4 py-3 whitespace-nowrap">
-                                    <div class="flex items-center space-x-2">
-                                        <select
-                                            class="bg-white/10 border-white/20 text-white text-xs rounded focus:ring-0">
-                                            <option class="text-gray-900" selected="">Submitted</option>
-                                            <option>Spelling checked</option>
-                                            <option>Ready for Visa</option>
-                                            <option>Online Visa received</option>
-                                            <option>Online visa submitted</option>
-                                            <option>Visa available</option>
-                                            <option>Visa to be Ammended</option>
-                                            <option>Online Visa Applicant</option>
-                                            <option>Visa on Ammendment</option>
-                                        </select>
-                                        <button
-                                            class="bg-white text-gray-800 px-2 py-1 rounded text-[10px] font-bold uppercase shadow-sm">Update</button>
-                                    </div>
-                                </td>
-                                <td class="px-4 py-3 whitespace-nowrap">FEB2-002</td>
-                                <td class="px-4 py-3 whitespace-nowrap">Aththili Godage</td>
-                                <td class="px-4 py-3 whitespace-nowrap">Irosha Ushanthi</td>
-                                <td class="px-4 py-3 whitespace-nowrap">F</td>
-                                <td class="px-4 py-3 whitespace-nowrap">1985-05-12</td>
-                                <td class="px-4 py-3 whitespace-nowrap">071-2345678</td>
-                                <td class="px-4 py-3 whitespace-nowrap">246/A/3, Udara Mw, Pahala Karagahamuna,
-                                    Kadawatha</td>
-                                <td class="px-4 py-3 whitespace-nowrap">N1234567</td>
-                                <td class="px-4 py-3 whitespace-nowrap">2030-01-15</td>
-                                <td class="px-4 py-3 whitespace-nowrap">20300115</td>
-                            </tr>
-                            <tr class="row-spelling-checked border-b border-black/5">
-                                <td class="px-4 py-3 whitespace-nowrap">
-                                    <div class="flex items-center space-x-2">
-                                        <select
-                                            class="bg-white/10 border-white/20 text-white text-xs rounded focus:ring-0">
-                                            <option>Submitted</option>
-                                            <option class="text-gray-900" selected="">Spelling checked</option>
-                                            <option>Ready for Visa</option>
-                                            <option>Online Visa received</option>
-                                            <option>Online visa submitted</option>
-                                            <option>Visa available</option>
-                                            <option>Visa to be Ammended</option>
-                                            <option>Online Visa Applicant</option>
-                                            <option>Visa on Ammendment</option>
-                                        </select>
-                                        <button
-                                            class="bg-white text-gray-800 px-2 py-1 rounded text-[10px] font-bold uppercase shadow-sm">Update</button>
-                                    </div>
-                                </td>
-                                <td class="px-4 py-3 whitespace-nowrap">FEB2-003</td>
-                                <td class="px-4 py-3 whitespace-nowrap">Wikrama</td>
-                                <td class="px-4 py-3 whitespace-nowrap">Thanuja Lalani</td>
-                                <td class="px-4 py-3 whitespace-nowrap">F</td>
-                                <td class="px-4 py-3 whitespace-nowrap">1990-08-22</td>
-                                <td class="px-4 py-3 whitespace-nowrap">077-9876543</td>
-                                <td class="px-4 py-3 whitespace-nowrap">219/4, Pahala Karagahamuna, Kadawatha</td>
-                                <td class="px-4 py-3 whitespace-nowrap">N8765432</td>
-                                <td class="px-4 py-3 whitespace-nowrap">2029-11-20</td>
-                                <td class="px-4 py-3 whitespace-nowrap">20291120</td>
-                            </tr>
-                            <tr class="row-ready-for-visa border-b border-black/5">
-                                <td class="px-4 py-3 whitespace-nowrap">
-                                    <div class="flex items-center space-x-2">
-                                        <select
-                                            class="bg-white/10 border-white/20 text-white text-xs rounded focus:ring-0">
-                                            <option>Submitted</option>
-                                            <option>Spelling checked</option>
-                                            <option class="text-gray-900" selected="">Ready for Visa</option>
-                                            <option>Online Visa received</option>
-                                            <option>Online visa submitted</option>
-                                            <option>Visa available</option>
-                                            <option>Visa to be Ammended</option>
-                                            <option>Online Visa Applicant</option>
-                                            <option>Visa on Ammendment</option>
-                                        </select>
-                                        <button
-                                            class="bg-white text-gray-800 px-2 py-1 rounded text-[10px] font-bold uppercase shadow-sm">Update</button>
-                                    </div>
-                                </td>
-                                <td class="px-4 py-3 whitespace-nowrap">FEB2-015</td>
-                                <td class="px-4 py-3 whitespace-nowrap">Kasthuriarachchige</td>
-                                <td class="px-4 py-3 whitespace-nowrap">Nilmini</td>
-                                <td class="px-4 py-3 whitespace-nowrap">F</td>
-                                <td class="px-4 py-3 whitespace-nowrap">1982-12-05</td>
-                                <td class="px-4 py-3 whitespace-nowrap">076-5544332</td>
-                                <td class="px-4 py-3 whitespace-nowrap">No 26/10, 2nd Lane, Wickramasinghepura,
-                                    Battaramulla</td>
-                                <td class="px-4 py-3 whitespace-nowrap">N5544332</td>
-                                <td class="px-4 py-3 whitespace-nowrap">2028-06-10</td>
-                                <td class="px-4 py-3 whitespace-nowrap">20280610</td>
-                            </tr>
-                            <tr class="row-online-visa-received border-b border-black/5">
-                                <td class="px-4 py-3 whitespace-nowrap">
-                                    <div class="flex items-center space-x-2">
-                                        <select class="bg-white/10 border-black/20 text-xs rounded focus:ring-0">
-                                            <option>Submitted</option>
-                                            <option>Spelling checked</option>
-                                            <option>Ready for Visa</option>
-                                            <option class="text-gray-900" selected="">Online Visa received</option>
-                                            <option>Online visa submitted</option>
-                                            <option>Visa available</option>
-                                            <option>Visa to be Ammended</option>
-                                            <option>Online Visa Applicant</option>
-                                            <option>Visa on Ammendment</option>
-                                        </select>
-                                        <button
-                                            class="bg-white text-gray-800 px-2 py-1 rounded text-[10px] font-bold uppercase shadow-sm">Update</button>
-                                    </div>
-                                </td>
-                                <td class="px-4 py-3 whitespace-nowrap">FEB2-024</td>
-                                <td class="px-4 py-3 whitespace-nowrap">Sirimewan</td>
-                                <td class="px-4 py-3 whitespace-nowrap">Bimini</td>
-                                <td class="px-4 py-3 whitespace-nowrap">F</td>
-                                <td class="px-4 py-3 whitespace-nowrap">1971-03-18</td>
-                                <td class="px-4 py-3 whitespace-nowrap">072-1155334</td>
-                                <td class="px-4 py-3 whitespace-nowrap">265, 04 Ela, Weheragama, Moraketiya,
-                                    Embilipitiya</td>
-                                <td class="px-4 py-3 whitespace-nowrap">N9988776</td>
-                                <td class="px-4 py-3 whitespace-nowrap">2034-02-28</td>
-                                <td class="px-4 py-3 whitespace-nowrap">20340228</td>
-                            </tr>
-                            <tr class="row-online-visa-submitted border-b border-black/5">
-                                <td class="px-4 py-3 whitespace-nowrap">
-                                    <div class="flex items-center space-x-2">
-                                        <select class="bg-white/10 border-black/20 text-xs rounded focus:ring-0">
-                                            <option>Submitted</option>
-                                            <option>Spelling checked</option>
-                                            <option>Ready for Visa</option>
-                                            <option>Online Visa received</option>
-                                            <option class="text-gray-900" selected="">Online visa submitted</option>
-                                            <option>Visa available</option>
-                                            <option>Visa to be Ammended</option>
-                                            <option>Online Visa Applicant</option>
-                                            <option>Visa on Ammendment</option>
-                                        </select>
-                                        <button
-                                            class="bg-white text-gray-800 px-2 py-1 rounded text-[10px] font-bold uppercase shadow-sm">Update</button>
-                                    </div>
-                                </td>
-                                <td class="px-4 py-3 whitespace-nowrap">FEB2-026</td>
-                                <td class="px-4 py-3 whitespace-nowrap">Gunasekara</td>
-                                <td class="px-4 py-3 whitespace-nowrap">Amara</td>
-                                <td class="px-4 py-3 whitespace-nowrap">F</td>
-                                <td class="px-4 py-3 whitespace-nowrap">1988-04-12</td>
-                                <td class="px-4 py-3 whitespace-nowrap">071-4433221</td>
-                                <td class="px-4 py-3 whitespace-nowrap">210/8, Sri Sudarshana Rd, Malabe</td>
-                                <td class="px-4 py-3 whitespace-nowrap">N3322110</td>
-                                <td class="px-4 py-3 whitespace-nowrap">2032-09-14</td>
-                                <td class="px-4 py-3 whitespace-nowrap">20320914</td>
-                            </tr>
-                            <tr class="row-visa-available border-b border-black/5">
-                                <td class="px-4 py-3 whitespace-nowrap">
-                                    <div class="flex items-center space-x-2">
-                                        <select class="bg-white/10 border-black/20 text-xs rounded focus:ring-0">
-                                            <option>Submitted</option>
-                                            <option>Spelling checked</option>
-                                            <option>Ready for Visa</option>
-                                            <option>Online Visa received</option>
-                                            <option>Online visa submitted</option>
-                                            <option class="text-gray-900" selected="">Visa available</option>
-                                            <option>Visa to be Ammended</option>
-                                            <option>Online Visa Applicant</option>
-                                            <option>Visa on Ammendment</option>
-                                        </select>
-                                        <button
-                                            class="bg-white text-gray-800 px-2 py-1 rounded text-[10px] font-bold uppercase shadow-sm">Update</button>
-                                    </div>
-                                </td>
-                                <td class="px-4 py-3 whitespace-nowrap">FEB2-027</td>
-                                <td class="px-4 py-3 whitespace-nowrap">Perera</td>
-                                <td class="px-4 py-3 whitespace-nowrap">Sunimal</td>
-                                <td class="px-4 py-3 whitespace-nowrap">M</td>
-                                <td class="px-4 py-3 whitespace-nowrap">1992-01-30</td>
-                                <td class="px-4 py-3 whitespace-nowrap">077-1122445</td>
-                                <td class="px-4 py-3 whitespace-nowrap">Yapa Stores, Dambarawa, Mahiyanganaya</td>
-                                <td class="px-4 py-3 whitespace-nowrap">N4455667</td>
-                                <td class="px-4 py-3 whitespace-nowrap">2029-05-18</td>
-                                <td class="px-4 py-3 whitespace-nowrap">20290518</td>
-                            </tr>
-                            <tr class="row-visa-to-be-amended border-b border-black/5">
-                                <td class="px-4 py-3 whitespace-nowrap">
-                                    <div class="flex items-center space-x-2">
-                                        <select class="bg-white/10 border-black/20 text-xs rounded focus:ring-0">
-                                            <option>Visa available</option>
-                                            <option>Submitted</option>
-                                            <option>Spelling checked</option>
-                                            <option>Ready for Visa</option>
-                                            <option>Online Visa received</option>
-                                            <option>Online visa submitted</option>
-                                            <option>Visa available</option>
-                                            <option class="text-gray-900" selected="">Visa to be Ammended</option>
-                                            <option>Online Visa Applicant</option>
-                                            <option>Visa on Ammendment</option>
-                                        </select>
-                                        <button
-                                            class="bg-white text-gray-800 px-2 py-1 rounded text-[10px] font-bold uppercase shadow-sm">Update</button>
-                                    </div>
-                                </td>
-                                <td class="px-4 py-3 whitespace-nowrap">FEB2-028</td>
-                                <td class="px-4 py-3 whitespace-nowrap">Dhurayalage</td>
-                                <td class="px-4 py-3 whitespace-nowrap">Senarathna</td>
-                                <td class="px-4 py-3 whitespace-nowrap">F</td>
-                                <td class="px-4 py-3 whitespace-nowrap">1971-03-18</td>
-                                <td class="px-4 py-3 whitespace-nowrap">072-1155334</td>
-                                <td class="px-4 py-3 whitespace-nowrap">Yapa Stores, Dambarawa, Mahiyanganaya</td>
-                                <td class="px-4 py-3 whitespace-nowrap">N9988776</td>
-                                <td class="px-4 py-3 whitespace-nowrap">2034-02-28</td>
-                                <td class="px-4 py-3 whitespace-nowrap">20340228</td>
-                            </tr>
-                            <tr class="row-online-visa-applicant border-b border-black/5">
-                                <td class="px-4 py-3 whitespace-nowrap">
-                                    <div class="flex items-center space-x-2">
-                                        <select class="bg-white/10 border-black/20 text-xs rounded focus:ring-0">
-                                            <option>Visa available</option>
-                                            <option>Submitted</option>
-                                            <option>Spelling checked</option>
-                                            <option>Ready for Visa</option>
-                                            <option>Online Visa received</option>
-                                            <option>Online visa submitted</option>
-                                            <option>Visa available</option>
-                                            <option>Visa to be Ammended</option>
-                                            <option class="text-gray-900" selected="">Online Visa Applicant</option>
-                                            <option>Visa on Ammendment</option>
-                                        </select>
-                                        <button
-                                            class="bg-white text-gray-800 px-2 py-1 rounded text-[10px] font-bold uppercase shadow-sm">Update</button>
-                                    </div>
-                                </td>
-                                <td class="px-4 py-3 whitespace-nowrap">FEB2-035</td>
-                                <td class="px-4 py-3 whitespace-nowrap">Ethugal Pedi</td>
-                                <td class="px-4 py-3 whitespace-nowrap">Padmini</td>
-                                <td class="px-4 py-3 whitespace-nowrap">F</td>
-                                <td class="px-4 py-3 whitespace-nowrap">1978-03-18</td>
-                                <td class="px-4 py-3 whitespace-nowrap">072-1122334</td>
-                                <td class="px-4 py-3 whitespace-nowrap">203/2, Uduwila Rd, Godigamuwa, Akaragama
-                                </td>
-                                <td class="px-4 py-3 whitespace-nowrap">N9988776</td>
-                                <td class="px-4 py-3 whitespace-nowrap">2031-02-28</td>
-                                <td class="px-4 py-3 whitespace-nowrap">20310228</td>
-                            </tr>
-                            <tr class="row-visa-on-amendment">
-                                <td class="px-4 py-3 whitespace-nowrap">
-                                    <div class="flex items-center space-x-2">
-                                        <select class="bg-white/10 border-black/20 text-xs rounded focus:ring-0">
-                                            <option>Visa available</option>
-                                            <option>Submitted</option>
-                                            <option>Spelling checked</option>
-                                            <option>Ready for Visa</option>
-                                            <option>Online Visa received</option>
-                                            <option>Online visa submitted</option>
-                                            <option>Visa available</option>
-                                            <option>Visa to be Ammended</option>
-                                            <option>Online Visa Applicant</option>
-                                            <option class="text-gray-900" selected="">Visa on Ammendment</option>
-                                        </select>
-                                        <button
-                                            class="bg-white text-gray-800 px-2 py-1 rounded text-[10px] font-bold uppercase shadow-sm">Update</button>
-                                    </div>
-                                </td>
-                                <td class="px-4 py-3 whitespace-nowrap">FEB2-121</td>
-                                <td class="px-4 py-3 whitespace-nowrap">Silva</td>
-                                <td class="px-4 py-3 whitespace-nowrap">Kumari</td>
-                                <td class="px-4 py-3 whitespace-nowrap">F</td>
-                                <td class="px-4 py-3 whitespace-nowrap">1984-06-21</td>
-                                <td class="px-4 py-3 whitespace-nowrap">071-5544667</td>
-                                <td class="px-4 py-3 whitespace-nowrap">246/78, Soisa Niwasa Yojana Kramaya,
-                                    Thewatta Rd, Ragama</td>
-                                <td class="px-4 py-3 whitespace-nowrap">N1122334</td>
-                                <td class="px-4 py-3 whitespace-nowrap">2033-10-10</td>
-                                <td class="px-4 py-3 whitespace-nowrap">20331010</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="bg-gray-50 dark:bg-gray-800/50 px-6 py-4 border-t border-gray-200 dark:border-gray-700">
-                    <div class="flex items-center justify-between">
-                        <div class="text-sm text-gray-700 dark:text-gray-400">
-                            Showing <span class="font-medium">1</span> to <span class="font-medium">9</span> of
-                            <span class="font-medium">18</span> results
-                        </div>
-                        <nav aria-label="Pagination" class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px">
-                            <a class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-sm font-medium text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600"
-                                href="#">
-                                <span class="material-icons-round text-sm">chevron_left</span>
-                            </a>
-                            <a aria-current="page"
-                                class="z-10 bg-primary/10 border-primary text-primary relative inline-flex items-center px-4 py-2 border text-sm font-medium"
-                                href="#">1</a>
-                            <a class="bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium"
-                                href="#">2</a>
-                            <a class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-sm font-medium text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600"
-                                href="#">
-                                <span class="material-icons-round text-sm">chevron_right</span>
-                            </a>
-                        </nav>
-                    </div>
-                </div>
-            </div>
+        </main>
     </div>
-    </main>
-    </div>
+    <script>    // Bind event to your specific edit button
+        document.querySelectorAll('.edit-action-btn').forEach(button => {
+            button.addEventListener('click', function () {
+                // Read dataset variables from the clicked button
+                document.getElementById('modalTitleReg').innerText = this.dataset.reg;
+                document.getElementById('edit_reg').value = this.dataset.reg;
+                document.getElementById('edit_surname').value = this.dataset.surname;
+                document.getElementById('edit_othername').value = this.dataset.othername;
+                document.getElementById('edit_gender').value = this.dataset.gender;
+                document.getElementById('edit_dob').value = this.dataset.dob;
+                document.getElementById('edit_contact').value = this.dataset.contact;
+                document.getElementById('edit_address').value = this.dataset.address;
+                document.getElementById('edit_passport').value = this.dataset.passport;
+                document.getElementById('edit_pass_exp').value = this.dataset.passExp; // maps to data-pass-exp
+                document.getElementById('edit_visa').value = this.dataset.visa;
+
+                // Reveal the modal interface
+                document.getElementById('editModal').classList.remove('hidden');
+            });
+        });
+
+        // Hide the modal interface
+        function closeModal() {
+            document.getElementById('editModal').classList.add('hidden');
+        }
+
+        // Handle data collection on Save
+        function saveData() {
+            const updatedRecord = {
+                reg: document.getElementById('edit_reg').value,
+                surname: document.getElementById('edit_surname').value,
+                othername: document.getElementById('edit_othername').value,
+                gender: document.getElementById('edit_gender').value,
+                dob: document.getElementById('edit_dob').value,
+                contact: document.getElementById('edit_contact').value,
+                address: document.getElementById('edit_address').value,
+                passport: document.getElementById('edit_passport').value,
+                pass_exp: document.getElementById('edit_pass_exp').value,
+                visa: document.getElementById('edit_visa').value,
+            };
+
+            console.log("Submitting updated profile dataset:", updatedRecord);
+
+            // Ready for backend fetch processing here
+
+            closeModal();
+        }</script>
 
 </body>
 
