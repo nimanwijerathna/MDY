@@ -410,47 +410,59 @@
                         </div>
                     </div>
                     <div
-                        class="bg-surface-light dark:bg-surface-dark p-4 rounded-lg shadow border border-gray-100 dark:border-gray-700 space-y-4">
-                        <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
-                            <div class="relative">
+                        class="bg-surface-light dark:bg-surface-dark p-4 rounded-lg shadow border border-gray-100 dark:border-gray-700 space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4 items-end">
+
+                            <div>
                                 <label class="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1">Date
                                     Start</label>
                                 <input
-                                    class="block w-full text-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-md focus:outline-none focus:ring-primary focus:border-primary shadow-sm"
+                                    class="block w-full text-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-md focus:outline-none focus:ring-primary focus:border-primary shadow-sm h-9"
                                     type="date" />
                             </div>
-                            <div class="relative">
+
+                            <div>
                                 <label class="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1">Date
                                     End</label>
                                 <input
-                                    class="block w-full text-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-md focus:outline-none focus:ring-primary focus:border-primary shadow-sm"
+                                    class="block w-full text-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-md focus:outline-none focus:ring-primary focus:border-primary shadow-sm h-9"
                                     type="date" />
                             </div>
-                            <div class="relative">
+
+                            <div>
                                 <label
                                     class="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1">Journey</label>
                                 <select
-                                    class="block w-full pl-3 pr-10 py-2 text-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:outline-none focus:ring-primary focus:border-primary rounded-md shadow-sm">
-                                    <option>Choose...</option>
+                                    class="block w-full pl-3 pr-10 py-1.5 text-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:outline-none focus:ring-primary focus:border-primary rounded-md shadow-sm h-9">
+                                    <option value="">Choose...</option>
                                     <option>2026 February 01</option>
                                     <option>2026 February 02</option>
                                     <option>2026 March 01</option>
                                 </select>
                             </div>
-                            <div class="relative">
+
+                            <div>
                                 <label class="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1">
-                                    Sort by
+                                    Passports Availability
                                 </label>
                                 <select
-                                    class="block w-full pl-3 pr-10 py-2 text-sm border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:outline-none focus:ring-primary focus:border-primary rounded-md shadow-sm">
+                                    class="block w-full pl-3 text-sm border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:outline-none focus:ring-primary focus:border-primary rounded-md shadow-sm">
                                     <option value="">Choose...</option>
-                                    <option value="bc_or_id">With Birth Certificate or ID</option>
-                                    <option value="bc_and_id">With Birth Certificate & ID</option>
-                                    <option value="has_passport">Has Passport</option>
-                                    <option value="missing_passport">Missing Passport</option>
+
+                                    <optgroup label="Has Passport — MDY">
+                                        <option value="passport_mdy_normal">Normal Service (Count)</option>
+                                        <option value="passport_mdy_oneday">Oneday Service (Count)</option>
+                                    </optgroup>
+
+                                    <optgroup label="No MDY">
+                                        <option value="passport_no_mdy">No MDY (Count)</option>
+                                    </optgroup>
+
+                                    <option value="missing_passport">Missing Passports (Count)</option>
                                 </select>
                             </div>
-                            <div class="relative">
+
+                            <div class="sm:col-span-2 lg:col-span-1">
                                 <label
                                     class="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1">Search</label>
                                 <div class="relative">
@@ -458,22 +470,27 @@
                                         <span class="material-icons-round text-gray-400 text-sm">search</span>
                                     </span>
                                     <input
-                                        class="block w-full pl-10 pr-3 py-2 text-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-md focus:outline-none focus:ring-primary focus:border-primary shadow-sm"
+                                        class="block w-full pl-10 pr-3 py-1.5 text-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-md focus:outline-none focus:ring-primary focus:border-primary shadow-sm h-9"
                                         placeholder="Search followers..." type="text" />
                                 </div>
                             </div>
+
                         </div>
-                        <div class="flex items-center space-x-3 pt-2">
-                            <button
-                                class="flex items-center px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded text-sm font-medium transition-colors shadow-sm">
-                                <span class="material-icons-round text-sm mr-2">picture_as_pdf</span>
-                                PDF
-                            </button>
-                            <button
-                                class="flex items-center px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded text-sm font-medium transition-colors shadow-sm">
-                                <span class="material-icons-round text-sm mr-2">table_view</span>
-                                Excel
-                            </button>
+
+                        <div
+                            class="flex items-center justify-between border-t border-gray-100 dark:border-gray-700 pt-4">
+                            <div class="flex space-x-3">
+                                <button
+                                    class="flex items-center px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded text-sm font-medium transition-colors shadow-sm">
+                                    <span class="material-icons-round text-sm mr-2">picture_as_pdf</span>
+                                    PDF
+                                </button>
+                                <button
+                                    class="flex items-center px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded text-sm font-medium transition-colors shadow-sm">
+                                    <span class="material-icons-round text-sm mr-2">table_view</span>
+                                    Excel
+                                </button>
+                            </div>
                         </div>
                     </div>
                     <div
