@@ -94,7 +94,7 @@
                                 alt="India">
                         </span>
                         Dambadiwa
-                    </a>                    
+                    </a>
                     <a class="flex items-center px-3 py-2 text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-800 rounded-lg transition-colors"
                         href="projects_lakdiwa.html">
                         <span class="w-4 h-4 rounded-full overflow-hidden mr-3 shrink-0 border border-gray-700">
@@ -235,7 +235,9 @@
                     </div>
                 </div>
                 <div
-                    class="flex flex-col lg:flex-row lg:items-start justify-between gap-4 bg-surface-light dark:bg-surface-dark p-4 rounded-lg shadow border border-gray-100 dark:border-gray-700">
+                    class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 bg-surface-light dark:bg-surface-dark p-4 rounded-lg shadow border border-gray-100 dark:border-gray-700">
+
+                    <!-- Action Buttons Group -->
                     <div class="flex flex-col gap-2 shrink-0 w-full lg:w-auto">
                         <div class="flex gap-2">
                             <button
@@ -257,24 +259,35 @@
                             </button>
                         </div>
                     </div>
-                    <div class="flex flex-col gap-2 w-full lg:w-auto">
-                        <div class="flex flex-col sm:flex-row gap-2 w-full">
-                            <div class="relative flex-1">
-                                <select
-                                    class="block w-full pl-3 pr-10 py-2 text-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:outline-none focus:ring-primary focus:border-primary rounded-md shadow-sm">
-                                    <option>Payment Status</option>
-                                    <option>Completed</option>
-                                    <option>Payment Due</option>
-                                </select>
-                            </div>
+
+                    <!-- Search Bar (Flexible width wrapper) -->
+                    <div class="relative w-full lg:max-w-md">
+                        <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <span class="material-icons-round text-gray-400 text-sm">search</span>
+                        </span>
+                        <input
+                            class="block w-full pl-10 pr-3 py-2 text-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-md focus:outline-none focus:ring-primary focus:border-primary shadow-sm"
+                            placeholder="Search crew..." type="text" />
+                    </div>
+
+                    <!-- Filters Group -->
+                    <div class="flex flex-col sm:flex-row gap-2 w-full lg:w-auto shrink-0">
+                        <div class="relative flex-1 sm:w-48">
+                            <select
+                                class="block w-full pl-3 pr-10 py-2 text-sm border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:outline-none focus:ring-primary focus:border-primary rounded-md shadow-sm">
+                                <option value="">Payment Status</option>
+                                <option value="completed">Completed</option>
+                                <option value="due">Payment Due</option>
+                            </select>
                         </div>
-                        <div class="relative w-full">
-                            <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                <span class="material-icons-round text-gray-400 text-sm">search</span>
-                            </span>
-                            <input
-                                class="block w-full pl-10 pr-3 py-2 text-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-md focus:outline-none focus:ring-primary focus:border-primary shadow-sm"
-                                placeholder="Search crew..." type="text" />
+                        <div class="relative flex-1 sm:w-48">
+                            <select
+                                class="block w-full pl-3 pr-10 py-2 text-sm border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:outline-none focus:ring-primary focus:border-primary rounded-md shadow-sm">
+                                <option>Choose Age Limits</option>
+                                <option>Less than 12</option>
+                                <option>Between 13-69</option>
+                                <option>Greater than 70</option>
+                            </select>
                         </div>
                     </div>
                 </div>
@@ -288,6 +301,7 @@
                                     <th class="px-4 py-3 font-semibold w-16">Image</th>
                                     <th class="px-4 py-3 font-semibold whitespace-nowrap">Reg No</th>
                                     <th class="px-4 py-3 font-semibold whitespace-nowrap">Name</th>
+                                    <th class="px-4 py-3 font-semibold whitespace-nowrap">Age</th>
                                     <th class="px-4 py-3 font-semibold whitespace-nowrap">Mobile 1</th>
                                     <th class="px-4 py-3 font-semibold whitespace-nowrap">Mobile 2</th>
                                     <th class="px-4 py-3 font-semibold">Guardian Mobile</th>
@@ -319,6 +333,7 @@
                                         <div class="text-sm font-medium text-gray-900 dark:text-white">Yapa
                                             Mudiyanselage Wasana Lakprabha</div>
                                     </td>
+                                    <td class="px-4 py-3 whitespace-nowrap">35</td>
                                     <td class="px-4 py-3 whitespace-nowrap text-gray-600 dark:text-gray-300">0701112222
                                     </td>
                                     <td class="px-4 py-3 whitespace-nowrap text-gray-600 dark:text-gray-300">0723334444
@@ -367,6 +382,7 @@
                                         <div class="text-sm font-medium text-gray-900 dark:text-white">Yapa
                                             Mudiyanselage Ranbanda</div>
                                     </td>
+                                    <td class="px-4 py-3 whitespace-nowrap">55</td>
                                     <td class="px-4 py-3 whitespace-nowrap text-gray-600 dark:text-gray-300">0712345678
                                     </td>
                                     <td class="px-4 py-3 whitespace-nowrap text-gray-600 dark:text-gray-300">0778901234
@@ -416,6 +432,7 @@
                                             Muhandiramge Siripala
                                         </div>
                                     </td>
+                                    <td class="px-4 py-3 whitespace-nowrap">37</td>
                                     <td class="px-4 py-3 whitespace-nowrap text-gray-600 dark:text-gray-300">0714561230
                                     </td>
                                     <td class="px-4 py-3 whitespace-nowrap text-gray-600 dark:text-gray-300">0729876540
@@ -464,6 +481,7 @@
                                         <div class="text-sm font-medium text-gray-900 dark:text-white">Yale Gamage
                                             Somalatha</div>
                                     </td>
+                                    <td class="px-4 py-3 whitespace-nowrap">65</td>
                                     <td class="px-4 py-3 whitespace-nowrap text-gray-600 dark:text-gray-300">0779998888
                                     </td>
                                     <td class="px-4 py-3 whitespace-nowrap text-gray-600 dark:text-gray-300">0717776666

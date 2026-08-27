@@ -245,11 +245,13 @@
                                     <th class="px-4 py-4 font-semibold whitespace-nowrap">Other Name</th>
                                     <th class="px-4 py-4 font-semibold whitespace-nowrap">Gender</th>
                                     <th class="px-4 py-4 font-semibold whitespace-nowrap">DOB</th>
+                                    <th class="px-4 py-4 font-semibold whitespace-nowrap">Age</th>
                                     <th class="px-4 py-4 font-semibold whitespace-nowrap">Contact</th>
                                     <th class="px-4 py-4 font-semibold whitespace-nowrap">Address</th>
                                     <th class="px-4 py-4 font-semibold whitespace-nowrap">Passport No</th>
                                     <th class="px-4 py-4 font-semibold whitespace-nowrap">Passport Exp Date</th>
                                     <th class="px-4 py-4 font-semibold whitespace-nowrap">Visa Number</th>
+                                    <th class="px-4 py-4 font-semibold whitespace-nowrap">Visa Exp Date</th>
                                     <th class="px-4 py-4 font-semibold whitespace-nowrap">Nationality</th>
                                     <th class="px-4 py-4 font-semibold whitespace-nowrap">Actions</th>
                                 </tr>
@@ -279,12 +281,14 @@
                                     <td class="px-4 py-3 whitespace-nowrap">IROSHA USHANTHI</td>
                                     <td class="px-4 py-3 whitespace-nowrap">F</td>
                                     <td class="px-4 py-3 whitespace-nowrap">1985-05-12</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">55</td>
                                     <td class="px-4 py-3 whitespace-nowrap">0712345678</td>
                                     <td class="px-4 py-3 whitespace-nowrap">246/A/3, UDARA RD, PAHALA KARAGAHAMUNA,
                                         KADAWATHA</td>
                                     <td class="px-4 py-3 whitespace-nowrap">N1234567</td>
                                     <td class="px-4 py-3 whitespace-nowrap">2030-01-15</td>
                                     <td class="px-4 py-3 whitespace-nowrap">20300115</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">2027-01-15</td>
                                     <td class="px-4 py-3 whitespace-nowrap uppercase">Sri Lankan</td>
                                     <td class="px-4 py-3 whitespace-nowrap text-sm">
                                         <button
@@ -408,6 +412,13 @@
                                                         </div>
                                                         <div>
                                                             <label
+                                                                class="block text-xs font-medium text-slate-600 mb-1">Visa
+                                                                Exp Date</label>
+                                                            <input type="date" id="edit_visa_exp"
+                                                                class="w-full bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-slate-800 transition duration-150 focus:bg-white focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 focus:outline-none">
+                                                        </div>
+                                                        <div>
+                                                            <label
                                                                 class="block text-xs font-medium text-slate-600 mb-1">Nationality</label>
                                                             <input type="text" id="edit_nationality"
                                                                 class="w-full bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-slate-800 transition duration-150 focus:bg-white focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 focus:outline-none">
@@ -465,12 +476,14 @@
                                     <td class="px-4 py-3 whitespace-nowrap uppercase">Thanuja Lalani</td>
                                     <td class="px-4 py-3 whitespace-nowrap">F</td>
                                     <td class="px-4 py-3 whitespace-nowrap">1990-08-22</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">33</td>
                                     <td class="px-4 py-3 whitespace-nowrap">0779876543</td>
                                     <td class="px-4 py-3 whitespace-nowrap uppercase">219/4, Pahala Karagahamuna,
                                         Kadawatha</td>
                                     <td class="px-4 py-3 whitespace-nowrap">N8765432</td>
                                     <td class="px-4 py-3 whitespace-nowrap">2029-11-20</td>
                                     <td class="px-4 py-3 whitespace-nowrap">20291120</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">2026-12-15</td>
                                     <td class="px-4 py-3 whitespace-nowrap uppercase">Sri Lankan</td>
                                     <td class="px-4 py-3 whitespace-nowrap text-sm">
                                         <button
@@ -509,6 +522,7 @@
                                     <td class="px-4 py-3 whitespace-nowrap uppercase">Nilmini</td>
                                     <td class="px-4 py-3 whitespace-nowrap">F</td>
                                     <td class="px-4 py-3 whitespace-nowrap">1982-12-05</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">55</td>
                                     <td class="px-4 py-3 whitespace-nowrap">0765544332</td>
                                     <td class="px-4 py-3 whitespace-nowrap uppercase">No 26/10, 2nd Lane,
                                         Wickramasinghepura,
@@ -516,6 +530,7 @@
                                     <td class="px-4 py-3 whitespace-nowrap">N5544332</td>
                                     <td class="px-4 py-3 whitespace-nowrap">2028-06-10</td>
                                     <td class="px-4 py-3 whitespace-nowrap">20280610</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">2026-12-15</td>
                                     <td class="px-4 py-3 whitespace-nowrap uppercase">Sri Lankan</td>
                                     <td class="px-4 py-3 whitespace-nowrap text-sm">
                                         <button
@@ -552,6 +567,7 @@
                                     <td class="px-4 py-3 whitespace-nowrap uppercase">Bimini</td>
                                     <td class="px-4 py-3 whitespace-nowrap">F</td>
                                     <td class="px-4 py-3 whitespace-nowrap">1971-03-18</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">53</td>
                                     <td class="px-4 py-3 whitespace-nowrap">0721155334</td>
                                     <td class="px-4 py-3 whitespace-nowrap uppercase">265, 04 Ela, Weheragama,
                                         Moraketiya,
@@ -559,6 +575,7 @@
                                     <td class="px-4 py-3 whitespace-nowrap">N9988776</td>
                                     <td class="px-4 py-3 whitespace-nowrap">2034-02-28</td>
                                     <td class="px-4 py-3 whitespace-nowrap">20340228</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">2028-01-15</td>
                                     <td class="px-4 py-3 whitespace-nowrap uppercase">Sri Lankan</td>
                                     <td class="px-4 py-3 whitespace-nowrap text-sm">
                                         <button
@@ -595,11 +612,13 @@
                                     <td class="px-4 py-3 whitespace-nowrap uppercase">Amara</td>
                                     <td class="px-4 py-3 whitespace-nowrap">F</td>
                                     <td class="px-4 py-3 whitespace-nowrap">1988-04-12</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">39</td>
                                     <td class="px-4 py-3 whitespace-nowrap">0714433221</td>
                                     <td class="px-4 py-3 whitespace-nowrap uppercase">210/8, Sri Sudarshana Rd, Malabe</td>
                                     <td class="px-4 py-3 whitespace-nowrap">N3322110</td>
                                     <td class="px-4 py-3 whitespace-nowrap">2032-09-14</td>
                                     <td class="px-4 py-3 whitespace-nowrap">20320914</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">2028-01-15</td>
                                     <td class="px-4 py-3 whitespace-nowrap uppercase">Sri Lankan</td>
                                     <td class="px-4 py-3 whitespace-nowrap text-sm">
                                         <button
@@ -636,12 +655,14 @@
                                     <td class="px-4 py-3 whitespace-nowrap uppercase">Sunimal</td>
                                     <td class="px-4 py-3 whitespace-nowrap">M</td>
                                     <td class="px-4 py-3 whitespace-nowrap">1992-01-30</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">37</td>
                                     <td class="px-4 py-3 whitespace-nowrap">0771122445</td>
                                     <td class="px-4 py-3 whitespace-nowrap uppercase">Yapa Stores, Dambarawa,
                                         Mahiyanganaya</td>
                                     <td class="px-4 py-3 whitespace-nowrap">N4455667</td>
                                     <td class="px-4 py-3 whitespace-nowrap">2029-05-18</td>
                                     <td class="px-4 py-3 whitespace-nowrap">20290518</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">2026-11-25</td>
                                     <td class="px-4 py-3 whitespace-nowrap uppercase">Sri Lankan</td>
                                     <td class="px-4 py-3 whitespace-nowrap text-sm">
                                         <button
@@ -679,6 +700,7 @@
                                     <td class="px-4 py-3 whitespace-nowrap uppercase">Senarathna</td>
                                     <td class="px-4 py-3 whitespace-nowrap">F</td>
                                     <td class="px-4 py-3 whitespace-nowrap">1971-03-18</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">53</td>
                                     <td class="px-4 py-3 whitespace-nowrap">0721155334</td>
                                     <td class="px-4 py-3 whitespace-nowrap uppercase">Yapa Stores, Dambarawa,
                                         Mahiyanganaya</td>
@@ -686,6 +708,7 @@
                                     <td class="px-4 py-3 whitespace-nowrap">2034-02-28</td>
                                     <td class="px-4 py-3 whitespace-nowrap">20340228</td>
                                     <td class="px-4 py-3 whitespace-nowrap uppercase">Sri Lankan</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">2028-03-05</td>
                                     <td class="px-4 py-3 whitespace-nowrap text-sm">
                                         <button
                                             class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-1.5 px-3 rounded transition duration-150 ease-in-out edit-action-btn"
@@ -721,13 +744,15 @@
                                     <td class="px-4 py-3 whitespace-nowrap uppercase">Ethugal Pedi</td>
                                     <td class="px-4 py-3 whitespace-nowrap uppercase">Padmini</td>
                                     <td class="px-4 py-3 whitespace-nowrap">F</td>
-                                    <td class="px-4 py-3 whitespace-nowrap">1978-03-18</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">1968-03-18</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">75</td>
                                     <td class="px-4 py-3 whitespace-nowrap">0721122334</td>
                                     <td class="px-4 py-3 whitespace-nowrap uppercase">203/2, Uduwila Rd, Godigamuwa,Akaragama                                     </td>
                                     <td class="px-4 py-3 whitespace-nowrap">N9988776</td>
                                     <td class="px-4 py-3 whitespace-nowrap">2031-02-28</td>
                                     <td class="px-4 py-3 whitespace-nowrap">20310228</td>
                                     <td class="px-4 py-3 whitespace-nowrap uppercase">Sri Lankan</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">2027-01-15</td>
                                     <td class="px-4 py-3 whitespace-nowrap text-sm">
                                         <button
                                             class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-1.5 px-3 rounded transition duration-150 ease-in-out edit-action-btn"
@@ -764,6 +789,7 @@
                                     <td class="px-4 py-3 whitespace-nowrap uppercase">Kumari</td>
                                     <td class="px-4 py-3 whitespace-nowrap">F</td>
                                     <td class="px-4 py-3 whitespace-nowrap">1984-06-21</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">59</td>
                                     <td class="px-4 py-3 whitespace-nowrap">0715544667</td>
                                     <td class="px-4 py-3 whitespace-nowrap uppercase">246/78, Soisa Niwasa Yojana
                                         Kramaya,
@@ -771,6 +797,7 @@
                                     <td class="px-4 py-3 whitespace-nowrap">N1122334</td>
                                     <td class="px-4 py-3 whitespace-nowrap">2033-10-10</td>
                                     <td class="px-4 py-3 whitespace-nowrap">20331010</td>
+                                    <td class="px-4 py-3 whitespace-nowrap">2027-01-15</td>
                                     <td class="px-4 py-3 whitespace-nowrap uppercase">Sri Lankan</td>
                                     <td class="px-4 py-3 whitespace-nowrap text-sm">
                                         <button
