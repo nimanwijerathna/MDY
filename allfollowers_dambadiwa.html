@@ -462,6 +462,33 @@
                                 </select>
                             </div>
 
+                            <div>
+                                <label class="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1">
+                                    Country From
+                                </label>
+                                <select
+                                    class="block w-full pl-3 text-sm border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:outline-none focus:ring-primary focus:border-primary rounded-md shadow-sm">
+                                    <option value="">All Locations</option>
+
+                                    <!-- Local Section -->
+                                    <optgroup label="Local">
+                                        <option value="sri_lanka">Sri Lanka (Count)</option>
+                                    </optgroup>
+
+                                    <!-- Overseas / Abroad Section -->
+                                    <optgroup label="Abroad">
+                                        <option value="australia">Australia (Count)</option>
+                                        <option value="canada">Canada (Count)</option>
+                                        <option value="france">France (Count)</option>
+                                        <option value="germany">Germany (Count)</option>
+                                        <option value="italy">Italy (Count)</option>
+                                        <option value="kuwait">Kuwait (Count)</option>
+                                        <option value="oman">Oman (Count)</option>
+                                        <option value="qatar">Qatar (Count)</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+
                             <div class="sm:col-span-2 lg:col-span-1">
                                 <label
                                     class="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1">Search</label>
@@ -503,6 +530,8 @@
                                         <th class="px-4 py-3 font-semibold w-16">Image</th>
                                         <th class="px-4 py-3 font-semibold whitespace-nowrap">Reg No</th>
                                         <th class="px-4 py-3 font-semibold whitespace-nowrap">Name</th>
+                                        <th class="px-4 py-3 font-semibold whitespace-nowrap">NIC</th>
+                                        <th class="px-4 py-3 font-semibold whitespace-nowrap">Address</th>
                                         <th class="px-4 py-3 font-semibold whitespace-nowrap">Mobile</th>
                                         <th class="px-4 py-3 font-semibold whitespace-nowrap">Mobile 2</th>
                                         <th class="px-4 py-3 font-semibold whitespace-nowrap">Payment</th>
@@ -546,13 +575,26 @@
                                                 Mudiyanselage Wasana Lakprabha</div>
                                         </td>
                                         <td class="px-4 py-3 whitespace-nowrap text-gray-600 dark:text-gray-300">
+                                            199012345678
+                                        </td>
+                                        <td class="px-4 py-3 whitespace-nowrap text-gray-600 dark:text-gray-300">
+                                            No 345/1/1, Kulathungapura, Tissamaharamaya
+                                        </td>
+                                        <td class="px-4 py-3 whitespace-nowrap text-gray-600 dark:text-gray-300">
                                             0701112222
                                         </td>
                                         <td class="px-4 py-3 whitespace-nowrap text-gray-600 dark:text-gray-300">
                                             0723334444
                                         </td>
                                         <td class="px-4 py-3 whitespace-nowrap">
-                                            <span class="font-bold text-green-600 dark:text-green-400">Completed</span>
+                                            <div class="flex items-center gap-2">
+                                                <span class="font-bold text-green-600 dark:text-green-400">Completed</span>
+                                                <button type="button"
+                                                    class="inline-flex items-center gap-1 rounded-md border border-blue-200 bg-blue-50 px-2.5 py-1 text-xs font-medium text-blue-700 transition-colors hover:bg-blue-100 dark:border-blue-700 dark:bg-blue-900/20 dark:text-blue-300 dark:hover:bg-blue-900/30"
+                                                    title="Modify Payment">
+                                                    <span class="material-icons-round text-sm">add</span>Payment
+                                                </button>
+                                            </div>
                                         </td>
                                         <td class="px-4 py-3 whitespace-nowrap text-center">
                                             <span class="material-icons-round text-green-500">check_circle</span>
@@ -606,13 +648,26 @@
                                                 Mudiyanselage Ranbanda</div>
                                         </td>
                                         <td class="px-4 py-3 whitespace-nowrap text-gray-600 dark:text-gray-300">
+                                            199875445678
+                                        </td>
+                                        <td class="px-4 py-3 whitespace-nowrap text-gray-600 dark:text-gray-300">
+                                            No 5/A, Rideegama, Panduwage Gedara, Polonnaruwa
+                                        </td>
+                                        <td class="px-4 py-3 whitespace-nowrap text-gray-600 dark:text-gray-300">
                                             0712345678
                                         </td>
                                         <td class="px-4 py-3 whitespace-nowrap text-gray-600 dark:text-gray-300">
                                             0778901234
                                         </td>
                                         <td class="px-4 py-3 whitespace-nowrap">
-                                            <span class="font-bold text-red-600 dark:text-red-400">125,000</span>
+                                            <div class="flex items-center gap-2">
+                                                 <span class="font-bold text-red-600 dark:text-red-400">125,000</span>
+                                                <button type="button"
+                                                    class="inline-flex items-center gap-1 rounded-md border border-blue-200 bg-blue-50 px-2.5 py-1 text-xs font-medium text-blue-700 transition-colors hover:bg-blue-100 dark:border-blue-700 dark:bg-blue-900/20 dark:text-blue-300 dark:hover:bg-blue-900/30"
+                                                    title="Modify Payment">
+                                                    <span class="material-icons-round text-sm">add</span>Payment
+                                                </button>
+                                            </div>
                                         </td>
                                         <td class="px-4 py-3 whitespace-nowrap text-center">
                                             <span class="material-icons-round text-green-500">check_circle</span>
@@ -659,38 +714,54 @@
                                                     class="material-icons-round text-gray-400 dark:text-gray-300">person</span>
                                             </div>
                                         </td>
-                                        <td class="px-4 py-3 whitespace-nowrap font-medium text-primary">FEB2 - 041
-                                        </td>
+                                        <td class="px-4 py-3 whitespace-nowrap font-medium text-primary">FEB2 - 041</td>
+
+                                        <!-- Updated Name Column with Country Pill -->
                                         <td class="px-4 py-3 whitespace-nowrap">
-                                            <div class="text-sm font-medium text-gray-900 dark:text-white">
-                                                Wijesooriya
-                                                Muhandiramge Siripala
+                                            <div class="flex flex-col">
+                                                <div
+                                                    class="text-sm font-medium text-gray-900 dark:text-white flex items-center gap-2">
+                                                    Wijesooriya Muhandiramge Siripala
+                                                    <!-- Abroad Badge -->
+                                                    <span
+                                                        class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold bg-indigo-50 text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-800">
+                                                        <span
+                                                            class="material-icons-round text-[14px]">flight_land</span>
+                                                        Australia
+                                                    </span>
+                                                </div>
                                             </div>
                                         </td>
                                         <td class="px-4 py-3 whitespace-nowrap text-gray-600 dark:text-gray-300">
-                                            0714561230
+                                            198612345678
                                         </td>
                                         <td class="px-4 py-3 whitespace-nowrap text-gray-600 dark:text-gray-300">
-                                            0729876540
+                                            No 5, Galle Road, Colombo 03
                                         </td>
+                                        <td class="px-4 py-3 whitespace-nowrap text-gray-600 dark:text-gray-300">
+                                            0714561230</td>
+                                        <td class="px-4 py-3 whitespace-nowrap text-gray-600 dark:text-gray-300">
+                                            0729876540</td>
                                         <td class="px-4 py-3 whitespace-nowrap">
-                                            <span class="font-bold text-green-600 dark:text-green-400">Completed</span>
+                                            <div class="flex items-center gap-2">
+                                                <span class="font-bold text-green-600 dark:text-green-400">Completed</span>
+                                                <button type="button"
+                                                    class="inline-flex items-center gap-1 rounded-md border border-blue-200 bg-blue-50 px-2.5 py-1 text-xs font-medium text-blue-700 transition-colors hover:bg-blue-100 dark:border-blue-700 dark:bg-blue-900/20 dark:text-blue-300 dark:hover:bg-blue-900/30"
+                                                    title="Modify Payment">
+                                                    <span class="material-icons-round text-sm">add</span>Payment
+                                                </button>
+                                            </div>
                                         </td>
-                                        <td class="px-4 py-3 whitespace-nowrap text-center">
-                                            <span class="material-icons-round text-green-500">check_circle</span>
-                                        </td>
-                                        <td class="px-4 py-3 whitespace-nowrap text-center">
-                                            <span class="material-icons-round text-green-500">check_circle</span>
-                                        </td>
-                                        <td class="px-4 py-3 whitespace-nowrap text-center">
-                                            <span class="material-icons-round text-green-500">check_circle</span>
-                                        </td>
-                                        <td class="px-4 py-3 whitespace-nowrap text-center">
-                                            <span class="material-icons-round text-green-500">check_circle</span>
-                                        </td>
+                                        <td class="px-4 py-3 whitespace-nowrap text-center"><span
+                                                class="material-icons-round text-green-500">check_circle</span></td>
+                                        <td class="px-4 py-3 whitespace-nowrap text-center"><span
+                                                class="material-icons-round text-green-500">check_circle</span></td>
+                                        <td class="px-4 py-3 whitespace-nowrap text-center"><span
+                                                class="material-icons-round text-green-500">check_circle</span></td>
+                                        <td class="px-4 py-3 whitespace-nowrap text-center"><span
+                                                class="material-icons-round text-green-500">check_circle</span></td>
                                         <td class="px-4 py-3 whitespace-nowrap text-gray-600 dark:text-gray-300">
-                                            2025-12-07
-                                        </td>
+                                            2025-12-07</td>
                                         <td class="px-4 py-3 whitespace-nowrap text-center">
                                             <button
                                                 class="text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 p-1 rounded transition-colors"
@@ -730,13 +801,26 @@
                                             </div>
                                         </td>
                                         <td class="px-4 py-3 whitespace-nowrap text-gray-600 dark:text-gray-300">
+                                            197845645678
+                                        </td>
+                                        <td class="px-4 py-3 whitespace-nowrap text-gray-600 dark:text-gray-300">
+                                            No 34, Main Street, Colombo 07
+                                        </td>
+                                        <td class="px-4 py-3 whitespace-nowrap text-gray-600 dark:text-gray-300">
                                             0779998888
                                         </td>
                                         <td class="px-4 py-3 whitespace-nowrap text-gray-600 dark:text-gray-300">
                                             0717776666
                                         </td>
                                         <td class="px-4 py-3 whitespace-nowrap">
-                                            <span class="font-bold text-red-600 dark:text-red-400">50,000</span>
+                                            <div class="flex items-center gap-2">
+                                                <span class="font-bold text-red-600 dark:text-red-400">50,000</span>
+                                                <button type="button"
+                                                    class="inline-flex items-center gap-1 rounded-md border border-blue-200 bg-blue-50 px-2.5 py-1 text-xs font-medium text-blue-700 transition-colors hover:bg-blue-100 dark:border-blue-700 dark:bg-blue-900/20 dark:text-blue-300 dark:hover:bg-blue-900/30"
+                                                    title="Modify Payment">
+                                                    <span class="material-icons-round text-sm">add</span>Payment
+                                                </button>
+                                            </div>
                                         </td>
                                         <td class="px-4 py-3 whitespace-nowrap text-center">
                                             <span class="material-icons-round text-green-500">check_circle</span>
